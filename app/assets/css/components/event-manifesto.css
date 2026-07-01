@@ -1,0 +1,37 @@
+.event-manifesto {
+  @apply max-w-[80rem];
+  @apply m-auto;
+  @apply pt-l pb-xxxl;
+
+  @apply md:pt-xxl;
+
+  & .event-manifesto__wrapper {
+    @apply flex flex-col gap-l;
+  }
+
+  & .event-manifesto__icon {
+    @apply flex flex-col gap-xxs;
+    @apply items-center justify-center;
+    @apply text-center;
+
+    & span {
+      @apply uppercase;
+      @apply text-xs;
+      @apply font-semi-condensed;
+    }
+  }
+
+  & .event-manifesto__text {
+    @apply text-3xl;
+    @apply text-center;
+    @apply uppercase;
+    @apply font-secondary font-bold;
+
+    @apply md:text-7xl;
+
+    & span {
+      color: var(--blue-500);
+      font-family: var(--font-brier);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.container {
+  @apply px-xs;
+  @apply m-auto;
+
+  @apply md:px-s;
+  @apply lg:px-m;
+
+  .container__inner {
+    @apply mx-auto max-w-site;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "evento": "Event",
+    "academia": "Academy",
+    "culture": "Culture"
+  },
+  "home": {
+    "title": "Presa",
+    "subtitle": "Brazilian Jiu-Jitsu"
+  },
+  "evento": {
+    "title": "BJJ Event",
+    "subtitle": "Upcoming events"
+  },
+  "academia": {
+    "title": "Academy",
+    "subtitle": "Train with us"
+  },
+  "culture": {
+    "title": "Culture",
+    "subtitle": "Who we are"
+  }
+}

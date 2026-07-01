@@ -1,0 +1,34 @@
+.btn {
+  @apply inline-flex items-center gap-xxs;
+  @apply font-primary font-semibold text-s uppercase tracking-nav;
+  @apply px-s py-xs;
+  @apply rounded-sm;
+  @apply border-0 cursor-pointer;
+  @apply transition-colors duration-200;
+  @apply w-fit;
+
+  &.btn--primary {
+    @apply bg-red text-white;
+
+    &:hover {
+      @apply bg-red-500;
+    }
+  }
+
+  &.btn--secondary {
+    @apply bg-blue text-white;
+
+    &:hover {
+      @apply bg-blue-500;
+    }
+  }
+
+  .btn__icon {
+    @apply w-4 h-4;
+    @apply flex-shrink-0;
+  }
+
+  .btn__label {
+    @apply leading-none;
+  }
+}

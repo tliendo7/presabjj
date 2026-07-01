@@ -1,0 +1,162 @@
+.event-hero {
+  @apply relative overflow-hidden mb-xxl;
+  height: 100svh;
+
+  .event-hero__container {
+    @apply relative z-[2];
+  }
+
+  .event-hero__text {
+    @apply flex flex-col gap-s;
+    @apply pb-[52svh];
+    @apply md:mt-m md:pb-xxxl md:max-w-[52%];
+  }
+
+  .event-hero__online {
+    @apply relative w-fit h-fit;
+    @apply flex items-center gap-s;
+    @apply uppercase text-gray;
+    @apply absolute top-s;
+  }
+
+  .event-hero__online-wave-outer {
+    @apply border border-gray border-dashed rounded-full;
+    animation: spin-cw 40s linear infinite;
+  }
+
+  .event-hero__online-wave-inner {
+    @apply border border-gray border-dotted rounded-full m-s;
+    animation: spin-ccw 20s linear infinite;
+  }
+
+  .event-hero__online-cover {
+    @apply relative w-24 h-24 bg-red rounded-full m-xs;
+    animation: spin-cw 40s linear infinite;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+      url('/images/past-events/presa-invitational-tournament-7.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      content: '';
+      border: 16px solid #b5b5b11f;
+      @apply w-[135%] h-[135%] absolute top-1/2 left-1/2 rounded-full -z-1;
+      translate: -50% -50%;
+      opacity: 0;
+      animation: event-hero-pulsate 1.6s ease-out infinite;
+    }
+  }
+
+  .event-hero__online-play {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-1;
+    @apply w-8 h-8 text-white;
+  }
+
+  .event-hero__eyebrow {
+    @apply font-secondary font-bold uppercase;
+    @apply text-xl leading-display tracking-title text-blue;
+    @apply md:text-2xl;
+  }
+
+  .event-hero__title {
+    @apply flex flex-col;
+    @apply font-secondary font-bold uppercase;
+    @apply text-5xl leading-display tracking-title;
+    @apply mt-xl pt-m;
+
+    @apply md:text-6xl;
+
+    @apply lg:mt-0;
+    @apply lg:text-[150px];
+
+    & > span:nth-of-type(1),
+    & > strong {
+      @apply pl-xxxl ml-l;
+    }
+
+    > span,
+    > em {
+      @apply lg:leading-[120px];
+    }
+  }
+
+  .event-hero__title-line--serif {
+    font-family: var(--font-brier);
+    @apply text-4xl z-20;
+    @apply md:text-6xl;
+    @apply lg:text-[105px];
+    @apply xl:text-[150px];
+  }
+
+  .event-hero__date {
+    @apply flex items-start gap-xs;
+  }
+
+  .event-hero__date-day {
+    @apply font-secondary font-bold uppercase text-blue;
+    /* color: var(--gray-300); */
+    @apply text-5xl tracking-title;
+    line-height: 37px !important;
+
+    @apply md:text-6xl;
+  }
+
+  .event-hero__date-month-year {
+    @apply flex flex-col leading-none;
+  }
+
+  .event-hero__date-month {
+    @apply font-secondary font-bold uppercase text-blue;
+    @apply text-2xl tracking-title;
+    line-height: 25px !important;
+
+    @apply md:text-3xl;
+  }
+
+  .event-hero__date-year {
+    @apply font-primary font-light uppercase tracking-locale text-gray-500;
+    @apply text-s;
+  }
+
+  .event-hero__description {
+    @apply text-s uppercase tracking-locale text-gray-500;
+  }
+
+  .event-hero__image-wrap {
+    @apply absolute bottom-0 left-0 right-0;
+    height: 55svh;
+    will-change: transform;
+    @apply md:left-auto md:bottom-auto md:w-[59%] md:h-[120%] md:top-[-10%];
+  }
+
+  .event-hero__image {
+    @apply w-full h-full object-contain object-bottom;
+  }
+}
+
+@keyframes spin-cw {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-ccw {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes event-hero-pulsate {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

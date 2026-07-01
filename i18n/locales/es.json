@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "evento": "Evento",
+    "academia": "Academia",
+    "culture": "Cultura"
+  },
+  "home": {
+    "title": "PRESA",
+    "subtitle": "Jiu-Jitsu Brasileño"
+  },
+  "evento": {
+    "title": "Presa International Tournament | BJJ",
+    "subtitle": "Próximos eventos"
+  },
+  "academia": {
+    "title": "Academia",
+    "subtitle": "Entrena con nosotros"
+  },
+  "culture": {
+    "title": "Cultura",
+    "subtitle": "Quiénes somos"
+  }
+}

@@ -1,0 +1,176 @@
+.socials {
+  @apply relative;
+  @apply overflow-hidden;
+  @apply flex flex-col;
+
+  & .socials__inner {
+    @apply flex flex-col items-center;
+    @apply pt-xl pb-m gap-0;
+
+    @apply md:pt-xxl md:pb-xl;
+  }
+
+  & .socials__header {
+    @apply text-center;
+    @apply pb-m;
+
+    @apply md:pb-l;
+  }
+
+  & .socials__title {
+    @apply flex flex-col;
+    @apply m-0;
+  }
+
+  & .socials__title-eyebrow {
+    @apply font-primary font-bold;
+    @apply uppercase italic;
+    @apply leading-display tracking-subtitle;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  & .socials__title-main {
+    @apply font-primary font-bold;
+    @apply uppercase;
+    @apply leading-display tracking-title;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  & .socials__fan {
+    @apply relative;
+    @apply w-full;
+    @apply overflow-visible;
+    height: clamp(340px, 46vw, 680px);
+  }
+
+  & .socials__card {
+    @apply absolute;
+    @apply overflow-hidden;
+    @apply top-0 left-1/2;
+    @apply opacity-0;
+    @apply rounded-lg;
+    width: clamp(120px, 20vw, 300px);
+    aspect-ratio: 9 / 15;
+    margin-left: calc(clamp(120px, 20vw, 300px) / -2);
+    transform: translateX(0) translateY(30px) rotate(0deg) scale(0.82);
+    transition:
+      transform 0.75s cubic-bezier(0.34, 1.4, 0.64, 1),
+      opacity 0.5s ease;
+    will-change: transform, opacity;
+  }
+
+  & .socials__card--0 {
+    @apply z-[1];
+  }
+  & .socials__card--1 {
+    @apply z-[2];
+  }
+  & .socials__card--2 {
+    @apply z-[3];
+  }
+  & .socials__card--3 {
+    @apply z-[4];
+  }
+  & .socials__card--4 {
+    @apply z-[3];
+  }
+  & .socials__card--5 {
+    @apply z-[2];
+  }
+  & .socials__card--6 {
+    @apply z-[1];
+  }
+
+  & .socials__card-img {
+    @apply block;
+    @apply w-full h-full;
+    @apply object-cover;
+  }
+
+  & .socials__fan.is-deployed .socials__card--0 {
+    @apply opacity-100;
+    transform: translateX(-37vw) translateY(9vw) rotate(-21deg) scale(0.775);
+  }
+
+  & .socials__fan.is-deployed .socials__card--1 {
+    @apply opacity-100;
+    transform: translateX(-27vw) translateY(5vw) rotate(-14deg) scale(0.85);
+  }
+
+  & .socials__fan.is-deployed .socials__card--2 {
+    @apply opacity-100;
+    transform: translateX(-14vw) translateY(1.6vw) rotate(-7deg) scale(0.935);
+  }
+
+  & .socials__fan.is-deployed .socials__card--3 {
+    @apply opacity-100;
+    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+  }
+
+  & .socials__fan.is-deployed .socials__card--4 {
+    @apply opacity-100;
+    transform: translateX(14vw) translateY(1.6vw) rotate(7deg) scale(0.935);
+  }
+
+  & .socials__fan.is-deployed .socials__card--5 {
+    @apply opacity-100;
+    transform: translateX(27vw) translateY(5vw) rotate(14deg) scale(0.85);
+  }
+
+  & .socials__fan.is-deployed .socials__card--6 {
+    @apply opacity-100;
+    transform: translateX(37vw) translateY(9vw) rotate(21deg) scale(0.775);
+  }
+
+  & .socials__footer {
+    @apply flex flex-col items-center;
+    @apply gap-s;
+  }
+
+  & .socials__subtitle {
+    @apply font-body text-m;
+    @apply m-0;
+    color: var(--gray-100);
+  }
+
+  & .socials__links {
+    @apply flex flex-wrap justify-center items-center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  & .socials__link {
+    @apply font-primary font-bold uppercase text-s tracking-nav no-underline;
+    @apply md:text-m;
+    color: var(--gray-100);
+  }
+
+  @media (max-width: 480px) {
+    & .socials__fan {
+      height: clamp(260px, 70vw, 340px);
+    }
+
+    & .socials__fan.is-deployed .socials__card--0 {
+      transform: translateX(-44vw) translateY(12vw) rotate(-18deg) scale(0.72);
+    }
+
+    & .socials__fan.is-deployed .socials__card--1 {
+      transform: translateX(-32vw) translateY(7vw) rotate(-12deg) scale(0.82);
+    }
+
+    & .socials__fan.is-deployed .socials__card--2 {
+      transform: translateX(-17vw) translateY(2.5vw) rotate(-6deg) scale(0.91);
+    }
+
+    & .socials__fan.is-deployed .socials__card--4 {
+      transform: translateX(17vw) translateY(2.5vw) rotate(6deg) scale(0.91);
+    }
+
+    & .socials__fan.is-deployed .socials__card--5 {
+      transform: translateX(32vw) translateY(7vw) rotate(12deg) scale(0.82);
+    }
+
+    & .socials__fan.is-deployed .socials__card--6 {
+      transform: translateX(44vw) translateY(12vw) rotate(18deg) scale(0.72);
+    }
+  }
+}

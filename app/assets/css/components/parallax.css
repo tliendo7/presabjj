@@ -1,0 +1,43 @@
+.parallax {
+  @apply relative w-full overflow-hidden bg-gray-900 mb-xxl;
+  @apply h-[70svh] md:h-[110svh];
+
+  .parallax__layer {
+    @apply absolute inset-0 flex items-center justify-center;
+    top: -15%;
+    height: 130%;
+    will-change: transform;
+  }
+
+  .parallax__layer--panther {
+    @apply z-0 items-start;
+  }
+
+  .parallax__panther {
+    @apply w-full h-full;
+    opacity: 0.55;
+  }
+
+  .parallax__layer--circle {
+    @apply z-1 items-end;
+  }
+
+  .parallax__semicircle {
+    @apply bg-red-700 aspect-square w-[95%] mb-[-10%];
+    border-radius: 50% 50% 0 0 / 50% 50% 0 0;
+    @apply md:mb-[-20%];
+    @apply lg:w-[70%] lg:mb-[-18%];
+    @apply xl:w-[60%] xl:max-w-[1250px];
+  }
+
+  .parallax__layer--fighters {
+    @apply z-[2] items-end;
+  }
+
+  .parallax__fighters {
+    @apply h-auto object-contain mb-[20%];
+    width: 88vw;
+    @apply md:mb-[25%] md:w-[78vw];
+    @apply lg:mb-[10%] lg:w-[68vw] lg:max-w-[640px];
+  }
+}

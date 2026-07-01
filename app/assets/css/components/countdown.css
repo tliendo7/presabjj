@@ -1,0 +1,49 @@
+.countdown {
+  @apply overflow-hidden;
+  @apply px-xs pb-xxl;
+
+  .countdown__inner {
+    @apply max-w-[80rem] mx-auto px-xs;
+    @apply flex flex-col;
+  }
+
+  .countdown__eyebrow {
+    @apply flex flex-col items-center gap-3;
+  }
+
+  .countdown__label {
+    @apply font-body font-normal;
+    @apply uppercase;
+    @apply m-0;
+  }
+
+  .countdown__digits {
+    @apply flex flex-row flex-wrap;
+    @apply justify-center items-start;
+    gap: clamp(0.5rem, 1.7vw, 1rem);
+    margin-top: clamp(1.5rem, 5.5vw, 2.5rem);
+  }
+
+  .countdown__item {
+    @apply flex flex-row items-baseline;
+    @apply font-primary font-bold;
+  }
+
+  .countdown__number {
+    @apply uppercase tabular-nums;
+    @apply inline-block text-center;
+    color: var(--gray-100);
+    width: 2ch;
+    font-size: clamp(4.75rem, 13.9vw, 8.5rem);
+    line-height: 0.8;
+    letter-spacing: -0.01em;
+  }
+
+  .countdown__unit {
+    @apply uppercase;
+    color: var(--gray-500);
+    font-size: clamp(4.75rem, 13.9vw, 8.5rem);
+    line-height: 0.8;
+    letter-spacing: -0.01em;
+  }
+}
