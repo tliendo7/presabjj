@@ -74,8 +74,12 @@ onUnmounted(() => {
     <Container>
       <div class="collabs__header">
         <div class="collabs__title-block">
-          <h2 class="collabs__title-main">IMPULSANDO LA</h2>
-          <h2 class="collabs__title-sub">CULTURA JUNTOS</h2>
+          <h2 class="collabs__title-main">
+            IMPULSANDO LA
+          </h2>
+          <h2 class="collabs__title-sub">
+            CULTURA JUNTOS
+          </h2>
         </div>
         <TextLineReveal
           class="collabs__meta"
@@ -100,7 +104,7 @@ onUnmounted(() => {
               :src="logo.src"
               :alt="logo.name"
               class="collabs__logo-img"
-            />
+            >
           </div>
         </div>
         <div
@@ -116,7 +120,7 @@ onUnmounted(() => {
               :src="logo.src"
               :alt="logo.name"
               class="collabs__logo-img"
-            />
+            >
           </div>
         </div>
       </div>

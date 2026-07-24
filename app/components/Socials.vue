@@ -35,7 +35,7 @@ onMounted(() => {
         observer?.disconnect();
       }
     },
-    { threshold: 0.2 }
+    { threshold: 0, rootMargin: '0px 0px -40% 0px' }
   );
 
   if (sectionRef.value) observer.observe(sectionRef.value);
@@ -54,8 +54,8 @@ onUnmounted(() => {
     <div class="socials__inner">
       <div class="socials__header">
         <h2 class="socials__title">
-          <span class="socials__title-eyebrow">Que es</span>
-          <span class="socials__title-main">lo siguiente</span>
+          <span class="socials__title-eyebrow">No te</span>
+          <span class="socials__title-main">pierdas nada</span>
         </h2>
       </div>
 
@@ -75,12 +75,14 @@ onUnmounted(() => {
             :alt="card.alt"
             class="socials__card-img"
             loading="lazy"
-          />
+          >
         </div>
       </div>
 
       <div class="socials__footer">
-        <p class="socials__subtitle">Síguenos en redes</p>
+        <p class="socials__subtitle">
+          Síguenos en redes
+        </p>
         <nav class="socials__links">
           <a
             v-for="social in SOCIAL_LINKS"

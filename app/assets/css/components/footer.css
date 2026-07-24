@@ -4,7 +4,8 @@
   @apply pt-[14rem];
 
   .footer__box {
-    @apply mx-auto bg-gray-900;
+    @apply mx-auto;
+    @apply bg-gray-900;
     @apply rounded-lg;
     @apply relative;
     @apply pb-s pt-m;
@@ -18,9 +19,8 @@
     @apply pointer-events-none;
     @apply z-0;
     @apply origin-bottom;
-
-    inset: auto 0% 0%;
-    overflow: clip;
+    @apply inset-x-0 bottom-0;
+    @apply overflow-clip;
     background-image: radial-gradient(
       circle at 50% -190%,
       transparent 68%,
@@ -35,32 +35,44 @@
   }
 
   .footer__logo {
-    @apply relative overflow-hidden w-full;
+    @apply relative;
+    @apply overflow-hidden;
+    @apply w-full;
 
     &::before {
       content: '';
-      @apply absolute inset-0;
-      background-image: url('/images/dummy-footer.jpg');
+      @apply absolute;
+      @apply inset-0;
       @apply bg-bottom bg-cover bg-no-repeat;
       @apply m-xxxs;
+      background-image: url('/images/dummy-footer.jpg');
     }
 
     img {
-      @apply relative block w-full h-auto;
-      z-index: 1;
+      @apply relative;
+      @apply block;
+      @apply w-full h-auto;
+      @apply z-1;
     }
   }
 
   .footer__wrapper {
-    @apply flex flex-col;
-    @apply justify-between;
+    @apply flex flex-col justify-between;
     @apply gap-xl;
 
     @apply lg:flex-row;
   }
 
+  .footer__contact-data {
+    @apply font-primary text-xs;
+    color: rgba(255, 255, 255, 0.45);
+    @apply flex flex-col;
+    @apply gap-xxs;
+  }
+
   .footer__col {
-    @apply flex flex-col gap-s;
+    @apply flex flex-col;
+    @apply gap-s;
   }
 
   .footer__nav {
@@ -72,19 +84,24 @@
 
   .footer__col-title {
     @apply font-primary font-semibold uppercase;
-    @apply text-xs text-white tracking-nav;
+    @apply text-xs tracking-nav;
+    @apply text-white;
     @apply m-0;
   }
 
   .footer__col-list {
-    @apply list-none m-0 p-0 flex flex-col;
+    @apply list-none;
+    @apply m-0;
+    @apply p-0;
+    @apply flex flex-col;
     @apply gap-xxs;
   }
 
   .footer__col-link {
-    @apply font-primary uppercase text-xs no-underline;
-    @apply transition-colors duration-200;
+    @apply font-primary uppercase text-xs;
+    @apply no-underline;
     color: rgba(255, 255, 255, 0.45);
+    @apply transition-colors duration-200;
 
     &:hover {
       color: rgba(255, 255, 255, 0.9);
@@ -92,17 +109,18 @@
   }
 
   .footer__bottom {
-    @apply flex items-center gap-s;
+    @apply flex items-center;
+    @apply gap-s;
     @apply pt-s;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .footer__social-link {
     @apply flex items-center justify-center;
-    @apply rounded-full no-underline;
+    @apply rounded-full;
+    @apply no-underline;
     @apply shrink-0;
-    width: 2.5rem;
-    height: 2.5rem;
+    @apply w-10 h-10;
     background-color: rgba(255, 255, 255, 0.08);
     color: rgba(255, 255, 255, 0.6);
   }

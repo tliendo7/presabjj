@@ -15,7 +15,243 @@
   },
   "academia": {
     "title": "Academia",
-    "subtitle": "Entrena con nosotros"
+    "subtitle": "Entrena con nosotros",
+    "categories": {
+      "heading": "Nuestras disciplinas",
+      "intro": "Nuestra academia entrena Jiu-Jitsu de principio a fin: desde tu primer agarre en el tatami hasta el podio de competición, con una metodología que une técnica, disciplina y comunidad.",
+      "moreLabel": "Más información",
+      "cards": [
+        {
+          "title": "Jiu-Jitsu Gi",
+          "description": "El arte tradicional, entrenado con kimono. Los agarres de solapa y manga abren un juego rico de control, raspados y sumisiones basado en la paciencia y la técnica.",
+          "more": "Las clases de Gi ponen el foco en la pelea de agarres, la retención de guardia y los fundamentos que sirven en todos los niveles. Ideal si buscas una comprensión profunda y metódica del Jiu-Jitsu, desde tu primer día hasta el cinturón negro.",
+          "cta": {
+            "href": "#contacto"
+          },
+          "image": "/images/past-events/presa-invitational-tournament-7.jpg"
+        },
+        {
+          "title": "Grappling No-Gi",
+          "description": "Rápido, dinámico y resbaladizo. Sin el kimono el juego se acelera, premiando la presión, el control corporal y un ritmo incansable sobre el tatami.",
+          "more": "El No-Gi se centra en underhooks, body locks y control basado en lucha, con un juego que se traslada directamente a la competición y al MMA. Un gran complemento al Gi o una disciplina por sí misma.",
+          "cta": {
+            "href": "#contacto"
+          },
+          "image": "/images/past-events/presa-invitational-tournament-11.jpg"
+        }
+      ]
+    },
+    "schedule": {
+      "heading": "Horarios",
+      "intro": "Consulta nuestros horarios de clases por grupo. Hay sesiones repartidas a lo largo de toda la semana para que siempre encuentres un hueco que encaje con tu rutina.",
+      "tabs": {
+        "kids": "Kids",
+        "adults": "Adultos"
+      },
+      "alt": {
+        "kids": "Horario de clases Kids en Presa",
+        "adults": "Horario de clases Adultos en Presa"
+      }
+    },
+    "app": {
+      "heading": "Reserva tu clase desde el móvil",
+      "description": "Consulta el horario, apúntate a tu clase y controla tus reservas en segundos. Todo lo que necesitas para entrenar, en la palma de tu mano.",
+      "cta": "Descargar la app",
+      "ctaHref": "#",
+      "phoneAlt": "App de Presa para reservar clases",
+      "bgAlt": "Entrenamiento en la academia Presa"
+    },
+    "join": {
+      "eyebrow": "Presa Academia",
+      "heading": "APRENDE. ENTRENA. SUPÉRATE.",
+      "description": "El BJJ es mucho más que un arte marcial: es la disciplina que demuestra que la técnica puede más que la fuerza. Basado en el trabajo de suelo y el control, te enseña a defenderte, a pensar bajo presión y a superar tus límites, sin importar tu punto de partida.",
+      "cta": "Únete hoy",
+      "reviews": [
+        {
+          "quote": "¡Me encanta este sitio!",
+          "author": "Alex K."
+        },
+        {
+          "quote": "Gran lugar para entrenar",
+          "author": "María G."
+        },
+        {
+          "quote": "Un cambio brutal",
+          "author": "Javi R."
+        },
+        {
+          "quote": "Ambiente inmejorable",
+          "author": "Laura P."
+        },
+        {
+          "quote": "Profes de 10",
+          "author": "Diego M."
+        },
+        {
+          "quote": "Mi segunda casa",
+          "author": "Nerea S."
+        },
+        {
+          "quote": "Técnica y comunidad",
+          "author": "Carlos V."
+        },
+        {
+          "quote": "Vuelvo cada día",
+          "author": "Ana L."
+        }
+      ]
+    },
+    "values": {
+      "imageAlt": "Entrenamiento en Presa",
+      "points": [
+        {
+          "title": "Disciplina",
+          "text": "Es lo que convierte el esfuerzo repetido en progreso real. Comprometerte con con el proceso, el equipo y contigo mismo."
+        },
+        {
+          "title": "Respeto",
+          "text": "La base sobre la que se contruye todo el arte. En el tatami todos somos iguales, sin importar el cinturón, la edad o la fuerza - aquí se aprende a ganar con humildad y a perder con dignidad, dentro y fuera del gimnasio."
+        },
+        {
+          "title": "Confianza",
+          "text": "El BJJ te enseña a mantener la calma bajo presión, a creer en tu preparación y a resolver desde la serenidad. Esa seguridad que se forja en el tatami, te acompaña después en cada desafío."
+        }
+      ]
+    },
+    "us": {
+      "eyebrow": "Quiénes somos",
+      "heading": "Las personas y el espacio detrás de Presa",
+      "intro": "Del tatami a la competición: el equipo y las instalaciones que hacen posible la academia.",
+      "blocks": [
+        {
+          "eyebrow": "El profesor",
+          "title": "Fran Santana",
+          "description": "Al frente de la academia desde sus inicios, Fran Santana combina años de tatami con una metodología pensada para que cada alumno progrese a su ritmo, desde el primer día hasta el cinturón negro.",
+          "cta": "Conoce al profesor",
+          "image": "/images/__dummy/_CIR7604.jpg",
+          "imageAlt": "Fran Santana, profesor de Presa"
+        },
+        {
+          "eyebrow": "Competición",
+          "title": "Equipo Santana",
+          "description": "Nuestro equipo de competición entrena bajo el ala de Team Gambaru, sumando la experiencia y el nivel de una de las referencias del Jiu-Jitsu para llevar a nuestros atletas a lo más alto.",
+          "cta": "Conoce al equipo",
+          "image": "/images/__dummy/_CIR5783.jpg",
+          "imageAlt": "Equipo de competición Santana"
+        },
+        {
+          "eyebrow": "El espacio",
+          "title": "Instalaciones",
+          "description": "Un tatami amplio, vestuarios y todo lo necesario para entrenar con comodidad, pensado tanto para las clases del día a día como para seminarios y eventos especiales.",
+          "cta": "",
+          "image": "/images/past-events/presa-invitational-tournament-3.jpg",
+          "imageAlt": "Instalaciones de la academia Presa"
+        }
+      ]
+    },
+    "faq": {
+      "heading": "Preguntas frecuentes",
+      "description": "Todo lo que necesitas saber sobre la academia y cómo funciona. ¿No encuentras tu respuesta? Escríbenos y te ayudamos.",
+      "categories": [
+        {
+          "id": "kids",
+          "label": "Kids"
+        },
+        {
+          "id": "material",
+          "label": "Material"
+        },
+        {
+          "id": "metodologia",
+          "label": "Metodología"
+        },
+        {
+          "id": "reserva",
+          "label": "Reserva"
+        },
+        {
+          "id": "generales",
+          "label": "Generales"
+        }
+      ],
+      "questions": [
+        {
+          "category": "kids",
+          "question": "¿A partir de qué edad pueden entrenar los niños?",
+          "answer": "Aceptamos peques desde los 4 años. Dividimos las clases por edades y nivel para que cada grupo entrene de forma segura y adaptada a su desarrollo."
+        },
+        {
+          "category": "kids",
+          "question": "¿Es seguro el Jiu-Jitsu para niños?",
+          "answer": "Sí. El BJJ es un arte marcial de control, sin golpes, y nuestras clases infantiles priorizan la técnica, el respeto y el juego. Los profesores supervisan cada sesión de cerca."
+        },
+        {
+          "category": "kids",
+          "question": "¿Qué aprenden los niños en clase?",
+          "answer": "Además de la técnica, trabajamos disciplina, coordinación, confianza y trabajo en equipo. Muchas familias notan mejoras en concentración y autoestima desde las primeras semanas."
+        },
+        {
+          "category": "material",
+          "question": "¿Necesito comprar un kimono para empezar?",
+          "answer": "Para la primera clase de prueba no necesitas nada: te prestamos el equipo. Si decides quedarte, te ayudamos a elegir tu primer kimono (Gi) al mejor precio."
+        },
+        {
+          "category": "material",
+          "question": "¿Qué diferencia hay entre entrenar con Gi y No-Gi?",
+          "answer": "El Gi es el kimono tradicional y abre un juego de agarres de solapa y manga. El No-Gi se entrena con rashguard y shorts, es más rápido y dinámico. Puedes practicar ambos."
+        },
+        {
+          "category": "material",
+          "question": "¿Qué debo llevar a cada clase?",
+          "answer": "Tu kimono limpio (o rashguard y shorts para No-Gi), una botella de agua y sandalias para moverte fuera del tatami. La higiene es clave: uñas cortas y ropa limpia siempre."
+        },
+        {
+          "category": "metodologia",
+          "question": "¿Cómo es la metodología de entrenamiento?",
+          "answer": "Combinamos técnica, situaciones específicas y sparring progresivo. Cada clase tiene un objetivo claro y la dificultad se adapta a tu nivel, desde principiante hasta competidor."
+        },
+        {
+          "category": "metodologia",
+          "question": "Nunca he hecho deportes de contacto, ¿puedo empezar?",
+          "answer": "Por supuesto. Todos empezamos algún día desde cero. Las clases están abiertas a todo el mundo y adaptamos la intensidad a cada persona sin importar tu punto de partida."
+        },
+        {
+          "category": "metodologia",
+          "question": "¿Cada cuánto debería entrenar para progresar?",
+          "answer": "Con dos o tres sesiones por semana notarás progreso constante. Lo importante es la regularidad: es mejor entrenar poco y a menudo que mucho de forma esporádica."
+        },
+        {
+          "category": "reserva",
+          "question": "¿Cómo reservo mi clase de prueba gratuita?",
+          "answer": "Escríbenos por el formulario de contacto o por WhatsApp y te asignamos un horario. La primera clase es gratuita y sin compromiso."
+        },
+        {
+          "category": "reserva",
+          "question": "¿Necesito reservar cada clase o hay horario libre?",
+          "answer": "Con tu cuota puedes acudir a las clases de tu grupo dentro del horario semanal. Para eventos especiales, seminarios o clases de prueba sí pedimos reserva previa."
+        },
+        {
+          "category": "reserva",
+          "question": "¿Puedo cancelar o cambiar mi reserva?",
+          "answer": "Sí. Si no puedes asistir, avísanos con antelación y reprogramamos tu sesión sin problema."
+        },
+        {
+          "category": "generales",
+          "question": "¿Dónde está la academia y cuál es el horario?",
+          "answer": "Estamos en el centro de entrenamiento Presa. Consulta el apartado de horarios de esta misma página para ver todas las franjas disponibles de Kids y Adultos."
+        },
+        {
+          "category": "generales",
+          "question": "¿Cuánto cuesta la cuota mensual?",
+          "answer": "Tenemos varias modalidades según los días de entrenamiento. Consulta el apartado de tarifas o escríbenos para darte el detalle actualizado y encontrar la opción que mejor encaja."
+        },
+        {
+          "category": "generales",
+          "question": "¿Ofrecéis clases para adultos y competición?",
+          "answer": "Sí. Tenemos grupos para todos los niveles, desde iniciación hasta un equipo de competición que representa a Presa en torneos nacionales e internacionales."
+        }
+      ]
+    }
   },
   "culture": {
     "title": "Cultura",

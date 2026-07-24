@@ -15,7 +15,244 @@
   },
   "academia": {
     "title": "Academy",
-    "subtitle": "Train with us"
+    "subtitle": "Train with us",
+    "categories": {
+      "heading": "Our disciplines",
+      "intro": "Our academy trains Jiu-Jitsu end to end: from your very first grip on the mat to the competition podium, through a method that blends technique, discipline and community.",
+      "moreLabel": "More info",
+      "cards": [
+        {
+          "title": "Gi Jiu-Jitsu",
+          "description": "The traditional art, trained in the kimono. Collar and sleeve grips open up a rich game of control, sweeps and submissions built on patience and technique.",
+          "more": "Gi classes emphasise grip fighting, guard retention and the fundamentals that carry over to every level. Ideal if you want a deep, methodical understanding of Jiu-Jitsu — from your first day to your black belt.",
+          "cta": {
+            "href": "#contacto"
+          },
+          "image": "/images/past-events/presa-invitational-tournament-7.jpg"
+        },
+        {
+          "title": "No-Gi Grappling",
+          "description": "Fast, dynamic and slippery. Without the kimono the game speeds up, rewarding pressure, body control and a relentless pace on the mat.",
+          "more": "No-Gi focuses on underhooks, body locks and wrestling-based control, with a game that translates directly to competition and MMA. A great complement to Gi or a discipline in its own right.",
+          "cta": {
+            "href": "#contacto"
+          },
+          "image": "/images/past-events/presa-invitational-tournament-11.jpg"
+        }
+      ]
+    },
+    "schedule": {
+      "heading": "Schedule",
+      "intro": "Check our class schedule by group. Sessions run throughout the whole week, so you can always find a time that fits your routine.",
+      "tabs": {
+        "kids": "Kids",
+        "adults": "Adults"
+      },
+      "alt": {
+        "kids": "Kids class schedule at Presa",
+        "adults": "Adults class schedule at Presa"
+      }
+    },
+    "app": {
+      "heading": "Book your class from your phone",
+      "description": "Check the schedule, sign up for your class, and manage your bookings in seconds. Everything you need to train, right in your pocket.",
+      "cta": "Download the app",
+      "ctaHref": "#",
+      "phoneAlt": "Presa app for booking classes",
+      "bgAlt": "Training at Presa academy"
+    },
+    "join": {
+      "eyebrow": "Presa Academy",
+      "heading": "TRAIN. COMPETE. RISE.",
+      "description": "Our team of certified coaches is committed to helping you reach your goals, whether you want to compete, build confidence, or improve your overall fitness. We build a training plan tailored to you.",
+      "cta": "Join today",
+      "reviews": [
+        {
+          "quote": "Love this gym!",
+          "author": "Alex K."
+        },
+        {
+          "quote": "Great place to work out",
+          "author": "María G."
+        },
+        {
+          "quote": "Big difference for me",
+          "author": "Javi R."
+        },
+        {
+          "quote": "Unbeatable atmosphere",
+          "author": "Laura P."
+        },
+        {
+          "quote": "Top-notch coaches",
+          "author": "Diego M."
+        },
+        {
+          "quote": "My second home",
+          "author": "Nerea S."
+        },
+        {
+          "quote": "Technique and community",
+          "author": "Carlos V."
+        },
+        {
+          "quote": "I come back every day",
+          "author": "Ana L."
+        }
+      ]
+    },
+    "values": {
+      "image": "/images/past-events/presa-invitational-tournament-5.jpg",
+      "imageAlt": "Training at Presa",
+      "points": [
+        {
+          "title": "For everyone",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+          "title": "Technique",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+          "title": "Community",
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+      ]
+    },
+    "us": {
+      "eyebrow": "Who we are",
+      "heading": "The people and the space behind Presa",
+      "intro": "From the mat to the competition circuit: the team and the facilities that make the academy possible.",
+      "blocks": [
+        {
+          "eyebrow": "The head coach",
+          "title": "Fran Santana",
+          "description": "Leading the academy since day one, Fran Santana blends years on the mat with a method built for every student to progress at their own pace, from their first class to black belt.",
+          "cta": "Meet the coach",
+          "image": "/images/__dummy/_CIR7604.jpg",
+          "imageAlt": "Fran Santana, head coach at Presa"
+        },
+        {
+          "eyebrow": "Competition",
+          "title": "Team Santana",
+          "description": "Our competition team trains under the wing of Team Gambaru, adding the experience and level of one of Jiu-Jitsu's benchmark teams to push our athletes to the top.",
+          "cta": "Meet the team",
+          "image": "/images/__dummy/_CIR5783.jpg",
+          "imageAlt": "Santana competition team"
+        },
+        {
+          "eyebrow": "The space",
+          "title": "Facilities",
+          "description": "A spacious mat, changing rooms and everything you need to train comfortably, built for day-to-day classes as well as seminars and special events.",
+          "cta": "",
+          "image": "/images/past-events/presa-invitational-tournament-3.jpg",
+          "imageAlt": "Presa academy facilities"
+        }
+      ]
+    },
+    "faq": {
+      "heading": "Frequently asked questions",
+      "description": "Everything you need to know about the academy and how it works. Can't find your answer? Get in touch and we'll help.",
+      "categories": [
+        {
+          "id": "kids",
+          "label": "Kids"
+        },
+        {
+          "id": "material",
+          "label": "Gear"
+        },
+        {
+          "id": "metodologia",
+          "label": "Method"
+        },
+        {
+          "id": "reserva",
+          "label": "Booking"
+        },
+        {
+          "id": "generales",
+          "label": "General"
+        }
+      ],
+      "questions": [
+        {
+          "category": "kids",
+          "question": "What's the minimum age for kids to train?",
+          "answer": "We welcome kids from age 4. Classes are split by age and level so every group trains safely and in a way that suits their development."
+        },
+        {
+          "category": "kids",
+          "question": "Is Jiu-Jitsu safe for children?",
+          "answer": "Yes. BJJ is a control-based martial art with no striking, and our kids' classes prioritise technique, respect and play. Coaches supervise every session closely."
+        },
+        {
+          "category": "kids",
+          "question": "What do children learn in class?",
+          "answer": "Beyond technique, we work on discipline, coordination, confidence and teamwork. Many families notice better focus and self-esteem within the first few weeks."
+        },
+        {
+          "category": "material",
+          "question": "Do I need to buy a kimono to start?",
+          "answer": "You don't need anything for your first trial class: we lend you the gear. If you decide to stay, we'll help you pick your first kimono (Gi) at the best price."
+        },
+        {
+          "category": "material",
+          "question": "What's the difference between Gi and No-Gi?",
+          "answer": "The Gi is the traditional kimono and opens up a collar and sleeve grip game. No-Gi is trained in a rashguard and shorts, faster and more dynamic. You can practise both."
+        },
+        {
+          "category": "material",
+          "question": "What should I bring to each class?",
+          "answer": "A clean kimono (or rashguard and shorts for No-Gi), a water bottle and sandals for moving off the mat. Hygiene matters: short nails and clean kit, always."
+        },
+        {
+          "category": "metodologia",
+          "question": "What's the training methodology like?",
+          "answer": "We combine technique, positional sparring and progressive rolling. Each class has a clear goal and difficulty adapts to your level, from beginner to competitor."
+        },
+        {
+          "category": "metodologia",
+          "question": "I've never done contact sports, can I start?",
+          "answer": "Absolutely. Everyone starts from zero someday. Classes are open to everyone and we adapt the intensity to each person regardless of your starting point."
+        },
+        {
+          "category": "metodologia",
+          "question": "How often should I train to progress?",
+          "answer": "With two or three sessions a week you'll see steady progress. Consistency is what matters: little and often beats a lot every now and then."
+        },
+        {
+          "category": "reserva",
+          "question": "How do I book my free trial class?",
+          "answer": "Message us through the contact form or WhatsApp and we'll assign you a slot. Your first class is free and with no commitment."
+        },
+        {
+          "category": "reserva",
+          "question": "Do I book every class or is it open schedule?",
+          "answer": "With your membership you can attend your group's classes within the weekly schedule. For special events, seminars or trial classes we do ask you to book in advance."
+        },
+        {
+          "category": "reserva",
+          "question": "Can I cancel or change my booking?",
+          "answer": "Yes. If you can't make it, let us know in advance and we'll reschedule your session, no problem."
+        },
+        {
+          "category": "generales",
+          "question": "Where is the academy and what are the hours?",
+          "answer": "We're at the Presa training centre. Check the schedule section on this page to see all the available Kids and Adults time slots."
+        },
+        {
+          "category": "generales",
+          "question": "How much is the monthly membership?",
+          "answer": "We have several options depending on your training days. Check the pricing section or message us for the up-to-date details and the best fit for you."
+        },
+        {
+          "category": "generales",
+          "question": "Do you offer adult and competition classes?",
+          "answer": "Yes. We have groups for every level, from beginners to a competition team that represents Presa at national and international tournaments."
+        }
+      ]
+    }
   },
   "culture": {
     "title": "Culture",

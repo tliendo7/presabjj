@@ -5,7 +5,8 @@
 
   & .socials__inner {
     @apply flex flex-col items-center;
-    @apply pt-xl pb-m gap-0;
+    @apply pt-xl pb-m;
+    @apply gap-0;
 
     @apply md:pt-xxl md:pb-xl;
   }
@@ -50,13 +51,13 @@
     @apply opacity-0;
     @apply rounded-lg;
     width: clamp(120px, 20vw, 300px);
-    aspect-ratio: 9 / 15;
+    @apply aspect-[9/15];
     margin-left: calc(clamp(120px, 20vw, 300px) / -2);
-    transform: translateX(0) translateY(30px) rotate(0deg) scale(0.82);
+    @apply translate-x-0 translate-y-[30px] rotate-0 scale-[0.82];
     transition:
       transform 0.75s cubic-bezier(0.34, 1.4, 0.64, 1),
       opacity 0.5s ease;
-    will-change: transform, opacity;
+    @apply will-change-[transform,opacity];
   }
 
   & .socials__card--0 {
@@ -89,37 +90,37 @@
 
   & .socials__fan.is-deployed .socials__card--0 {
     @apply opacity-100;
-    transform: translateX(-37vw) translateY(9vw) rotate(-21deg) scale(0.775);
+    @apply -translate-x-[37vw] translate-y-[9vw] -rotate-[21deg] scale-[0.775];
   }
 
   & .socials__fan.is-deployed .socials__card--1 {
     @apply opacity-100;
-    transform: translateX(-27vw) translateY(5vw) rotate(-14deg) scale(0.85);
+    @apply -translate-x-[27vw] translate-y-[5vw] -rotate-[14deg] scale-[0.85];
   }
 
   & .socials__fan.is-deployed .socials__card--2 {
     @apply opacity-100;
-    transform: translateX(-14vw) translateY(1.6vw) rotate(-7deg) scale(0.935);
+    @apply -translate-x-[14vw] translate-y-[1.6vw] -rotate-[7deg] scale-[0.935];
   }
 
   & .socials__fan.is-deployed .socials__card--3 {
     @apply opacity-100;
-    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    @apply translate-x-0 translate-y-0 rotate-0 scale-100;
   }
 
   & .socials__fan.is-deployed .socials__card--4 {
     @apply opacity-100;
-    transform: translateX(14vw) translateY(1.6vw) rotate(7deg) scale(0.935);
+    @apply translate-x-[14vw] translate-y-[1.6vw] rotate-[7deg] scale-[0.935];
   }
 
   & .socials__fan.is-deployed .socials__card--5 {
     @apply opacity-100;
-    transform: translateX(27vw) translateY(5vw) rotate(14deg) scale(0.85);
+    @apply translate-x-[27vw] translate-y-[5vw] rotate-[14deg] scale-[0.85];
   }
 
   & .socials__fan.is-deployed .socials__card--6 {
     @apply opacity-100;
-    transform: translateX(37vw) translateY(9vw) rotate(21deg) scale(0.775);
+    @apply translate-x-[37vw] translate-y-[9vw] rotate-[21deg] scale-[0.775];
   }
 
   & .socials__footer {
@@ -130,7 +131,7 @@
   & .socials__subtitle {
     @apply font-body text-m;
     @apply m-0;
-    color: var(--gray-100);
+    @apply text-gray-100;
   }
 
   & .socials__links {
@@ -139,9 +140,11 @@
   }
 
   & .socials__link {
-    @apply font-primary font-bold uppercase text-s tracking-nav no-underline;
+    @apply font-primary font-bold uppercase text-s tracking-nav;
+    @apply no-underline;
+    @apply text-gray-100;
+
     @apply md:text-m;
-    color: var(--gray-100);
   }
 
   @media (max-width: 480px) {

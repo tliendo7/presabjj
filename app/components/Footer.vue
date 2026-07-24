@@ -55,14 +55,14 @@ const navColumns = [
                 src="/images/Exclude.png"
                 alt="Presa logo"
                 loading="lazy"
-              />
+              >
             </div>
           </NuxtLink>
 
           <nav class="footer__wrapper">
-            <div class="footer_contact-data">
+            <div class="footer__contact-data">
               <p>
-                Cam. la Piterita, 107, Nave 5,<br />38329 La Laguna,<br />Santa
+                Cam. la Piterita, 107, Nave 5,<br>38329 La Laguna,<br>Santa
                 Cruz de Tenerife
               </p>
               <p>(+34) 000 00 00 00</p>

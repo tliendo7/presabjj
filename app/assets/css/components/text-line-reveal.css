@@ -1,25 +1,24 @@
 .text-line-reveal {
-  min-height: 1em;
+  @apply min-h-[1em];
 
   .text-line-reveal__line {
-    position: relative;
-    display: block;
-    overflow: hidden;
+    @apply relative;
+    @apply block;
+    @apply overflow-hidden;
   }
 
   .text-line-reveal__text {
-    display: block;
+    @apply block;
   }
 
   .text-line-reveal__mask {
-    position: absolute;
-    inset: 0;
-    transform: translateX(0%);
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+    @apply absolute;
+    @apply inset-0;
+    @apply translate-x-0;
+    @apply transition-transform ease-[cubic-bezier(0.76,0,0.24,1)];
   }
 
   &.is-revealed .text-line-reveal__mask {
-    transform: translateX(101%);
+    @apply translate-x-[101%];
   }
 }

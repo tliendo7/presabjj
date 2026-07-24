@@ -74,7 +74,7 @@ onUnmounted(() => {
         </div>
         <TextLineReveal
           class="event-hero__description"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit quos nostrum ullam? Explicabo assumenda exercitationem veritatis hic accusantium quae nostrum ipsa a dignissimos."
+          text="Volvemos a por todo, la cuarta edición ya está aquí. Competidores de BJJ nacionales e internacionales se suben al tatami de nuevo."
         />
         <Button
           label="Compra tu entrada"
@@ -93,7 +93,7 @@ onUnmounted(() => {
         src="/images/luchadores.png"
         alt=""
         class="event-hero__image"
-      />
+      >
     </div>
   </section>
 </template>

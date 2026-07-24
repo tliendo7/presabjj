@@ -6,11 +6,13 @@
   @apply md:pt-xxl;
 
   & .event-manifesto__wrapper {
-    @apply flex flex-col gap-l;
+    @apply flex flex-col;
+    @apply gap-l;
   }
 
   & .event-manifesto__icon {
-    @apply flex flex-col gap-xxs;
+    @apply flex flex-col;
+    @apply gap-xxs;
     @apply items-center justify-center;
     @apply text-center;
 
@@ -30,8 +32,8 @@
     @apply md:text-7xl;
 
     & span {
-      color: var(--blue-500);
-      font-family: var(--font-brier);
+      @apply text-blue-500;
+      @apply font-brier;
     }
   }
 }

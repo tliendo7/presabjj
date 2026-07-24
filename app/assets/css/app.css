@@ -2,12 +2,3 @@
 body {
   @apply bg-gray-900 text-gray-100;
 }
-
-.page-enter-active {
-  @apply transition-all duration-500;
-}
-
-.page-enter-from,
-.page-leave-to {
-  @apply opacity-0 translate-y-2;
-}

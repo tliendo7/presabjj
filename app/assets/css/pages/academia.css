@@ -1,1 +1,4 @@
-/* Academia page styles */
+.academia-page {
+  @apply min-h-screen;
+  @apply bg-white text-gray-900;
+}

@@ -1,9 +1,11 @@
 .btn {
-  @apply inline-flex items-center gap-xxs;
+  @apply inline-flex items-center;
+  @apply gap-xxs;
   @apply font-primary font-semibold text-s uppercase tracking-nav;
   @apply px-s py-xs;
   @apply rounded-sm;
-  @apply border-0 cursor-pointer;
+  @apply border-0;
+  @apply cursor-pointer;
   @apply transition-colors duration-200;
   @apply w-fit;
 

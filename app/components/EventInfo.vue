@@ -6,7 +6,6 @@ interface ScheduleItem {
   highlight?: boolean;
 }
 
-// TODO: reemplazar con datos reales del evento
 const schedule: ScheduleItem[] = [
   { day: 'Vie 16', time: '18h', name: 'Publicación de las categorías' },
   { day: 'Sáb 17', time: '16h', name: 'Inauguración del evento' },
@@ -20,20 +19,23 @@ const schedule: ScheduleItem[] = [
 <template>
   <section class="event-info">
     <Container>
-      <h2 class="event-info__heading">Todos los detalles</h2>
+      <h2 class="event-info__heading">
+        Información general
+      </h2>
 
       <div class="event-info__layout">
         <div class="event-info__card">
           <div class="event-info__section event-info__about">
-            <h2 class="event-info__title">Sobre el evento</h2>
+            <h2 class="event-info__title">
+              Sobre el evento
+            </h2>
             <TextLineReveal
               class="event-info__description"
-              text="Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Molestiae, voluptatem consectetur iusto ducimus rem quam aut
-              officiis aperiam est eaque beatae vero nisi necessitatibus culpa
-              sint animi! Sint, quidem ea!"
+              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel
+              quasi quisquam earum explicabo ducimus facilis rem nobis hic
+              itaque! Debitis eos necessitatibus accusamus quidem veniam
+              voluptates quo a tempore minus!"
             />
-
             <ul class="event-info__meta">
               <li class="event-info__meta-item">
                 <Icon
@@ -60,7 +62,9 @@ const schedule: ScheduleItem[] = [
           </div>
 
           <div class="event-info__section event-info__prize">
-            <p class="event-info__title">Premio · Bote acumulado</p>
+            <p class="event-info__title">
+              Premio · Bote acumulado
+            </p>
             <TextLineReveal
               class="event-info__description"
               text="La bolsa de premios crece con cada artículo de merchandising que
@@ -79,28 +83,56 @@ const schedule: ScheduleItem[] = [
         </div>
         <div class="event-info__side">
           <div class="event-info__section event-info__categories">
-            <p class="event-info__title">Categorias & Divisiones</p>
+            <p class="event-info__title">
+              Categorias & Divisiones
+            </p>
             <ul class="event-info__chips">
-              <li class="event-info__chip">Femenino</li>
-              <li class="event-info__chip">Masculino</li>
-              <li class="event-info__chip">Junior</li>
-              <li class="event-info__chip">Senior</li>
-              <li class="event-info__chip">Master</li>
-              <li class="event-info__chip">Open</li>
-              <li class="event-info__chip">No-Gi</li>
-              <li class="event-info__chip">Gi</li>
-              <li class="event-info__chip">No-Gi</li>
+              <li class="event-info__chip">
+                Femenino
+              </li>
+              <li class="event-info__chip">
+                Masculino
+              </li>
+              <li class="event-info__chip">
+                Junior
+              </li>
+              <li class="event-info__chip">
+                Senior
+              </li>
+              <li class="event-info__chip">
+                Master
+              </li>
+              <li class="event-info__chip">
+                Open
+              </li>
+              <li class="event-info__chip">
+                No-Gi
+              </li>
+              <li class="event-info__chip">
+                Gi
+              </li>
+              <li class="event-info__chip">
+                No-Gi
+              </li>
             </ul>
           </div>
 
           <div class="event-info__section event-info__rules">
-            <p class="event-info__title">Modalidad & Reglas</p>
-            <p class="event-info__description">Sólo sumisión, sin puntos.</p>
+            <p class="event-info__title">
+              Modalidad & Reglas
+            </p>
+            <p class="event-info__description">
+              Sólo sumisión, sin puntos.
+            </p>
           </div>
           <div class="event-info__section event-info__schedule">
             <div class="event-info__section-header">
-              <p class="event-info__title">Horario</p>
-              <p class="event-info__note">*Hora canaria</p>
+              <p class="event-info__title">
+                Horario
+              </p>
+              <p class="event-info__note">
+                *Hora canaria
+              </p>
             </div>
             <ul class="event-info__schedule-list">
               <li

@@ -5,7 +5,10 @@ const { tag = 'div' } = defineProps<{
 </script>
 
 <template>
-  <component :is="tag" class="container">
+  <component
+    :is="tag"
+    class="container"
+  >
     <div class="container__inner">
       <slot />
     </div>

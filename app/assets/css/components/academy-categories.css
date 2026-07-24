@@ -1,0 +1,186 @@
+.academy-categories {
+  @apply w-full;
+  @apply py-xl;
+
+  & .academy-categories__heading {
+    @apply font-josefin font-bold uppercase;
+    @apply text-black;
+    @apply m-0;
+    @apply leading-none;
+    @apply mb-s;
+    font-size: clamp(2rem, 4vw, 3.75rem);
+
+    @apply lg:mb-l;
+  }
+
+  & .academy-categories__intro {
+    @apply grid grid-cols-1;
+    @apply mb-m;
+    @apply gap-l;
+    @apply md:grid-cols-2;
+    @apply md:gap-s;
+
+    @apply lg:mb-l;
+  }
+
+  & .academy-categories__intro-col {
+    @apply relative;
+    @apply flex flex-col;
+    @apply gap-s;
+    @apply min-w-0;
+    @apply pt-[2rem];
+    border-top: 1px solid var(--themed-lines);
+
+    @apply md:pr-[16%];
+  }
+
+  & .academy-categories__intro-col--empty {
+    @apply hidden md:block;
+  }
+
+  & .academy-categories__intro-square {
+    @apply absolute;
+    @apply block;
+    @apply top-0 left-0;
+    @apply w-[0.8rem] h-[0.8rem];
+    @apply bg-black;
+  }
+
+  & .academy-categories__intro-title {
+    @apply font-body font-normal;
+    @apply m-0;
+    @apply text-m;
+    @apply text-black;
+  }
+
+  & .academy-categories__stack {
+    @apply relative;
+  }
+
+  & .academy-categories__wrapper {
+    @apply sticky;
+    @apply top-0;
+    @apply w-full;
+    @apply bg-white;
+    @apply origin-top;
+    @apply will-change-[transform,opacity];
+  }
+
+  & .academy-categories__card {
+    @apply flex flex-col-reverse;
+    @apply gap-s;
+    @apply pt-m;
+    @apply md:grid md:grid-cols-[1fr_2fr] md:items-stretch;
+    @apply md:pt-l;
+    @apply md:h-[660px];
+  }
+
+  & .academy-categories__info {
+    @apply flex flex-col;
+    @apply gap-xs;
+    @apply pt-s pb-s;
+    @apply min-w-0;
+    border-top: 1px solid var(--themed-lines);
+
+    @apply md:justify-start;
+    @apply md:gap-xxs;
+  }
+
+  & .academy-categories__title {
+    @apply font-josefin font-semibold uppercase;
+    @apply text-black;
+    @apply m-0;
+    @apply leading-none;
+    @apply text-l;
+
+    @apply lg:text-xl;
+  }
+
+  & .academy-categories__desc {
+    @apply font-body;
+    @apply m-0;
+    @apply leading-body;
+    @apply text-gray-500;
+    @apply text-m;
+    @apply max-w-[46ch];
+  }
+
+  & .academy-categories__disclosure {
+    @apply inline-flex items-center;
+    @apply gap-xxs;
+    @apply mt-xxs;
+    @apply p-0;
+    @apply w-max max-w-full;
+    @apply bg-transparent;
+    @apply border-none;
+    @apply cursor-pointer;
+    @apply text-black;
+    @apply text-left;
+  }
+
+  & .academy-categories__disclosure-label {
+    @apply font-josefin font-semibold uppercase;
+    @apply text-xs;
+  }
+
+  & .academy-categories__disclosure-chevron {
+    @apply w-4 h-4;
+    @apply shrink-0;
+    @apply transition-transform duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)];
+    @apply motion-reduce:transition-none;
+  }
+
+  &
+    .academy-categories__disclosure.is-open
+    .academy-categories__disclosure-chevron {
+    @apply rotate-180;
+  }
+
+  & .academy-categories__more {
+    @apply grid grid-rows-[0fr];
+    @apply transition-[grid-template-rows] duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)];
+    @apply motion-reduce:transition-none;
+  }
+
+  & .academy-categories__more.is-open {
+    @apply grid-rows-[1fr];
+  }
+
+  & .academy-categories__more-inner {
+    @apply min-h-0 overflow-hidden;
+  }
+
+  & .academy-categories__more-text {
+    @apply font-body;
+    @apply m-0;
+    @apply leading-body;
+    @apply pt-xs;
+    @apply text-gray-500;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    @apply max-w-[46ch];
+  }
+
+  & .academy-categories__media {
+    @apply relative;
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply max-h-[320px];
+    @apply rounded-sm;
+    @apply aspect-[3/4];
+    @apply bg-gray-100;
+
+    @apply lg:max-h-[500px];
+  }
+
+  & .academy-categories__img {
+    @apply block;
+    @apply w-full h-full;
+    @apply object-cover;
+    @apply transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)];
+    @apply motion-reduce:transition-none;
+  }
+
+  & .academy-categories__card:hover .academy-categories__img {
+    @apply md:scale-[1.04];
+  }
+}

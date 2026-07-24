@@ -1,0 +1,150 @@
+.academy-us {
+  @apply w-full;
+  @apply py-xl;
+
+  @apply lg:py-xxl;
+
+  & .academy-us__intro {
+    @apply flex flex-col;
+    @apply gap-xs;
+    @apply max-w-[46ch];
+  }
+
+  & .academy-us__intro-eyebrow {
+    @apply font-primary font-semibold uppercase tracking-nav;
+    @apply text-xs;
+    @apply text-gray-500;
+  }
+
+  & .academy-us__intro-heading {
+    @apply font-secondary font-bold uppercase;
+    @apply m-0;
+    @apply tracking-title leading-none;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+  }
+
+  & .academy-us__intro-text {
+    @apply font-body;
+    @apply m-0;
+    @apply text-m leading-body;
+    @apply text-gray-500;
+
+    @apply lg:text-l;
+  }
+
+  & .academy-us__block {
+    @apply mt-xl;
+
+    @apply lg:mt-xxl;
+  }
+
+  & .academy-us__bar-track {
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply mb-s;
+    @apply h-[3px];
+    @apply rounded-full;
+    @apply bg-gray-100;
+
+    @apply lg:mb-m;
+  }
+
+  & .academy-us__bar-fill {
+    @apply block;
+    @apply h-full w-full;
+    @apply rounded-full;
+    @apply bg-gold;
+    @apply origin-left;
+    @apply scale-x-0;
+  }
+
+  & .academy-us__content {
+    @apply flex flex-col;
+    @apply gap-8;
+
+    @apply lg:grid lg:grid-cols-2 lg:items-stretch;
+    @apply lg:gap-m;
+  }
+
+  & .academy-us__text {
+    @apply flex flex-col;
+    @apply gap-l;
+    @apply min-w-0;
+
+    @apply lg:justify-between;
+  }
+
+  & .academy-us__title-block {
+    @apply flex flex-col;
+    @apply gap-xs;
+    @apply items-start;
+  }
+
+  & .academy-us__eyebrow {
+    @apply font-primary font-semibold uppercase tracking-nav;
+    @apply text-xs;
+    @apply text-gray-500;
+  }
+
+  & .academy-us__title {
+    @apply font-secondary font-bold uppercase;
+    @apply m-0;
+    @apply tracking-title leading-none;
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+  }
+
+  & .academy-us__cta {
+    @apply mt-xs;
+  }
+
+  & .academy-us__description {
+    @apply font-body;
+    @apply m-0;
+    @apply text-m leading-body;
+    @apply pt-s;
+    @apply max-w-narrow;
+    @apply text-gray-500;
+    border-top: 1px solid var(--themed-lines);
+
+    @apply lg:mt-auto;
+    @apply lg:text-l;
+  }
+
+  & .academy-us__media {
+    @apply w-full;
+    @apply h-[22rem];
+
+    @apply sm:h-[26rem];
+    @apply lg:h-[30rem];
+    @apply xl:h-[36rem];
+  }
+
+  & .academy-us__media-wrap {
+    @apply relative;
+    @apply w-full h-full;
+    @apply overflow-hidden;
+    @apply rounded-md;
+    @apply bg-gray-100;
+  }
+
+  & .academy-us__img {
+    @apply absolute;
+    @apply top-0 left-0;
+    @apply w-full;
+    @apply object-cover;
+    @apply origin-center;
+    @apply h-0;
+    @apply scale-[1.2];
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    & .academy-us__bar-fill {
+      transform: scaleX(1);
+    }
+
+    & .academy-us__img {
+      height: 100%;
+      transform: scale(1);
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.academy-app {
+  @apply w-full;
+  @apply py-xl;
+
+  @apply lg:py-xxl;
+
+  & .academy-app__panel {
+    @apply relative;
+    @apply w-full;
+    @apply rounded-2xl;
+    @apply px-s pb-0;
+    @apply bg-gray-900;
+
+    @apply md:px-l;
+
+    @apply lg:px-xl;
+    @apply lg:min-h-[320px];
+    @apply lg:flex lg:items-center;
+  }
+
+  & .academy-app__bg {
+    @apply absolute inset-0;
+    @apply rounded-2xl;
+    @apply overflow-hidden;
+    @apply z-0;
+  }
+
+  & .academy-app__bg-image {
+    @apply w-full h-full;
+    @apply object-cover;
+    @apply will-change-transform;
+  }
+
+  & .academy-app__overlay {
+    @apply absolute inset-0;
+    background-color: rgba(0, 0, 0, 0.5);
+    @apply rounded-2xl;
+  }
+
+  & .academy-app__grid {
+    @apply relative z-10;
+    @apply w-full;
+    @apply flex flex-col-reverse items-center;
+    @apply gap-0;
+
+    @apply lg:flex-col;
+    @apply lg:grid lg:grid-cols-2 lg:items-center;
+    @apply lg:gap-xl;
+  }
+
+  & .academy-app__image-col {
+    @apply order-1;
+    @apply w-full h-full;
+    @apply flex justify-center;
+
+    @apply lg:order-1 lg:justify-start;
+  }
+
+  & .academy-app__phone {
+    @apply w-full h-auto;
+    @apply mt-0;
+    @apply drop-shadow-[0_24px_40px_rgba(0,0,0,0.45)];
+
+    @apply lg:w-[100%];
+    @apply lg:-mt-xxl;
+  }
+
+  & .academy-app__text-col {
+    @apply order-2;
+    @apply w-full;
+    @apply flex flex-col items-center;
+    @apply text-center;
+    @apply gap-s;
+    @apply py-m;
+
+    @apply lg:order-2 lg:items-start;
+    @apply lg:text-left;
+  }
+
+  & .academy-app__heading {
+    @apply font-josefin font-bold uppercase;
+    @apply text-white;
+    @apply m-0;
+    @apply leading-none;
+    @apply text-3xl;
+  }
+
+  & .academy-app__description {
+    @apply font-body;
+    @apply m-0;
+    @apply text-m leading-body;
+    @apply text-gray-100;
+    @apply max-w-narrow;
+  }
+
+  & .academy-app__cta {
+    @apply inline-flex items-center justify-center;
+    @apply font-body font-semibold uppercase tracking-nav;
+    @apply text-s;
+    @apply px-m py-xxs;
+    @apply mt-xs;
+    @apply no-underline;
+    @apply cursor-pointer;
+    @apply transition-colors duration-200;
+    @apply rounded-full;
+    @apply bg-white text-black;
+  }
+
+  & .academy-app__cta:hover {
+    @apply bg-gray-100;
+  }
+}

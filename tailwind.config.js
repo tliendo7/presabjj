@@ -57,7 +57,8 @@ export default {
       'secondary': 'var(--font-secondary)',
       'semi-condensed': 'var(--font-semi-condensed)',
       'body': 'var(--font-body)',
-      'brier': 'var(--font-brier)'
+      'brier': 'var(--font-brier)',
+      'josefin': 'var(--font-josefin)'
     },
 
     fontSize: {
@@ -76,13 +77,14 @@ export default {
 
     // ── Border radius ────────────────────────────────────────
     borderRadius: {
-      none: '0',
-      sm: 'var(--radius-sm)',
-      md: 'var(--radius-md)',
-      DEFAULT: 'var(--radius-md)',
-      lg: 'var(--radius-lg)',
-      xl: 'var(--radius-xl)',
-      full: 'var(--radius-full)'
+      'none': '0',
+      'sm': 'var(--radius-sm)',
+      'md': 'var(--radius-md)',
+      'DEFAULT': 'var(--radius-md)',
+      'lg': 'var(--radius-lg)',
+      'xl': 'var(--radius-xl)',
+      '2xl': 'var(--radius-2xl)',
+      'full': 'var(--radius-full)'
     },
 
     extend: {

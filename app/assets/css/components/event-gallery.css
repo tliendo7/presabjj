@@ -8,14 +8,12 @@
 
   .event-gallery__title {
     @apply absolute left-0 right-0;
-    @apply font-secondary font-bold uppercase;
-    @apply text-center;
+    @apply font-secondary font-bold uppercase text-center tracking-title;
     @apply text-white;
-    @apply tracking-title;
-    top: var(--space-m);
+    @apply top-m;
     @apply z-10;
     font-size: clamp(3rem, 10vw, 7rem);
-    line-height: 0.9;
+    @apply leading-[0.9];
   }
 
   .event-gallery__grid {
@@ -34,10 +32,11 @@
   }
 
   .event-gallery__item {
-    @apply relative overflow-hidden;
+    @apply relative;
+    @apply overflow-hidden;
     @apply rounded-sm;
     @apply w-full;
-    aspect-ratio: 1.067 / 1;
+    @apply aspect-[1.067/1];
   }
 
   .event-gallery__img {

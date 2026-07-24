@@ -79,7 +79,10 @@ const formattedDate = computed(() => {
         </p>
       </div>
 
-      <div class="countdown__digits" aria-hidden="true">
+      <div
+        class="countdown__digits"
+        aria-hidden="true"
+      >
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.days }}</span>
           <span class="countdown__unit">D</span>

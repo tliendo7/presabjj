@@ -14,9 +14,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      ]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }
   },
 
@@ -51,6 +49,10 @@ export default defineNuxtConfig({
       'Saira Semi Condensed': [500, 600, 700, 800],
       'Mona Sans': {
         wght: [300, 400, 500, 600, 700, 800]
+      },
+      'Josefin Sans': {
+        wght: [300, 400, 500, 600, 700],
+        ital: [400, 600]
       }
     },
     display: 'swap',

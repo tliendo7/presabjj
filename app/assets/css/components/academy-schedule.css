@@ -1,0 +1,109 @@
+.academy-schedule {
+  @apply w-full;
+  @apply pt-l pb-xl;
+
+  & .academy-schedule__grid {
+    @apply flex flex-col;
+    @apply gap-l;
+
+    @apply lg:grid;
+    @apply lg:grid-cols-2;
+    @apply lg:items-start;
+    @apply lg:gap-xl;
+  }
+
+  & .academy-schedule__intro-col {
+    @apply flex flex-col;
+    @apply gap-s;
+  }
+
+  & .academy-schedule__content {
+    @apply flex flex-col;
+    @apply gap-m;
+  }
+
+  & .academy-schedule__heading {
+    @apply font-josefin font-bold uppercase;
+    @apply text-black;
+    @apply m-0;
+    @apply leading-none;
+    font-size: clamp(2rem, 4vw, 3.75rem);
+  }
+
+  & .academy-schedule__intro {
+    @apply relative;
+    @apply pt-[2rem];
+    border-top: 1px solid var(--themed-lines);
+  }
+
+  & .academy-schedule__intro-square {
+    @apply absolute;
+    @apply block;
+    @apply top-0 left-0;
+    @apply w-[0.8rem] h-[0.8rem];
+    @apply bg-black;
+  }
+
+  & .academy-schedule__intro-title {
+    @apply font-body font-normal;
+    @apply m-0;
+    @apply text-m;
+    @apply text-black;
+  }
+
+  & .academy-schedule__tabs {
+    @apply mx-auto;
+    @apply w-fit;
+    @apply flex items-center;
+    @apply gap-xxxs;
+    @apply p-xxxs;
+    @apply bg-gray-100;
+    @apply rounded-lg;
+  }
+
+  & .academy-schedule__tab {
+    @apply font-body font-semibold uppercase;
+    @apply cursor-pointer;
+    @apply px-s py-xxs;
+    @apply text-s;
+    @apply leading-none;
+    @apply text-gray-400;
+    @apply bg-transparent;
+    @apply border-none;
+    @apply rounded-md;
+    @apply transition-[color,background-color,box-shadow] duration-[250ms] ease-[ease];
+  }
+
+  & .academy-schedule__tab:hover {
+    @apply text-gray-900;
+  }
+
+  & .academy-schedule__tab--active {
+    @apply text-black;
+    @apply bg-[#ffffffeb];
+    @apply shadow-[0_1px_2px_rgba(0,0,0,0.088)];
+  }
+
+  & .academy-schedule__panel {
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply rounded-sm;
+  }
+
+  & .academy-schedule__img {
+    @apply block;
+    @apply w-full h-auto;
+    @apply object-contain;
+    animation: academy-schedule-fade 0.35s ease;
+  }
+}
+
+@keyframes academy-schedule-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

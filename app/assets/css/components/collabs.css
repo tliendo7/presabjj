@@ -1,19 +1,21 @@
 .collabs {
-  @apply flex flex-col overflow-hidden;
+  @apply flex flex-col;
+  @apply overflow-hidden;
   @apply pt-xxl;
 
   @apply lg:pb-xxl;
 
   & .collabs__header {
-    @apply grid items-start;
-    @apply grid-cols-2 gap-m;
+    @apply grid items-start grid-cols-2;
+    @apply gap-m;
     @apply mb-l;
 
     @apply md:gap-xl;
   }
 
   & .collabs__title-block {
-    @apply flex flex-col gap-0;
+    @apply flex flex-col;
+    @apply gap-0;
   }
 
   & .collabs__title-main {
@@ -24,33 +26,37 @@
   }
 
   & .collabs__title-sub {
-    font-family: var(--font-brier);
-    @apply uppercase;
+    @apply font-brier uppercase;
     @apply m-0;
     @apply leading-display tracking-subtitle;
     font-size: clamp(2rem, 5.2vw, 4.5rem);
   }
 
   & .collabs__meta {
-    @apply font-body self-end;
+    @apply font-body;
+    @apply self-end;
     color: rgba(255, 255, 255, 0.6);
     @apply text-s leading-tight;
-    @apply m-0 max-w-full;
+    @apply m-0;
+    @apply max-w-full;
 
     @apply md:max-w-narrow;
-    @apply md:leading-body;
-    @apply md:text-m;
+    @apply md:leading-body md:text-m;
   }
 
   & .collabs__marquee-wrap {
-    @apply relative overflow-hidden w-full;
+    @apply relative;
+    @apply overflow-hidden;
+    @apply w-full;
     @apply pt-s pb-s;
   }
 
   & .collabs__marquee-wrap::before,
   & .collabs__marquee-wrap::after {
-    @apply absolute top-0 bottom-0;
-    @apply z-1 pointer-events-none;
+    @apply absolute;
+    @apply top-0 bottom-0;
+    @apply z-1;
+    @apply pointer-events-none;
     content: '';
     width: clamp(4rem, 10vw, 10rem);
   }
@@ -66,17 +72,20 @@
   }
 
   & .collabs__marquee-track {
-    @apply flex w-max;
-    will-change: transform;
+    @apply flex;
+    @apply w-max;
+    @apply will-change-transform;
   }
 
   & .collabs__marquee-set {
-    @apply flex items-center shrink-0;
+    @apply flex items-center;
+    @apply shrink-0;
   }
 
   & .collabs__logo-item {
     @apply flex items-center justify-center;
-    @apply px-m opacity-75;
+    @apply px-m;
+    @apply opacity-75;
     @apply transition-opacity duration-200;
 
     @apply md:px-xl;
@@ -87,7 +96,8 @@
   }
 
   & .collabs__logo-img {
-    @apply block object-contain;
+    @apply block;
+    @apply object-contain;
     @apply h-[50px] w-auto;
     @apply grayscale brightness-0 invert;
 

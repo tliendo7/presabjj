@@ -6,12 +6,15 @@
 
   .navbar__inner {
     @apply flex items-center justify-between;
-    @apply mx-auto max-w-site;
-    @apply h-16 px-m;
+    @apply mx-auto;
+    @apply max-w-site;
+    @apply h-16;
+    @apply px-m;
   }
 
   .navbar__logo {
-    @apply flex items-center no-underline;
+    @apply flex items-center;
+    @apply no-underline;
   }
 
   .navbar__logo-img {
@@ -19,16 +22,21 @@
   }
 
   .navbar__links {
-    @apply hidden md:flex items-center;
-    @apply list-none m-0 p-0 gap-xs;
+    @apply hidden items-center;
+    @apply list-none;
+    @apply m-0;
+    @apply p-0;
+    @apply gap-xs;
+
+    @apply md:flex;
   }
 
   .navbar__link {
     @apply font-primary font-medium uppercase;
-    @apply text-s no-underline;
-    @apply tracking-nav;
-    @apply transition-colors duration-200;
+    @apply text-s tracking-nav;
+    @apply no-underline;
     color: rgba(255, 255, 255, 0.65);
+    @apply transition-colors duration-200;
 
     &:hover,
     &.router-link-active {
@@ -37,19 +45,23 @@
 
     &.router-link-active {
       @apply pb-0.5;
-      border-bottom: 2px solid var(--presa-blue);
+      @apply border-b-2 border-blue;
     }
   }
 
   .navbar__locale {
-    @apply flex items-center gap-xxs;
+    @apply flex items-center;
+    @apply gap-xxs;
 
     &--desktop {
-      @apply hidden md:flex;
+      @apply hidden;
+
+      @apply md:flex;
     }
 
     &--mobile {
-      @apply mt-12 gap-4;
+      @apply mt-12;
+      @apply gap-4;
     }
 
     &--mobile .navbar__locale-btn {
@@ -59,10 +71,10 @@
 
   .navbar__locale-btn {
     @apply font-primary font-semibold;
-    @apply text-xs no-underline;
-    @apply tracking-locale;
-    @apply transition-colors duration-200;
+    @apply text-xs tracking-locale;
+    @apply no-underline;
     color: rgba(255, 255, 255, 0.4);
+    @apply transition-colors duration-200;
 
     &:hover {
       color: rgba(255, 255, 255, 0.8);
@@ -74,20 +86,27 @@
   }
 
   .navbar__hamburger {
-    @apply flex md:hidden;
-    @apply flex-col justify-center items-center gap-[5px];
-    @apply w-8 h-8 bg-transparent border-none cursor-pointer;
+    @apply flex flex-col justify-center items-center;
+    @apply gap-[5px];
+    @apply w-8 h-8;
+    @apply bg-transparent;
+    @apply border-none;
+    @apply cursor-pointer;
     @apply p-0;
-    z-index: 60;
+    @apply z-[60];
+
+    @apply md:hidden;
 
     span {
-      @apply block w-6 h-[2px] bg-white;
+      @apply block;
+      @apply w-6 h-[2px];
+      @apply bg-white;
       @apply transition-all duration-300;
-      transform-origin: center;
+      @apply origin-center;
     }
 
     &.is-open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
+      @apply translate-y-[7px] rotate-45;
     }
 
     &.is-open span:nth-child(2) {
@@ -95,33 +114,41 @@
     }
 
     &.is-open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
+      @apply -translate-y-[7px] -rotate-45;
     }
   }
 
   .navbar__mobile-menu {
-    @apply fixed inset-0 bg-black;
+    @apply fixed;
+    @apply inset-0;
+    @apply bg-black;
     @apply flex flex-col justify-center items-center;
-    @apply opacity-0 pointer-events-none;
+    @apply opacity-0;
+    @apply pointer-events-none;
     @apply transition-opacity duration-300;
-    top: 64px;
-    z-index: 55;
+    @apply top-16;
+    @apply z-[55];
 
     &.is-open {
-      @apply opacity-100 pointer-events-auto;
+      @apply opacity-100;
+      @apply pointer-events-auto;
     }
   }
 
   .navbar__mobile-links {
-    @apply list-none m-0 p-0;
-    @apply flex flex-col items-center gap-8;
+    @apply list-none;
+    @apply m-0;
+    @apply p-0;
+    @apply flex flex-col items-center;
+    @apply gap-8;
   }
 
   .navbar__mobile-link {
     @apply font-secondary font-extrabold uppercase;
-    @apply text-3xl no-underline tracking-wider;
-    @apply transition-colors duration-200;
+    @apply text-3xl tracking-wider;
+    @apply no-underline;
     color: rgba(255, 255, 255, 0.65);
+    @apply transition-colors duration-200;
 
     &:hover,
     &.router-link-active {
@@ -129,7 +156,7 @@
     }
 
     &.router-link-active {
-      border-bottom: 2px solid var(--presa-blue);
+      @apply border-b-2 border-blue;
       @apply pb-1;
     }
   }

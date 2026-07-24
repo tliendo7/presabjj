@@ -14,22 +14,41 @@ watch(() => route.fullPath, () => {
 <template>
   <header class="navbar">
     <nav class="navbar__inner">
-      <NuxtLink :to="localePath('/')" class="navbar__logo">
-        <img src="/images/logo.png" alt="Presa" class="navbar__logo-img" />
+      <NuxtLink
+        :to="localePath('/')"
+        class="navbar__logo"
+      >
+        <img
+          src="/images/logo.png"
+          alt="Presa"
+          class="navbar__logo-img"
+        >
       </NuxtLink>
 
       <ul class="navbar__links">
         <li>
-          <NuxtLink :to="localePath('/')" class="navbar__link">{{ t('nav.home') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/')"
+            class="navbar__link"
+          >{{ t('nav.home') }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/evento')" class="navbar__link">{{ t('nav.evento') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/evento')"
+            class="navbar__link"
+          >{{ t('nav.evento') }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/academia')" class="navbar__link">{{ t('nav.academia') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/academia')"
+            class="navbar__link"
+          >{{ t('nav.academia') }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/culture')" class="navbar__link">{{ t('nav.culture') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/culture')"
+            class="navbar__link"
+          >{{ t('nav.culture') }}</NuxtLink>
         </li>
       </ul>
 
@@ -55,9 +74,9 @@ watch(() => route.fullPath, () => {
         :aria-expanded="isMenuOpen"
         @click="isMenuOpen = !isMenuOpen"
       >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
       </button>
     </nav>
 
@@ -68,16 +87,28 @@ watch(() => route.fullPath, () => {
     >
       <ul class="navbar__mobile-links">
         <li>
-          <NuxtLink :to="localePath('/')" class="navbar__mobile-link">{{ t('nav.home') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/')"
+            class="navbar__mobile-link"
+          >{{ t('nav.home') }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/evento')" class="navbar__mobile-link">{{ t('nav.evento') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/evento')"
+            class="navbar__mobile-link"
+          >{{ t('nav.evento') }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/academia')" class="navbar__mobile-link">{{ t('nav.academia') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/academia')"
+            class="navbar__mobile-link"
+          >{{ t('nav.academia') }}</NuxtLink>
         </li>
         <li>
-          <NuxtLink :to="localePath('/culture')" class="navbar__mobile-link">{{ t('nav.culture') }}</NuxtLink>
+          <NuxtLink
+            :to="localePath('/culture')"
+            class="navbar__mobile-link"
+          >{{ t('nav.culture') }}</NuxtLink>
         </li>
       </ul>
 

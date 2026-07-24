@@ -9,7 +9,7 @@
             src="/images/A.png"
             alt="Presa logo mark"
             class="w-10"
-          />
+          >
           <span>Presa Culture</span>
         </div>
         <h2 class="event-manifesto__text">

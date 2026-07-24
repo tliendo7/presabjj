@@ -55,7 +55,7 @@ onUnmounted(() => {
         alt=""
         aria-hidden="true"
         class="parallax__panther"
-      />
+      >
     </div>
 
     <div
@@ -73,7 +73,7 @@ onUnmounted(() => {
         src="/images/luchadores.png"
         alt="Luchadores de BJJ"
         class="parallax__fighters"
-      />
+      >
     </div>
   </section>
 </template>

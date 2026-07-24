@@ -246,7 +246,7 @@ onUnmounted((): void => {
               :alt="image.alt"
               class="event-gallery__img"
               loading="lazy"
-            />
+            >
           </div>
         </div>
       </div>
