@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import Button from './Button.vue';
 import Container from './Container.vue';
 
 interface UsBlock {
-  eyebrow: string;
-  title: string;
   description: string;
-  cta: string;
+  image: string;
+  imageAlt: string;
+}
+
+interface GanbaruBlock {
+  text: string;
   image: string;
   imageAlt: string;
 }
@@ -20,20 +22,23 @@ const { t, tm, rt } = useI18n();
 
 const rootRef = ref<HTMLElement | null>(null);
 
-const eyebrow = computed<string>(() => t('academia.us.eyebrow'));
-const heading = computed<string>(() => t('academia.us.heading'));
-const intro = computed<string>(() => t('academia.us.intro'));
-
-const blocks = computed<UsBlock[]>(() =>
-  (tm('academia.us.blocks') as UsBlock[]).map(b => ({
-    eyebrow: rt(b.eyebrow),
-    title: rt(b.title),
+const block = computed<UsBlock>(() => {
+  const b = tm('academia.us.block') as UsBlock;
+  return {
     description: rt(b.description),
-    cta: rt(b.cta),
     image: b.image,
     imageAlt: rt(b.imageAlt)
-  }))
-);
+  };
+});
+
+const ganbaru = computed<GanbaruBlock>(() => {
+  const g = tm('academia.us.ganbaru') as GanbaruBlock;
+  return {
+    text: rt(g.text),
+    image: rt(g.image),
+    imageAlt: rt(g.imageAlt)
+  };
+});
 
 let barTracks: HTMLElement[] = [];
 let barFills: HTMLElement[] = [];
@@ -127,60 +132,55 @@ onUnmounted(() => {
 
 <template>
   <section
+    id="equipo-santana"
     ref="rootRef"
     class="academy-us"
   >
     <Container>
+      <div class="academy-us__bar-track">
+        <div class="academy-us__bar-fill" />
+      </div>
+
       <div class="academy-us__intro">
-        <span class="academy-us__intro-eyebrow">{{ eyebrow }}</span>
+        <span class="academy-us__intro-eyebrow">{{ t('academia.us.eyebrow') }}</span>
         <h2 class="academy-us__intro-heading">
-          {{ heading }}
+          {{ t('academia.us.heading') }}
         </h2>
         <p class="academy-us__intro-text">
-          {{ intro }}
+          {{ t('academia.us.intro') }}
         </p>
       </div>
 
-      <div
-        v-for="block in blocks"
-        :key="block.title"
-        class="academy-us__block"
-      >
-        <div class="academy-us__bar-track">
-          <div class="academy-us__bar-fill" />
-        </div>
-
+      <div class="academy-us__block">
         <div class="academy-us__content">
-          <div class="academy-us__text">
-            <div class="academy-us__title-block">
-              <span class="academy-us__eyebrow">{{ block.eyebrow }}</span>
-              <h3 class="academy-us__title">
-                {{ block.title }}
-              </h3>
-              <Button
-                v-if="block.cta"
-                class="academy-us__cta"
-                :label="block.cta"
-                icon-name="mdi:arrow-right"
-                icon-position="right"
-                variant="secondary"
-              />
-            </div>
-
-            <p class="academy-us__description">
-              {{ block.description }}
-            </p>
-          </div>
+          <p class="academy-us__description">
+            {{ block.description }}
+          </p>
 
           <div class="academy-us__media">
             <div class="academy-us__media-wrap">
               <img
-                :src="block.image"
-                :alt="block.imageAlt"
+                src="/images/class/_CIR8579.jpg"
                 class="academy-us__img"
-              >
+              />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="academy-us__block academy-us__block--ganbaru">
+        <div class="academy-us__content academy-us__content--ganbaru">
+          <div class="academy-us__ganbaru-media">
+            <img
+              :src="ganbaru.image"
+              :alt="ganbaru.imageAlt"
+              class="academy-us__ganbaru-logo"
+            />
+          </div>
+
+          <p class="academy-us__description academy-us__ganbaru-text">
+            {{ ganbaru.text }}
+          </p>
         </div>
       </div>
     </Container>

@@ -1,0 +1,44 @@
+.error-page {
+  @apply min-h-screen;
+  @apply flex flex-col items-center justify-center;
+  @apply text-center;
+  @apply px-m py-xxl;
+  @apply gap-xxs;
+
+  & .error-page__logo-link {
+    @apply mb-m;
+  }
+
+  & .error-page__logo {
+    @apply h-24 w-auto;
+  }
+
+  & .error-page__eyebrow {
+    @apply font-body font-semibold uppercase tracking-nav;
+    @apply text-s;
+    @apply text-gray-400;
+    @apply m-0;
+  }
+
+  & .error-page__heading {
+    @apply font-secondary font-bold uppercase;
+    @apply text-white;
+    @apply text-2xl;
+    @apply m-0;
+
+    @apply md:text-4xl;
+  }
+
+  & .error-page__description {
+    @apply font-body;
+    @apply text-gray-300;
+    @apply text-m leading-body;
+    @apply max-w-narrow;
+    @apply m-0;
+    @apply mb-xs;
+  }
+
+  & .error-page__cta-link {
+    @apply no-underline;
+  }
+}

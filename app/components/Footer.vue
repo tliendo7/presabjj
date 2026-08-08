@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { RouteLocationRaw } from 'vue-router';
+
 const localePath = useLocalePath();
 
 interface FooterIcon {
@@ -8,33 +10,46 @@ interface FooterIcon {
 }
 
 const socialIcons: FooterIcon[] = [
-  { name: 'mdi:instagram', href: '#', label: 'Instagram' },
-  { name: 'mdi:youtube', href: '#', label: 'YouTube' },
-  { name: 'mdi:whatsapp', href: '#', label: 'WhatsApp' },
-  { name: 'mdi:phone', href: 'tel:+34000000000', label: 'Llamar' }
+  {
+    name: 'mdi:instagram',
+    href: 'https://www.instagram.com/presabjj/',
+    label: 'Instagram'
+  },
+  {
+    name: 'mdi:youtube',
+    href: 'https://www.youtube.com/@PRESABJJ',
+    label: 'YouTube'
+  }
 ];
 
-const navColumns = [
+const addressHref = 'https://maps.app.goo.gl/pKCQMHTGET9vWKMi9';
+
+const navColumns: {
+  title: string;
+  to: RouteLocationRaw;
+  links: { label: string; to: RouteLocationRaw }[];
+}[] = [
   {
     title: 'ACADEMIA',
+    to: { name: 'academia' },
     links: [
-      { label: 'INSTALACIONES', to: '/evento' },
-      { label: 'EQUIPO SANTANA', to: '/academia' },
-      { label: 'HORARIOS Y PRECIOS', to: '/culture' }
+      { label: 'CONÓCENOS', to: { name: 'academia' } },
+      { label: 'EQUIPO SANTANA', to: { name: 'academia', hash: '#equipo-santana' } },
+      { label: 'HORARIOS Y TARIFAS', to: { name: 'academia', hash: '#horarios' } }
     ]
   },
   {
     title: 'TORNEO BJJ',
+    to: { name: 'torneo' },
     links: [
-      { label: 'EVENTO', to: '/' },
-      { label: 'COMPRA TU ENTRADA', to: '/' }
-    ]
-  },
-  {
-    title: 'CULTURE',
-    links: [
-      { label: 'QUIENES SOMOS', to: '/' },
-      { label: 'ENCUÉNTRANOS', to: '/' }
+      {
+        label: 'INFORMACIÓN GENERAL',
+        to: { name: 'torneo', hash: '#informacion-general' }
+      },
+      {
+        label: 'COMPRA TU ENTRADA',
+        to: { name: 'torneo', hash: '#comprar-entradas' }
+      }
     ]
   }
 ];
@@ -42,30 +57,30 @@ const navColumns = [
 
 <template>
   <footer class="footer">
-    <div
-      class="footer__gradient"
-      aria-hidden="true"
-    />
     <div class="footer__box">
       <Container>
         <div class="footer__top">
-          <NuxtLink :to="localePath('/')">
+          <NuxtLink :to="localePath('index')">
             <div class="footer__logo">
               <img
-                src="/images/Exclude.png"
+                src="/images/deco/presa-dark.png"
                 alt="Presa logo"
                 loading="lazy"
-              >
+              />
             </div>
           </NuxtLink>
 
           <nav class="footer__wrapper">
             <div class="footer__contact-data">
-              <p>
-                Cam. la Piterita, 107, Nave 5,<br>38329 La Laguna,<br>Santa
+              <a
+                :href="addressHref"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer__address-link"
+              >
+                Cam. la Piterita, 107, Nave 5,<br />38329 La Laguna,<br />Santa
                 Cruz de Tenerife
-              </p>
-              <p>(+34) 000 00 00 00</p>
+              </a>
             </div>
             <div class="footer__nav">
               <div
@@ -73,9 +88,12 @@ const navColumns = [
                 :key="col.title"
                 class="footer__col"
               >
-                <p class="footer__col-title">
+                <NuxtLink
+                  :to="localePath(col.to)"
+                  class="footer__col-title"
+                >
                   {{ col.title }}
-                </p>
+                </NuxtLink>
                 <ul class="footer__col-list">
                   <li
                     v-for="link in col.links"
@@ -100,6 +118,8 @@ const navColumns = [
             :key="icon.name"
             :href="icon.href"
             :aria-label="icon.label"
+            target="_blank"
+            rel="noopener noreferrer"
             class="footer__social-link"
           >
             <Icon

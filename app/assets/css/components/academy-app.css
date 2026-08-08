@@ -8,12 +8,12 @@
     @apply relative;
     @apply w-full;
     @apply rounded-2xl;
-    @apply px-s pb-0;
+    @apply px-s pb-m;
     @apply bg-gray-900;
 
     @apply md:px-l;
 
-    @apply lg:px-xl;
+    @apply lg:px-xl lg:pb-0;
     @apply lg:min-h-[320px];
     @apply lg:flex lg:items-center;
   }
@@ -51,17 +51,18 @@
   & .academy-app__image-col {
     @apply order-1;
     @apply w-full h-full;
-    @apply flex justify-center;
+    @apply flex justify-center items-end;
 
-    @apply lg:order-1 lg:justify-start;
+    @apply lg:order-1;
   }
 
   & .academy-app__phone {
     @apply w-full h-auto;
-    @apply mt-0;
+    @apply max-w-[275px];
+    @apply mt-[50px];
     @apply drop-shadow-[0_24px_40px_rgba(0,0,0,0.45)];
 
-    @apply lg:w-[100%];
+    @apply lg:h-fit lg:max-w-[325px];
     @apply lg:-mt-xxl;
   }
 
@@ -71,10 +72,11 @@
     @apply flex flex-col items-center;
     @apply text-center;
     @apply gap-s;
-    @apply py-m;
+    @apply pt-m;
 
     @apply lg:order-2 lg:items-start;
     @apply lg:text-left;
+    @apply py-m;
   }
 
   & .academy-app__heading {

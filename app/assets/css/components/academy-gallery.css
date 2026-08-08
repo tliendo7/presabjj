@@ -1,0 +1,40 @@
+.academy-gallery {
+  @apply relative;
+  @apply w-full;
+  @apply overflow-hidden;
+
+  & .academy-gallery__marquee-wrap {
+    @apply relative;
+    @apply w-full;
+    @apply overflow-hidden;
+  }
+
+  & .academy-gallery__marquee-track {
+    @apply flex;
+    @apply w-max;
+    @apply will-change-transform;
+  }
+
+  & .academy-gallery__marquee-set {
+    @apply flex;
+    @apply shrink-0;
+  }
+
+  & .academy-gallery__item {
+    @apply relative;
+    @apply shrink-0;
+    @apply overflow-hidden;
+
+    width: clamp(160px, 24vw, 260px);
+    height: clamp(160px, 24vw, 260px);
+
+    @apply lg:w-[260px] lg:h-[260px];
+  }
+
+  & .academy-gallery__img {
+    @apply absolute inset-0;
+    @apply block;
+    @apply w-full h-full;
+    @apply object-cover;
+  }
+}

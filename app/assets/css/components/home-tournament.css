@@ -1,0 +1,181 @@
+.home-tournament {
+  @apply relative;
+  @apply overflow-hidden;
+  @apply w-full;
+  @apply pt-xl pb-xxl;
+
+  background-color: var(--gray-300);
+  margin-top: -1px;
+
+  /*
+   * La imagen va en un ::before en vez de directamente en el fondo del
+   * section, para poder bajarle la opacidad sin afectar al texto ni al
+   * resto del contenido (que va por encima, ver .home-tournament__top
+   * y .home-tournament__gallery/__footer más abajo).
+   */
+  &::before {
+    content: '';
+    @apply absolute inset-0;
+    @apply z-0;
+
+    background-image: url('/images/deco/bg-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+  }
+
+  & .container {
+    @apply relative;
+    @apply z-1;
+  }
+
+  /* ── Top: patrocinador + edición ─────────────────────────── */
+
+  & .home-tournament__top {
+    @apply flex items-end justify-between;
+    @apply gap-s;
+    @apply mb-xxs px-m;
+    @apply max-w-[1100px] mx-auto;
+
+    @apply lg:px-xl;
+  }
+
+  & .home-tournament__edition-block {
+    @apply flex flex-col;
+    @apply gap-xxxs;
+  }
+
+  & .home-tournament__sponsor {
+    @apply h-8 w-auto;
+    @apply object-contain object-right;
+    @apply shrink-0;
+    @apply brightness-0;
+
+    @apply md:h-10;
+  }
+
+  & .home-tournament__edition {
+    @apply font-primary font-bold uppercase;
+    @apply text-m tracking-title;
+    @apply text-black;
+
+    @apply md:text-xl;
+  }
+
+  /* ── Collage de fotos ─────────────────────────────────────── */
+
+  & .home-tournament__gallery {
+    @apply grid grid-cols-2;
+    @apply gap-xs;
+    @apply mb-m;
+    @apply max-w-[1100px] mx-auto;
+
+    @apply md:grid-cols-3;
+    @apply md:gap-s;
+  }
+
+  & .home-tournament__photo-img {
+    @apply w-full h-full;
+    @apply block;
+    @apply object-cover;
+  }
+
+  /* Imagen suelta (p. ej. mask.png) directamente dentro de __gallery,
+     sin el wrapper .home-tournament__photo: ocupa todo el ancho del
+     grid en vez de una sola columna, y el alto es el natural de la
+     imagen (sin recortar ni limitar). */
+  & .home-tournament__gallery > img {
+    grid-column: 1 / -1;
+    height: auto;
+  }
+
+  /* ── Footer: nombre, fecha y CTAs ─────────────────────────── */
+
+  & .home-tournament__footer {
+    @apply flex flex-col items-center;
+    @apply text-center;
+    @apply gap-s;
+
+    @apply md:gap-m;
+  }
+
+  & .home-tournament__info {
+    @apply flex flex-col items-center;
+    @apply gap-xxs;
+  }
+
+  & .home-tournament__title {
+    @apply font-secondary font-bold uppercase;
+    @apply m-0;
+    @apply leading-display tracking-title;
+    @apply text-red;
+    @apply text-3xl;
+    font-size: clamp(2rem, 5vw, 3.25rem);
+
+    @apply lg:text-7xl;
+    @apply md:max-w-[24ch];
+  }
+
+  & .home-tournament__date {
+    @apply font-body font-bold uppercase;
+    @apply m-0;
+    @apply text-s tracking-locale;
+    @apply text-black;
+
+    @apply md:text-m;
+  }
+
+  & .home-tournament__actions {
+    @apply flex flex-col items-center;
+    @apply gap-xs;
+
+    @apply md:flex-row md:flex-nowrap md:justify-center;
+  }
+
+  & .home-tournament__cta-link {
+    @apply no-underline;
+  }
+
+  /* El outline por defecto (btn--outline) está pensado para fondo
+     oscuro (texto/borde blancos); aquí se invierte a negro para el
+     botón de "más información". */
+  & .home-tournament__cta-info {
+    &.btn--outline {
+      @apply text-black bg-white;
+      border-color: var(--presa-red);
+
+      &:hover {
+        @apply bg-white;
+        border-color: var(--presa-red);
+      }
+    }
+  }
+
+  /* "Comprar entradas": fondo rojo, texto blanco y círculo del icono
+     en blanco con la flecha en negro (estilo por defecto de
+     .btn__icon, así que no hace falta tocarlo). */
+  & .home-tournament__cta-tickets.btn--outline {
+    @apply bg-red text-white;
+    border-color: transparent;
+
+    &:hover {
+      @apply bg-red-500;
+      border-color: transparent;
+    }
+  }
+
+  /* "Más información" no lleva icono, así que su altura natural
+     (padding vertical xxxs + texto) es menor que la del botón de al
+     lado, cuya altura la marca el círculo del icono (w-8/h-8 = 2rem
+     + py-xxxs de 0.25rem arriba y abajo = 2.5rem en total). Se fija
+     esa misma altura aquí en vez de ajustar el padding a ojo.
+     El padding horizontal de .btn--outline (pl-s pr-xxxs) es asimétrico
+     a propósito para dejar sitio al círculo del icono; como este botón
+     no lleva icono, ese desequilibrio hace que el texto se vea
+     descentrado dentro de la píldora, así que aquí se iguala. */
+  & .home-tournament__cta-info.btn--outline {
+    @apply py-0 px-s;
+    height: 2.5rem;
+  }
+}

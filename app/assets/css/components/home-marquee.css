@@ -1,0 +1,39 @@
+.home-marquee {
+  @apply overflow-hidden;
+  @apply w-full;
+  background-color: var(--presa-black);
+
+  & .home-marquee__wrap {
+    @apply relative;
+    @apply overflow-hidden;
+    @apply w-full;
+    @apply py-xxs;
+  }
+
+  & .home-marquee__track {
+    @apply flex;
+    @apply w-max;
+    @apply will-change-transform;
+  }
+
+  & .home-marquee__set {
+    @apply flex items-center;
+    @apply shrink-0;
+  }
+
+  & .home-marquee__item {
+    @apply flex items-center;
+    @apply gap-m;
+    @apply px-s;
+    @apply font-secondary uppercase;
+    @apply whitespace-nowrap;
+    @apply text-white;
+    @apply text-xl;
+  }
+
+  & .home-marquee__asterisk {
+    @apply inline-block;
+    @apply w-[0.7em] h-[0.7em];
+    color: var(--presa-white);
+  }
+}

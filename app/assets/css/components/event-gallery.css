@@ -1,6 +1,9 @@
 .event-gallery {
   @apply relative;
-  @apply my-xxxl;
+  @apply py-xxxl;
+
+  background-color: var(--presa-white);
+  margin-top: -1px;
 
   .container__inner {
     @apply relative;
@@ -9,7 +12,7 @@
   .event-gallery__title {
     @apply absolute left-0 right-0;
     @apply font-secondary font-bold uppercase text-center tracking-title;
-    @apply text-white;
+    color: var(--presa-black);
     @apply top-m;
     @apply z-10;
     font-size: clamp(3rem, 10vw, 7rem);
@@ -19,7 +22,6 @@
   .event-gallery__grid {
     @apply flex;
     @apply gap-xxs;
-    @apply overflow-hidden;
     @apply relative;
     @apply z-20;
 
@@ -48,5 +50,160 @@
     &:hover {
       @apply scale-105;
     }
+  }
+
+  /* Mismo grid de 3 columnas que .event-gallery__editions para que el
+     párrafo (colocado en la columna central) quede exactamente alineado
+     con el ancho de la card del medio. */
+  .event-gallery__editions-intro {
+    @apply relative z-20;
+    @apply grid grid-cols-1;
+    @apply mt-xxl;
+
+    @apply md:grid-cols-3;
+    @apply md:gap-xs;
+    @apply md:mx-xl;
+  }
+
+  .event-gallery__editions-intro-text {
+    @apply font-body;
+    @apply text-center;
+    @apply text-m leading-body;
+    @apply m-0;
+    color: rgba(0, 0, 0, 0.6);
+
+    @apply md:col-start-2;
+  }
+
+  .event-gallery__editions {
+    @apply relative z-20;
+    @apply grid grid-cols-1;
+    @apply gap-s;
+    @apply mt-l;
+
+    @apply md:grid-cols-3;
+    @apply md:gap-xs;
+    @apply md:mx-xl;
+  }
+
+  .event-gallery__edition {
+    @apply flex flex-col;
+    @apply gap-xxs;
+  }
+
+  .event-gallery__edition-media {
+    @apply relative;
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply rounded-sm;
+    @apply aspect-[5/3];
+  }
+
+  .event-gallery__edition-img {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply block;
+    @apply object-cover;
+    transition:
+      transform 0.6s ease,
+      opacity 0.6s ease;
+  }
+
+  /* El zoom al pasar el ratón solo aplica a las cards de imagen (no a la
+     de vídeo, que en su lugar se oscurece por completo). El hover se
+     dispara al entrar en la carátula, no en toda la card. */
+  .event-gallery__edition:not(.event-gallery__edition--video)
+    .event-gallery__edition-media:hover
+    .event-gallery__edition-img {
+    @apply scale-105;
+  }
+
+  .event-gallery__edition-overlay {
+    @apply absolute inset-0;
+    transition: background-color 0.6s ease;
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  .event-gallery__edition--video
+    .event-gallery__edition-media:hover
+    .event-gallery__edition-overlay {
+    background: rgba(0, 0, 0, 0.85);
+  }
+
+  .event-gallery__edition--video
+    .event-gallery__edition-media:hover
+    .event-gallery__edition-img {
+    @apply opacity-40;
+  }
+
+  .event-gallery__edition-play {
+    @apply absolute top-1/2 left-1/2;
+    @apply -translate-x-1/2 -translate-y-1/2;
+    @apply text-white;
+    @apply text-6xl;
+    filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.4));
+  }
+
+  /* Degradado inferior para que el nombre del evento (dentro de la
+     imagen) se lea bien en blanco sobre cualquier carátula. */
+  .event-gallery__edition-gradient {
+    @apply absolute inset-x-0 bottom-0;
+    @apply h-1/2;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .event-gallery__edition-event {
+    @apply absolute left-xs bottom-xs;
+    @apply font-secondary font-bold uppercase;
+    @apply m-0;
+    @apply text-white;
+    @apply text-l;
+  }
+
+  .event-gallery__edition-info {
+    @apply flex items-start justify-between;
+    @apply gap-xs;
+  }
+
+  .event-gallery__edition-heading {
+    @apply flex flex-col items-start;
+    @apply gap-0;
+  }
+
+  .event-gallery__edition-label {
+    @apply font-secondary font-bold;
+    @apply text-left;
+    @apply text-xl uppercase;
+    @apply text-black;
+  }
+
+  .event-gallery__edition-meta {
+    @apply flex flex-col items-end;
+    @apply shrink-0;
+    @apply gap-0;
+    @apply text-right;
+  }
+
+  .event-gallery__edition-year {
+    @apply font-body;
+    @apply text-s;
+    @apply text-black font-medium;
+  }
+
+  .event-gallery__edition-location {
+    @apply flex items-center;
+    @apply gap-xxxs;
+    @apply font-body;
+    @apply text-s;
+    @apply text-gray-500;
+  }
+
+  .event-gallery__edition-location-icon {
+    @apply text-s;
+    @apply shrink-0;
   }
 }

@@ -3,19 +3,32 @@
 @import './container.css';
 @import './navbar.css';
 
+@import './home-hero.css';
+@import './home-marquee.css';
+@import './home-intro.css';
+@import './home-events.css';
+@import './home-tournament.css';
+@import './home-academy.css';
+@import './home-store.css';
+
 @import './collabs.css';
+@import './event-online.css';
 @import './countdown.css';
 @import './event-manifesto.css';
 @import './socials.css';
-@import './parallax.css';
 @import './event-gallery.css';
 @import './event-hero.css';
 @import './text-line-reveal.css';
 @import './event-info.css';
+@import './academy-hero.css';
 @import './academy-categories.css';
-@import './academy-values.css';
+@import './academy-highlights.css';
 @import './academy-join.css';
+@import './academy-video.css';
 @import './academy-us.css';
+@import './academy-gallery.css';
 @import './academy-schedule.css';
 @import './academy-faq.css';
 @import './academy-app.css';
+@import './academia-form.css';
+@import './merchandising.css';

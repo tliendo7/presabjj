@@ -1,0 +1,30 @@
+.home-hero {
+  @apply relative;
+  @apply w-full;
+  @apply overflow-hidden;
+  @apply bg-red-700;
+  height: calc(60svh - 4rem);
+
+  .container,
+  .container__inner {
+    @apply h-full;
+  }
+
+  .home-hero__inner {
+    @apply h-full;
+    @apply flex flex-col items-center justify-center;
+    @apply text-center;
+    @apply gap-s;
+  }
+
+  .home-hero__logo {
+    @apply w-[min(80%,28rem)] h-auto;
+  }
+
+  .home-hero__text {
+    @apply font-body;
+    @apply text-m leading-body;
+    @apply text-white;
+    @apply max-w-narrow;
+  }
+}

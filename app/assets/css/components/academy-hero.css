@@ -1,0 +1,12 @@
+.academy-hero {
+  @apply relative;
+  @apply w-full;
+  @apply min-h-screen;
+  @apply overflow-hidden;
+
+  & .academy-hero__media {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply object-cover;
+  }
+}

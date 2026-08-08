@@ -1,4 +1,7 @@
 .event-info {
+  @apply relative;
+  background-color: var(--gray-900);
+
   .event-info__heading {
     @apply font-secondary font-bold uppercase text-center;
     @apply mb-l;
@@ -7,95 +10,113 @@
 
   .event-info__layout {
     @apply flex flex-col;
-    @apply gap-s;
+    @apply gap-m;
 
     @apply md:flex-row md:items-start;
+    @apply md:gap-xl;
   }
 
-  .event-info__card {
-    @apply relative;
-    @apply overflow-hidden;
-    @apply rounded-[24px];
-    @apply px-xs pt-m pb-s;
-    @apply flex flex-col;
-    @apply gap-m;
-    outline: 1px solid rgba(255, 255, 255, 0.1);
-    outline-offset: -1px;
-    background-image: radial-gradient(
-      ellipse at bottom left,
-      rgba(15, 53, 103, 0.8),
-      rgba(20, 69, 132, 0.1),
-      transparent
-    );
-
-    @apply md:p-m;
-    @apply md:flex-1;
-    @apply md:min-w-0;
-  }
-
-  .event-info__button {
-    @apply w-full;
-    @apply justify-center;
-    @apply text-center;
-
-    @apply md:w-auto;
-    @apply md:ml-auto;
-  }
-
-  .event-info__side {
+  .event-info__about {
     @apply flex flex-col;
     @apply gap-m;
 
-    @apply md:flex-1;
+    @apply md:flex-[2];
     @apply md:min-w-0;
-  }
-
-  .event-info__section {
-    @apply flex flex-col;
-    @apply gap-xs;
   }
 
   .event-info__title {
     @apply font-primary font-light uppercase;
-    @apply text-xs tracking-locale;
+    @apply text-s tracking-locale;
     @apply text-white;
   }
 
-  .event-info__section-header {
-    @apply flex items-center justify-between;
-    @apply gap-xs;
-  }
-
-  .event-info__note {
+  .event-info__eyebrow {
     @apply font-primary font-light uppercase;
-    @apply text-xs tracking-locale;
-    @apply text-gray-500;
+    @apply text-s tracking-locale;
+    @apply text-gray-400;
   }
 
   .event-info__description {
+    @apply font-body;
+    @apply text-xl;
     @apply text-gray-300;
+    @apply leading-body;
   }
 
-  .event-info__meta {
+  .event-info__description--small {
+    @apply text-l;
+  }
+
+  .event-info__schedule {
+    @apply flex flex-col;
+    @apply gap-xxs;
+    @apply mt-xs;
+    @apply pt-m;
+    @apply border-t border-gray;
+  }
+
+  .event-info__schedule-line {
+    @apply font-body;
+    @apply text-m leading-body;
+    @apply text-white;
+    @apply m-0;
+
+    strong {
+      @apply font-bold;
+    }
+  }
+
+  .event-info__side {
+    @apply flex flex-col;
+    @apply gap-xs;
+
+    @apply md:flex-1;
+    @apply md:min-w-0;
+  }
+
+  .event-info__box {
+    @apply relative;
+    @apply overflow-hidden;
+    @apply rounded-[20px];
+    @apply p-xs;
+    @apply flex flex-col;
+    @apply gap-xs;
+    outline: 1px solid rgba(255, 255, 255, 0.1);
+    outline-offset: -1px;
+    background-color: rgba(255, 255, 255, 0.03);
+
+    @apply md:p-s;
+  }
+
+  .event-info__box-title {
+    @apply font-primary font-semibold uppercase;
+    @apply text-s tracking-locale;
+    @apply text-white;
+  }
+
+  .event-info__detail-list {
     @apply flex flex-col;
     @apply gap-xxs;
   }
 
-  .event-info__meta-item {
-    @apply flex items-center;
-    @apply gap-xxs;
-    @apply font-primary text-s;
+  .event-info__detail-row {
+    @apply flex items-center justify-between;
+    @apply gap-xs;
+  }
+
+  .event-info__detail-label {
+    @apply font-primary font-light uppercase;
+    @apply text-s tracking-locale;
+    @apply text-gray-400;
+  }
+
+  .event-info__detail-value {
+    @apply font-body;
+    @apply text-m;
     @apply text-white;
   }
 
-  .event-info__meta-icon {
-    @apply w-4 h-4;
-    @apply shrink-0;
-    color: rgba(255, 255, 255, 0.5);
-  }
-
-  .event-info__meta-link {
-    @apply text-white;
+  .event-info__detail-value--link {
     @apply no-underline;
 
     &:hover {
@@ -110,41 +131,36 @@
 
   .event-info__chip {
     @apply inline-flex items-center justify-center;
-    @apply font-primary font-semibold uppercase;
-    @apply text-gray-300;
-    @apply text-xs;
+    @apply font-body;
+    @apply text-gray-200;
+    @apply text-s;
     @apply px-xs py-xxxs;
     @apply rounded-full;
-    @apply border border-gray;
+    background-color: rgba(255, 255, 255, 0.08);
   }
 
-  .event-info__schedule-list {
-    @apply flex flex-col;
+  .event-info__outro {
+    @apply flex flex-col items-center justify-center;
+    @apply text-center;
+    @apply gap-s;
+    @apply mt-xl mb-xl;
+
+    @apply lg:mt-xxxl;
   }
 
-  .event-info__schedule-row {
-    @apply flex items-baseline;
-    @apply gap-xs;
-    @apply py-xxs;
-    @apply border-t border-gray;
-
-    &.event-info__schedule-row--highlight {
-      .event-info__schedule-time {
-        @apply text-red-300;
-      }
-    }
+  .event-info__outro-icon {
+    @apply w-10;
   }
 
-  .event-info__schedule-time {
-    @apply font-primary font-bold uppercase;
-    @apply text-s whitespace-nowrap;
-    @apply text-blue-300;
-    @apply shrink-0;
+  .event-info__outro-text {
+    @apply font-brier;
+    @apply text-white;
+    @apply max-w-narrow;
+    @apply text-xl;
+    @apply mb-s;
   }
 
-  .event-info__schedule-name {
-    @apply font-primary font-normal uppercase;
-    @apply text-s;
-    @apply text-gray-400;
+  .event-info__outro-button {
+    @apply w-fit;
   }
 }

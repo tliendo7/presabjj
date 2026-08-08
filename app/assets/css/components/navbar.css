@@ -26,13 +26,13 @@
     @apply list-none;
     @apply m-0;
     @apply p-0;
-    @apply gap-xs;
+    @apply gap-m;
 
     @apply md:flex;
   }
 
   .navbar__link {
-    @apply font-primary font-medium uppercase;
+    @apply font-body font-medium uppercase;
     @apply text-s tracking-nav;
     @apply no-underline;
     color: rgba(255, 255, 255, 0.65);
@@ -69,8 +69,14 @@
     }
   }
 
+  .navbar__locale-separator {
+    @apply font-body font-semibold;
+    @apply text-xs;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
   .navbar__locale-btn {
-    @apply font-primary font-semibold;
+    @apply font-body font-semibold;
     @apply text-xs tracking-locale;
     @apply no-underline;
     color: rgba(255, 255, 255, 0.4);
@@ -121,7 +127,7 @@
   .navbar__mobile-menu {
     @apply fixed;
     @apply inset-0;
-    @apply bg-black;
+    @apply bg-gray-900;
     @apply flex flex-col justify-center items-center;
     @apply opacity-0;
     @apply pointer-events-none;
@@ -140,12 +146,12 @@
     @apply m-0;
     @apply p-0;
     @apply flex flex-col items-center;
-    @apply gap-8;
+    @apply gap-s;
   }
 
   .navbar__mobile-link {
-    @apply font-secondary font-extrabold uppercase;
-    @apply text-3xl tracking-wider;
+    @apply font-body font-semibold uppercase;
+    @apply text-2xl;
     @apply no-underline;
     color: rgba(255, 255, 255, 0.65);
     @apply transition-colors duration-200;

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 const logos = [
   { name: 'Deporte Lagunero', src: '/images/partners/deporte-lagunero.png' },
   { name: 'DxD', src: '/images/partners/dxd.png' },
@@ -75,16 +77,15 @@ onUnmounted(() => {
       <div class="collabs__header">
         <div class="collabs__title-block">
           <h2 class="collabs__title-main">
-            IMPULSANDO LA
+            {{ t('evento.collabs.titleMain') }}
           </h2>
           <h2 class="collabs__title-sub">
-            CULTURA JUNTOS
+            {{ t('evento.collabs.titleSub') }}
           </h2>
         </div>
         <TextLineReveal
           class="collabs__meta"
-          text="Presa colabora con marcas que comparten su pasión por el deporte, la
-          excelencia y el espíritu competitivo."
+          :text="t('evento.collabs.description')"
         />
       </div>
     </Container>

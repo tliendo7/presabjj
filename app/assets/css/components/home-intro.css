@@ -1,0 +1,45 @@
+.home-intro {
+  @apply w-full;
+  @apply py-xl;
+  @apply flex items-center;
+  @apply bg-white;
+
+  & .home-intro__grid {
+    @apply flex flex-col;
+    @apply gap-m;
+
+    @apply lg:grid;
+    @apply lg:grid-cols-2;
+    @apply lg:items-start;
+    @apply lg:gap-xl;
+  }
+
+  & .home-intro__heading {
+    @apply font-secondary font-bold uppercase;
+    @apply m-0;
+    @apply leading-none;
+    @apply text-black;
+    font-size: clamp(2rem, 4vw, 3.75rem);
+  }
+
+  & .home-intro__content {
+    @apply relative;
+    @apply pt-[2rem];
+    border-top: 1px solid var(--themed-lines);
+  }
+
+  & .home-intro__square {
+    @apply absolute;
+    @apply block;
+    @apply top-0 left-0;
+    @apply w-[0.8rem] h-[0.8rem];
+    @apply bg-black;
+  }
+
+  & .home-intro__text {
+    @apply font-body font-normal;
+    @apply m-0;
+    @apply text-m leading-body;
+    @apply text-black;
+  }
+}

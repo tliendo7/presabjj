@@ -1,0 +1,155 @@
+.academy-highlights {
+  @apply w-full;
+  @apply py-m;
+
+  @apply max-lg:h-[100dvh] max-lg:max-h-[100dvh];
+  @apply max-lg:overflow-hidden;
+
+  @apply lg:py-xxl;
+
+  & .academy-highlights__grid {
+    @apply flex flex-col-reverse;
+    @apply gap-l;
+
+    @apply max-lg:h-full;
+
+    @apply lg:flex-row-reverse lg:items-stretch;
+    @apply lg:gap-xl;
+  }
+
+  & .academy-highlights__list {
+    @apply flex flex-col;
+    @apply min-w-0;
+    @apply m-0 p-0;
+    @apply list-none;
+    @apply gap-s;
+
+    /* Altura fija, lo bastante grande como para que quepa el item más
+       largo ya expandido: así al cambiar de item activo la lista no
+       cambia de tamaño ni desplaza lo de debajo. */
+    @apply max-lg:h-[380px] max-lg:shrink-0;
+    @apply max-lg:justify-center;
+    @apply max-lg:overflow-hidden;
+
+    @apply lg:w-1/2 lg:flex-none;
+    @apply lg:gap-m;
+  }
+
+  & .academy-highlights__item {
+    @apply relative flex;
+    @apply gap-s;
+    @apply pl-s py-0;
+    @apply cursor-pointer;
+    @apply opacity-40;
+    @apply transition-opacity duration-500 ease-[ease];
+
+    @apply lg:py-0;
+  }
+
+  & .academy-highlights__item--active {
+    @apply opacity-100;
+
+    & .academy-highlights__title {
+      @apply text-[32px];
+
+      @apply lg:text-[35px];
+    }
+  }
+
+  & .academy-highlights__bar {
+    @apply absolute left-0 top-0;
+    @apply block;
+    @apply w-[2px] h-full;
+    background-color: rgb(225, 225, 225);
+    @apply overflow-hidden;
+  }
+
+  & .academy-highlights__bar-fill {
+    @apply block w-full h-0;
+    @apply bg-blue-500;
+    animation-name: academy-highlights-fill;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  & .academy-highlights__content {
+    @apply flex flex-col;
+    @apply gap-xxs;
+    @apply min-w-0;
+  }
+
+  & .academy-highlights__title {
+    @apply font-body;
+    @apply text-black;
+    @apply text-[22px];
+    @apply leading-none;
+    @apply m-0;
+
+    /* @apply lg:font-semibold; */
+  }
+
+  & .academy-highlights__text-wrap {
+    @apply grid;
+    @apply overflow-hidden;
+    grid-template-rows: 0fr;
+    @apply transition-[grid-template-rows] duration-500 ease-[ease];
+  }
+
+  & .academy-highlights__item--active .academy-highlights__text-wrap {
+    grid-template-rows: 1fr;
+  }
+
+  & .academy-highlights__text {
+    @apply font-body;
+    @apply m-0;
+    @apply min-h-0;
+    @apply leading-snug;
+    @apply text-gray-500;
+    @apply text-l;
+    @apply overflow-hidden;
+
+    @apply lg:text-[22px];
+    @apply lg:leading-snug;
+  }
+
+  & .academy-highlights__media-col {
+    @apply min-w-0;
+    @apply shrink-0;
+
+    @apply lg:w-1/2 lg:shrink;
+  }
+
+  & .academy-highlights__media {
+    @apply relative w-full;
+    @apply overflow-hidden rounded-sm;
+    @apply bg-gray-100;
+    @apply h-[320px];
+
+    @apply lg:h-[400px];
+  }
+
+  & .academy-highlights__img {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply object-cover;
+  }
+}
+
+@keyframes academy-highlights-fill {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.academy-highlights-fade-enter-active,
+.academy-highlights-fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.academy-highlights-fade-enter-from,
+.academy-highlights-fade-leave-to {
+  opacity: 0;
+}

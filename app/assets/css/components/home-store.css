@@ -1,0 +1,217 @@
+.home-store {
+  @apply relative;
+  @apply w-full;
+  @apply pt-xxl pb-xxl;
+  @apply bg-white;
+
+  /* Compensa el inset -2px del top-curve (ver abajo) para que no quede
+     una línea de 2px sin cubrir entre esta sección y la anterior. */
+  margin-top: -2px;
+
+  /* Curva de entrada: tira que hace de puente visual con la sección
+     oscura anterior (HomeAcademy), con el mismo criterio que
+     Merchandising.vue / merchandising.css. */
+  & .home-store__top-curve {
+    @apply absolute;
+    @apply h-[85px];
+    inset: -2px 0 auto;
+    @apply bg-gray-900;
+    @apply z-0;
+    clip-path: ellipse(70% 20% at 50% 0%);
+    will-change: clip-path;
+
+    @apply lg:h-[200px];
+  }
+
+  & .container {
+    @apply relative;
+    @apply z-1;
+  }
+
+  /* ── Texto ────────────────────────────────────────────── */
+  /* Vive dentro de .home-store__grid (ver más abajo): ocupa las
+     columnas 1-2 en la fila 1, tanto en mobile (grid de 2 columnas,
+     así que ya es el 100% del ancho) como en desktop (grid de 4
+     columnas, col-span-2 dentro de esa grilla más ancha). */
+
+  & .home-store__content {
+    @apply flex flex-col items-center text-center;
+    @apply gap-xs;
+    @apply col-span-2;
+
+    @apply lg:items-start lg:text-left;
+    @apply lg:gap-s;
+  }
+
+  & .home-store__heading {
+    @apply font-josefin font-bold uppercase;
+    @apply m-0;
+    @apply leading-display tracking-title;
+    @apply text-black;
+    @apply text-4xl;
+  }
+
+  & .home-store__intro {
+    @apply font-body;
+    @apply m-0;
+    @apply text-s leading-tight;
+
+    color: rgba(0, 0, 0, 0.6);
+
+    @apply md:text-m md:leading-body;
+  }
+
+  & .home-store__cta {
+    @apply mt-xs;
+
+    &.btn--outline {
+      color: var(--presa-black);
+      border-color: rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        border-color: rgba(0, 0, 0, 0.6);
+      }
+
+      & .btn__icon {
+        @apply bg-black text-white;
+      }
+    }
+  }
+
+  /* ── Grid de texto + productos ────────────────────────── */
+
+  /*
+   * Un único grid para el texto y las 6 cards (antes eran dos bloques
+   * separados: texto a un lado y una grilla de cards al otro). En
+   * mobile son 2 columnas y el texto (col-span-2) empuja todas las
+   * cards por debajo en el orden natural del array. En desktop pasa a
+   * 4 columnas: el texto sigue ocupando las columnas 1-2 en la fila 1,
+   * y cada card se coloca explícitamente vía --card-col/--card-row
+   * (ver CARD_LAYOUT en el script) para que las dos cards nuevas caigan
+   * debajo del texto, en columnas 1-2 fila 2.
+   *
+   * Sin overflow-hidden a propósito: con el parallax (ver
+   * getGroupTargets en el script) el desplazamiento vertical de cada
+   * grupo de columnas es pequeño (máx. ~48px), pero si el offset aún
+   * no ha llegado a 0 al pintar (por ejemplo con la sección ya visible
+   * pero sin haber hecho scroll hasta el final), un overflow-hidden
+   * aquí recortaba la última fila de cards por abajo, porque el alto
+   * de esta caja se calcula sin contar el transform. Al quitarlo, las
+   * cards nunca se cortan, como mucho asoman unos px más abajo
+   * mientras se asienta la animación.
+   */
+  & .home-store__grid {
+    @apply grid grid-cols-2;
+    @apply items-start;
+    @apply gap-xs;
+    @apply pb-xxs pt-s;
+
+    @apply lg:pt-xxxl;
+  }
+
+  @media (min-width: 1024px) {
+    & .home-store__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /*
+   * Tarjeta inspirada en el grid de cascos de landonorris.com: esquinas
+   * redondeadas y una muesca curva en la esquina inferior derecha. El
+   * recorte se logra con una máscara SVG (escala con el tamaño real de
+   * la tarjeta) y el borde se dibuja encima con dos SVG apilados: uno
+   * neutro siempre visible y uno dorado que aparece en hover.
+   *
+   * La card usa el mismo ratio que el viewBox del SVG (407 / 411) para
+   * que la máscara no se deforme. OJO: la máscara solo se aplica a
+   * .home-store__frame-mask (imagen + borde), NUNCA a .home-store__card
+   * directamente — si el label estuviera dentro del elemento con
+   * mask-image, la máscara lo recortaría también y desaparecería al
+   * caer en la zona de la muesca.
+   */
+  & .home-store__card {
+    @apply relative;
+    @apply aspect-[407/411];
+    @apply bg-white;
+
+    /*
+     * .home-store__card no lleva la máscara (ver comentario de arriba),
+     * así que su propio fondo blanco es un rectángulo recto detrás del
+     * SVG recortado. Sobre fondo oscuro eso deja ver las esquinas
+     * cuadradas asomando por fuera de las esquinas redondeadas del
+     * SVG (radio 8 sobre un viewBox de 407, de ahí el 2%). La
+     * esquina inferior derecha se deja sin redondear porque ahí va la
+     * muesca + el label, que necesitan el rectángulo recto.
+     */
+    border-radius: 2% 2% 0 2%;
+  }
+
+  @media (min-width: 1024px) {
+    & .home-store__card {
+      grid-column: var(--card-col);
+      grid-row: var(--card-row);
+    }
+  }
+
+  & .home-store__frame-mask {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+
+    mask-image: url('/images/store-card-mask.svg');
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-image: url('/images/store-card-mask.svg');
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  & .home-store__frame {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply pointer-events-none;
+    @apply z-10;
+
+    transition: opacity 0.3s ease;
+  }
+
+  & .home-store__media {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply overflow-hidden;
+  }
+
+  & .home-store__img {
+    @apply w-full h-full;
+    @apply block;
+    @apply object-cover;
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  & .home-store__card:hover .home-store__img {
+    @apply scale-110;
+  }
+
+  /*
+   * El borde plano de la muesca queda a un 90.5% de la altura del SVG
+   * (y=372 de 411) desde donde empieza el recorte (x=150 de 407, un
+   * 63% del ancho hacia la derecha). El label vive en ese hueco, así
+   * que se ancla abajo-derecha con margen para no invadir la curva.
+   */
+  & .home-store__label {
+    @apply absolute;
+    @apply bottom-1 right-1;
+    @apply z-50;
+    @apply max-w-[65%];
+  }
+
+  & .home-store__label-name {
+    @apply font-body;
+    @apply text-s leading-none;
+    @apply text-black;
+    @apply truncate;
+    @apply block;
+    @apply -mb-1;
+
+    @apply lg:text-m;
+  }
+}

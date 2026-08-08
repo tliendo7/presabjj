@@ -1,0 +1,252 @@
+.event-online {
+  @apply overflow-hidden;
+  @apply pt-xl pb-m;
+
+  background-color: var(--presa-white);
+
+  & .event-online__layout {
+    @apply relative;
+    @apply grid grid-cols-1 items-center;
+    @apply gap-l;
+
+    @apply md:grid-cols-2 md:gap-0;
+
+    /* En desktop le damos algo más de ancho a la columna de contenido
+       (título + cards) para que las cards crezcan un poco. */
+    @apply lg:grid-cols-[1fr_1.2fr];
+  }
+
+  /* Mobile: el mapa queda como fondo a pantalla completa, detrás del
+     título/párrafo, sangrando fuera del container (left-1/2 + w-screen
+     + -translate-x-1/2 es el truco clásico de full-bleed). A partir de
+     md vuelve a ser una columna normal dentro del grid de dos columnas. */
+  & .event-online__map {
+    @apply absolute top-[130px] left-1/2;
+    @apply w-screen;
+    @apply -translate-x-1/2;
+    @apply z-0;
+    @apply order-2;
+
+    @apply md:static md:top-auto md:bottom-auto md:left-auto;
+    @apply md:w-full;
+    @apply md:translate-x-0;
+    @apply md:order-1;
+
+    /* A partir de escritorio (lg), el mapa se desplaza hacia la izquierda
+       para "sangrar" fuera de la pantalla. El propio overflow-hidden de
+       .event-online recorta lo que sobresalga del viewport. En pantallas
+       muy anchas (super desktop), el hueco natural fuera del contenedor
+       (max-w-site) ya es mayor que este desplazamiento, así que el mapa
+       vuelve a verse completo. */
+    @apply lg:-ml-[350px];
+    @apply lg:w-[calc(100%+350px)];
+  }
+
+  & .event-online__map-img {
+    @apply block;
+    @apply w-full h-full;
+    @apply object-cover;
+    @apply opacity-30;
+
+    @apply md:h-auto;
+    @apply md:object-contain;
+    @apply md:opacity-50;
+  }
+
+  & .event-online__live-chip {
+    @apply absolute;
+    @apply top-xs left-xs;
+    @apply flex items-center;
+    @apply gap-xxs;
+    @apply font-body font-medium uppercase;
+    @apply text-xs;
+    @apply text-white;
+    @apply px-xs py-xxs;
+    @apply rounded-full;
+    @apply tracking-locale;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+  }
+
+  & .event-online__live-dot {
+    @apply relative;
+    @apply w-[10px] h-[10px];
+    @apply rounded-full;
+    background-color: var(--red-500);
+    box-shadow: 0 0 6px 1px rgba(195, 19, 57, 0.8);
+  }
+
+  & .event-online__live-dot::before {
+    @apply absolute;
+    @apply -inset-[6px];
+    @apply rounded-full;
+    content: '';
+    background-color: var(--red-500);
+    opacity: 0.6;
+    animation: event-online-live-pulse 1.4s ease-out infinite;
+  }
+
+  & .event-online__content {
+    @apply relative z-10;
+    @apply flex flex-col;
+    @apply gap-xxl;
+    @apply order-1;
+    @apply text-center;
+
+    @apply md:gap-m;
+    @apply md:z-auto;
+    @apply md:order-2;
+    @apply md:text-right;
+  }
+
+  & .event-online__title-block {
+    @apply flex flex-col;
+    @apply items-center;
+    @apply gap-xxs;
+
+    @apply md:items-end;
+  }
+
+  & .event-online__title-main {
+    @apply font-secondary font-bold uppercase;
+    @apply m-0;
+    @apply leading-display tracking-title;
+    color: var(--presa-black);
+    font-size: clamp(2rem, 5.2vw, 4.5rem);
+  }
+
+  & .event-online__title-line {
+    @apply block;
+  }
+
+  & .event-online__title-line--brier {
+    @apply font-brier font-normal;
+  }
+
+  & .event-online__meta {
+    @apply font-body;
+    @apply self-center;
+    @apply text-s leading-tight;
+    @apply m-0;
+    color: rgba(0, 0, 0, 0.6);
+
+    @apply md:self-end;
+    @apply md:leading-body md:text-m;
+  }
+
+  @keyframes event-online-live-pulse {
+    0% {
+      transform: scale(0.6);
+      opacity: 0.6;
+    }
+
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+  & .event-online__cards {
+    @apply grid grid-cols-1;
+    @apply gap-xs;
+
+    @apply sm:grid-cols-2;
+  }
+
+  & .event-online__card {
+    @apply relative;
+    @apply flex flex-col justify-end;
+    @apply overflow-hidden;
+    @apply aspect-[5/3];
+    @apply p-xs;
+  }
+
+  & .event-online__card--disabled {
+    @apply flex items-center justify-center;
+    @apply text-center;
+    background-color: var(--presa-black);
+    border: 3px solid var(--presa-blue);
+  }
+
+  & .event-online__card-img {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply object-cover object-top;
+  }
+
+  & .event-online__card-duration {
+    @apply absolute;
+    @apply top-xs left-xs;
+    @apply font-body font-medium;
+    @apply text-m;
+    @apply text-white;
+    @apply px-xxs py-xxxs;
+    @apply bg-black;
+
+    @apply lg:text-xs;
+  }
+
+  & .event-online__card-overlay {
+    @apply absolute inset-0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1) 15%,
+      rgba(0, 0, 0, 0.3) 60%
+    );
+  }
+
+  & .event-online__card-badge {
+    @apply relative;
+    @apply self-start;
+    @apply font-body font-medium uppercase;
+    @apply text-[10px];
+    @apply text-white;
+    @apply px-xxs py-xxxs;
+    @apply mb-xxs;
+    @apply rounded-full;
+    @apply tracking-locale;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+  }
+
+  & .event-online__card--disabled .event-online__card-badge {
+    @apply self-center;
+    @apply text-blue;
+    @apply text-s;
+    @apply mb-0;
+
+    background: transparent;
+  }
+
+  & .event-online__card--disabled .event-online__card-title {
+    @apply text-white;
+    @apply text-2xl;
+    @apply text-center;
+  }
+
+  & .event-online__card-play {
+    @apply absolute;
+    @apply top-1/2 left-1/2;
+    @apply -translate-x-1/2 -translate-y-1/2;
+    @apply text-white;
+    @apply text-7xl;
+    @apply transition-colors duration-200;
+
+    @apply lg:text-5xl;
+  }
+
+  & a.event-online__card:hover .event-online__card-play {
+    @apply text-red-500;
+  }
+
+  & .event-online__card-title {
+    @apply relative;
+    @apply font-secondary font-bold uppercase;
+    @apply text-white;
+    @apply text-l leading-tight;
+    @apply text-left;
+    @apply m-0;
+
+    @apply lg:text-xl;
+  }
+}

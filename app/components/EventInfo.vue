@@ -1,156 +1,180 @@
 <script setup lang="ts">
 interface ScheduleItem {
-  day: string;
   time: string;
   name: string;
-  highlight?: boolean;
 }
 
-const schedule: ScheduleItem[] = [
-  { day: 'Vie 16', time: '18h', name: 'Publicación de las categorías' },
-  { day: 'Sáb 17', time: '16h', name: 'Inauguración del evento' },
-  { day: 'Sáb 17', time: '16.30h', name: 'Primer pase' },
-  { day: 'Sáb 17', time: '17h', name: 'Descanso' },
-  { day: 'Sáb 17', time: '17.30h', name: 'Segundo pase' },
-  { day: 'Sáb 17', time: '20h', name: 'Podio & Premios', highlight: true }
-];
+const { t, tm, rt } = useI18n();
+
+const schedule = computed<ScheduleItem[]>(() =>
+  (tm('evento.info.schedule') as ScheduleItem[]).map(item => ({
+    time: rt(item.time),
+    name: rt(item.name)
+  }))
+);
+
+const categories = computed<string[]>(() =>
+  (tm('evento.info.categories') as string[]).map(item => rt(item))
+);
+
+const amenities = computed<string[]>(() =>
+  (tm('evento.info.amenities') as string[]).map(item => rt(item))
+);
 </script>
 
 <template>
-  <section class="event-info">
+  <section
+    id="informacion-general"
+    class="event-info"
+  >
     <Container>
       <h2 class="event-info__heading">
-        Información general
+        {{ t('evento.info.heading') }}
       </h2>
 
       <div class="event-info__layout">
-        <div class="event-info__card">
-          <div class="event-info__section event-info__about">
-            <h2 class="event-info__title">
-              Sobre el evento
-            </h2>
-            <TextLineReveal
-              class="event-info__description"
-              text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel
-              quasi quisquam earum explicabo ducimus facilis rem nobis hic
-              itaque! Debitis eos necessitatibus accusamus quidem veniam
-              voluptates quo a tempore minus!"
-            />
-            <ul class="event-info__meta">
-              <li class="event-info__meta-item">
-                <Icon
-                  name="mdi:map-marker"
-                  class="event-info__meta-icon"
-                />
+        <div class="event-info__about">
+          <h3 class="event-info__title">
+            {{ t('evento.info.aboutTitle') }}
+          </h3>
+
+          <TextLineReveal
+            class="event-info__description"
+            :text="t('evento.info.description1')"
+          />
+
+          <TextLineReveal
+            class="event-info__description event-info__description--small"
+            :text="t('evento.info.description2')"
+          />
+
+          <div class="event-info__schedule">
+            <p class="event-info__eyebrow">
+              {{ t('evento.info.scheduleEyebrow') }}
+            </p>
+
+            <p
+              v-for="item in schedule"
+              :key="item.name"
+              class="event-info__schedule-line"
+            >
+              <strong>{{ item.time }}</strong> — {{ item.name }}
+            </p>
+          </div>
+        </div>
+
+        <div class="event-info__side">
+          <div class="event-info__box">
+            <p class="event-info__box-title">
+              {{ t('evento.info.detailsTitle') }}
+            </p>
+
+            <ul class="event-info__detail-list">
+              <li class="event-info__detail-row">
+                <span class="event-info__detail-label">{{
+                  t('evento.info.detailLocationLabel')
+                }}</span>
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Testa+Training+La+Laguna"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="event-info__meta-link"
+                  class="event-info__detail-value event-info__detail-value--link"
                 >
-                  Testa Training
+                  {{ t('evento.info.detailLocationValue') }}
                 </a>
               </li>
-              <li class="event-info__meta-item">
-                <Icon
-                  name="mdi:clock-outline"
-                  class="event-info__meta-icon"
-                />
-                <span>16.00h</span>
+              <li class="event-info__detail-row">
+                <span class="event-info__detail-label">{{
+                  t('evento.info.detailHourLabel')
+                }}</span>
+                <span class="event-info__detail-value">{{
+                  t('evento.info.detailHourValue')
+                }}</span>
               </li>
-            </ul>
-          </div>
-
-          <div class="event-info__section event-info__prize">
-            <p class="event-info__title">
-              Premio · Bote acumulado
-            </p>
-            <TextLineReveal
-              class="event-info__description"
-              text="La bolsa de premios crece con cada artículo de merchandising que
-              venden los competidores. Cuanto más mueve el cartel, mayor el
-              premio que se reparten al final."
-            />
-          </div>
-
-          <Button
-            class="event-info__button"
-            label="Compra tu entrada"
-            icon-name="mdi:arrow-right"
-            icon-position="right"
-            variant="secondary"
-          />
-        </div>
-        <div class="event-info__side">
-          <div class="event-info__section event-info__categories">
-            <p class="event-info__title">
-              Categorias & Divisiones
-            </p>
-            <ul class="event-info__chips">
-              <li class="event-info__chip">
-                Femenino
+              <li class="event-info__detail-row">
+                <span class="event-info__detail-label">{{
+                  t('evento.info.detailPrizeLabel')
+                }}</span>
+                <!-- TODO: conectar con la API de Shopify para calcular el
+                     bote a partir de las ventas de merchandising -->
+                <span class="event-info__detail-value">{{
+                  t('evento.info.detailPrizeValue')
+                }}</span>
               </li>
-              <li class="event-info__chip">
-                Masculino
-              </li>
-              <li class="event-info__chip">
-                Junior
-              </li>
-              <li class="event-info__chip">
-                Senior
-              </li>
-              <li class="event-info__chip">
-                Master
-              </li>
-              <li class="event-info__chip">
-                Open
-              </li>
-              <li class="event-info__chip">
-                No-Gi
-              </li>
-              <li class="event-info__chip">
-                Gi
-              </li>
-              <li class="event-info__chip">
-                No-Gi
-              </li>
-            </ul>
-          </div>
-
-          <div class="event-info__section event-info__rules">
-            <p class="event-info__title">
-              Modalidad & Reglas
-            </p>
-            <p class="event-info__description">
-              Sólo sumisión, sin puntos.
-            </p>
-          </div>
-          <div class="event-info__section event-info__schedule">
-            <div class="event-info__section-header">
-              <p class="event-info__title">
-                Horario
-              </p>
-              <p class="event-info__note">
-                *Hora canaria
-              </p>
-            </div>
-            <ul class="event-info__schedule-list">
-              <li
-                v-for="item in schedule"
-                :key="item.name"
-                class="event-info__schedule-row"
-                :class="{
-                  'event-info__schedule-row--highlight': item.highlight
-                }"
-              >
-                <span class="event-info__schedule-time">
-                  {{ item.day }} · {{ item.time }}
+              <li class="event-info__detail-row">
+                <span class="event-info__detail-label">{{
+                  t('evento.info.detailRefereeingLabel')
+                }}</span>
+                <span class="event-info__detail-value">
+                  {{ t('evento.info.detailRefereeingValue') }}
                 </span>
-                <span class="event-info__schedule-name">{{ item.name }}</span>
+              </li>
+              <li class="event-info__detail-row">
+                <span class="event-info__detail-label">{{
+                  t('evento.info.detailRulesLabel')
+                }}</span>
+                <span class="event-info__detail-value">
+                  {{ t('evento.info.detailRulesValue') }}
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="event-info__box">
+            <p class="event-info__box-title">
+              {{ t('evento.info.categoriesTitle') }}
+            </p>
+
+            <ul class="event-info__chips">
+              <li
+                v-for="category in categories"
+                :key="category"
+                class="event-info__chip"
+              >
+                {{ category }}
+              </li>
+            </ul>
+          </div>
+
+          <div class="event-info__box">
+            <p class="event-info__box-title">
+              {{ t('evento.info.amenitiesTitle') }}
+            </p>
+
+            <ul class="event-info__chips">
+              <li
+                v-for="amenity in amenities"
+                :key="amenity"
+                class="event-info__chip"
+              >
+                {{ amenity }}
               </li>
             </ul>
           </div>
         </div>
+      </div>
+
+      <div
+        id="comprar-entradas"
+        class="event-info__outro"
+      >
+        <img
+          src="/images/A.png"
+          alt="Presa logo mark"
+          class="event-info__outro-icon"
+        />
+
+        <p class="event-info__outro-text">
+          {{ t('evento.info.outroText') }}
+        </p>
+
+        <Button
+          class="event-info__outro-button"
+          :label="t('evento.info.outroCta')"
+          icon-name="mdi:arrow-right"
+          icon-position="right"
+          variant="secondary"
+        />
       </div>
     </Container>
   </section>

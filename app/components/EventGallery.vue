@@ -5,11 +5,26 @@ interface GalleryImage {
   alt: string;
 }
 
+interface PastEditionCard {
+  id: string;
+  eventName: string;
+  label: string;
+  year: string;
+  location: string;
+  type: 'video' | 'image';
+  image: string;
+  alt: string;
+  // TODO: sustituir por la URL real del vídeo de cada edición.
+  url?: string;
+}
+
 interface SpringState {
   current: number;
   velocity: number;
   target: number;
 }
+
+const { t, tm, rt } = useI18n();
 
 const sectionRef = ref<HTMLElement | null>(null);
 const colCount = ref<number>(3);
@@ -29,90 +44,85 @@ let springs: SpringState[] = [
 const titleSpring: SpringState = { current: 0, velocity: 0, target: 0 };
 let rafId = 0;
 
-const images: GalleryImage[] = [
+const images = computed<GalleryImage[]>(() =>
+  Array.from({ length: 15 }, (_, i): GalleryImage => {
+    const n = i + 1;
+    return {
+      id: n,
+      src: `/images/past-editions/presa-invitational-tournament-${n}.jpg`,
+      alt: t('evento.gallery.photoAlt', { n })
+    };
+  })
+);
+
+// TODO: sustituir por los vídeos/imagen y enlaces definitivos de cada
+// edición cuando estén disponibles.
+const EDITION_STATIC_DATA = [
   {
-    id: 1,
-    src: '/images/past-events/presa-invitational-tournament-1.jpg',
-    alt: 'Presa Invitational Tournament - foto 1'
+    id: 'edicion-3',
+    eventName: 'Invitational Tournament',
+    location: 'Testa Training, La Laguna',
+    type: 'video' as const,
+    image: '/images/past-editions/2025-cover.jpg',
+    url: 'https://www.instagram.com/reel/DL6przqtXjx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
   },
   {
-    id: 2,
-    src: '/images/past-events/presa-invitational-tournament-2.jpg',
-    alt: 'Presa Invitational Tournament - foto 2'
+    id: 'edicion-2',
+    eventName: 'Invitational Tournament',
+    location: 'Santa Cruz',
+    type: 'image' as const,
+    image: '/images/past-editions/edicion-2-cover.jpg'
   },
   {
-    id: 3,
-    src: '/images/past-events/presa-invitational-tournament-3.jpg',
-    alt: 'Presa Invitational Tournament - foto 3'
-  },
-  {
-    id: 4,
-    src: '/images/past-events/presa-invitational-tournament-4.jpg',
-    alt: 'Presa Invitational Tournament - foto 4'
-  },
-  {
-    id: 5,
-    src: '/images/past-events/presa-invitational-tournament-5.jpg',
-    alt: 'Presa Invitational Tournament - foto 5'
-  },
-  {
-    id: 6,
-    src: '/images/past-events/presa-invitational-tournament-6.webp',
-    alt: 'Presa Invitational Tournament - foto 6'
-  },
-  {
-    id: 7,
-    src: '/images/past-events/presa-invitational-tournament-7.jpg',
-    alt: 'Presa Invitational Tournament - foto 7'
-  },
-  {
-    id: 8,
-    src: '/images/past-events/presa-invitational-tournament-8.jpg',
-    alt: 'Presa Invitational Tournament - foto 8'
-  },
-  {
-    id: 9,
-    src: '/images/past-events/presa-invitational-tournament-9.jpg',
-    alt: 'Presa Invitational Tournament - foto 9'
-  },
-  {
-    id: 10,
-    src: '/images/past-events/presa-invitational-tournament-10.jpg',
-    alt: 'Presa Invitational Tournament - foto 10'
-  },
-  {
-    id: 11,
-    src: '/images/past-events/presa-invitational-tournament-11.jpg',
-    alt: 'Presa Invitational Tournament - foto 11'
-  },
-  {
-    id: 12,
-    src: '/images/past-events/presa-invitational-tournament-12.jpg',
-    alt: 'Presa Invitational Tournament - foto 12'
-  },
-  {
-    id: 13,
-    src: '/images/past-events/presa-invitational-tournament-13.jpg',
-    alt: 'Presa Invitational Tournament - foto 13'
-  },
-  {
-    id: 14,
-    src: '/images/past-events/presa-invitational-tournament-14.jpg',
-    alt: 'Presa Invitational Tournament - foto 14'
-  },
-  {
-    id: 15,
-    src: '/images/past-events/presa-invitational-tournament-15.jpg',
-    alt: 'Presa Invitational Tournament - foto 15'
+    id: 'edicion-1',
+    eventName: 'Grappling Open',
+    location: 'Testa Training, La Laguna',
+    type: 'image' as const,
+    image: '/images/past-editions/edicion-1-cover.jpg'
   }
 ];
+
+interface EditionTranslation {
+  label: string;
+  year: string;
+  alt: string;
+}
+
+const pastEditionCards = computed<PastEditionCard[]>(() =>
+  (tm('evento.gallery.editions') as EditionTranslation[]).map((edition, index) => ({
+    ...EDITION_STATIC_DATA[index],
+    label: rt(edition.label),
+    year: rt(edition.year),
+    alt: rt(edition.alt)
+  }))
+);
+
+// Las cards de "Ediciones anteriores" reutilizan el mismo desplazamiento
+// (colOffsets) que las columnas del grid de fotos de arriba: la card
+// central se mueve como la columna central (más despacio) y las dos
+// laterales se mueven como las columnas más externas del grid.
+//
+// En mobile las 3 cards se apilan en una sola columna, así que en vez de
+// repartir velocidades distintas se mueven todas juntas, como un único
+// bloque, con la misma velocidad que las columnas más externas del grid.
+const isEditionsStacked = ref<boolean>(false);
+
+const editionOuterOffset = computed((): number => colOffsets.value[0] ?? 0);
+const editionCenterOffset = computed(
+  (): number => colOffsets.value[Math.floor(colOffsets.value.length / 2)] ?? 0
+);
+
+const getEditionOffset = (index: number): number => {
+  if (isEditionsStacked.value) return editionOuterOffset.value;
+  return index === 1 ? editionCenterOffset.value : editionOuterOffset.value;
+};
 
 const imageColumns = computed((): GalleryImage[][] => {
   const cols: GalleryImage[][] = Array.from(
     { length: colCount.value },
     (): GalleryImage[] => []
   );
-  images.forEach((img: GalleryImage, i: number) =>
+  images.value.forEach((img: GalleryImage, i: number) =>
     cols[i % colCount.value]?.push(img)
   );
   return cols;
@@ -198,6 +208,10 @@ const updateColumnCount = (): void => {
     colCount.value = newCount;
     initSprings(newCount, getProgress());
   }
+
+  // Las cards de "Ediciones anteriores" pasan a una sola columna en el
+  // mismo breakpoint (md, 768px) en el que lo hace .event-gallery__editions.
+  isEditionsStacked.value = w < 768;
 };
 
 onMounted((): void => {
@@ -224,7 +238,7 @@ onUnmounted((): void => {
         class="event-gallery__title"
         :style="{ opacity: titleOpacity, transform: `translateY(${titleY}px)` }"
       >
-        Ediciones anteriores
+        {{ t('evento.gallery.heading') }}
       </h2>
       <div class="event-gallery__grid">
         <div
@@ -246,9 +260,77 @@ onUnmounted((): void => {
               :alt="image.alt"
               class="event-gallery__img"
               loading="lazy"
-            >
+            />
           </div>
         </div>
+      </div>
+
+      <div
+        class="event-gallery__editions-intro"
+        :style="{
+          transform: `translateY(${getEditionOffset(1)}px)`,
+          willChange: 'transform'
+        }"
+      >
+        <p class="event-gallery__editions-intro-text">
+          {{ t('evento.gallery.editionsIntro') }}
+        </p>
+      </div>
+
+      <div class="event-gallery__editions">
+        <component
+          :is="card.url ? 'a' : 'div'"
+          v-for="(card, index) in pastEditionCards"
+          :key="card.id"
+          :href="card.url ?? undefined"
+          :target="card.url ? '_blank' : undefined"
+          :rel="card.url ? 'noopener noreferrer' : undefined"
+          class="event-gallery__edition"
+          :class="{ 'event-gallery__edition--video': card.type === 'video' }"
+          :style="{
+            transform: `translateY(${getEditionOffset(index)}px)`,
+            willChange: 'transform'
+          }"
+        >
+          <div class="event-gallery__edition-media">
+            <img
+              :src="card.image"
+              :alt="card.alt"
+              class="event-gallery__edition-img"
+              loading="lazy"
+            />
+
+            <div class="event-gallery__edition-overlay" />
+            <div class="event-gallery__edition-gradient" />
+
+            <Icon
+              v-if="card.type === 'video'"
+              name="mdi:play"
+              class="event-gallery__edition-play"
+            />
+
+            <p class="event-gallery__edition-event">
+              {{ card.eventName }}
+            </p>
+          </div>
+
+          <div class="event-gallery__edition-info">
+            <div class="event-gallery__edition-heading">
+              <span class="event-gallery__edition-label">{{ card.label }}</span>
+            </div>
+
+            <div class="event-gallery__edition-meta">
+              <span class="event-gallery__edition-location">
+                <Icon
+                  name="mdi:map-marker"
+                  class="event-gallery__edition-location-icon"
+                />
+                {{ card.location }}
+              </span>
+              <span class="event-gallery__edition-year">{{ card.year }}</span>
+            </div>
+          </div>
+        </component>
       </div>
     </Container>
   </section>

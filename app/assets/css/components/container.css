@@ -3,7 +3,7 @@
   @apply m-auto;
 
   @apply md:px-s;
-  @apply lg:px-m;
+  @apply lg:px-xl;
 
   .container__inner {
     @apply mx-auto;

@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const { t } = useI18n();
-
-useSeoMeta({
-  title: () => t('academia.title'),
-  description: () => t('academia.subtitle')
-});
+usePageSeo('academia');
 
 // TODO:
 //       x - Disciplinas
@@ -12,54 +7,42 @@ useSeoMeta({
 //       x - Horario
 //       x - FAQ
 //       x - Link para la app
-//    - Equipo Santana + Profe + Team Gambaru + INSTALACIONES
-//       - 💘 Ponerlo bonito 💘
-//    - 💘 Copys 💘
-//    - Tarifas
-
-// - Form de contacto
-// - Hero
-// - Redes
+//       x - Equipo Santana + Profe + Team Ganbaru + INSTALACIONES
+//       x - 💘 Ponerlo bonito 💘
+//       x - Form de contacto
+//       x - Redes
+//       x - Copys
+//       x - Subhero en DESKTOP
+//       x - Animación seccion Vídeo
+//    - Hero
+//    - Terminar de cuadrar imágenes, data (tlf, etc.), FAQs, márgenes
+// - Horarios
+// - Añadir CTAs!!!
 
 // -----------------------------------------------
-// - Limpiar código. Errores, accesibilidad.
-// - Transiciones entre páginas. (Maat app)
-// - Navbar
+//       x - Limpiar código. Errores, accesibilidad.
+//       x - Navbar
+// ⭐️ - Transiciones entre páginas. (Maat app)
+// ⭐️ - Traducciones
 // - Errores + ready para deploy
-// - SEO y metadata y buen puntuaje (accesibilidad)
-// - Ajustar enlaces
-// - Traducciones
+// - Despliegue REAL
+// - SEO y metadata y buen puntuaje (accesibilidad, performance, intervalos abiertos)
+// - Ajustar enlaces, y ubicaciones, tlfs, etc.
 // - Hosting de las imagenes/vídeos
+// - Form. Thank you. Config Sheet. Probarlo.
 
 // Todos empiezan algun día desde cero. Clases abiertas a todo el mundo
 </script>
 
 <template>
   <div class="academia-page">
-    <section
-      class="relative flex items-center justify-center overflow-hidden"
-      style="height: 600px"
-    >
-      <img
-        class="absolute inset-0 h-full w-full object-cover"
-        src="/images/__dummy/_CIR7604.jpg"
-        alt=""
-      >
-      <div class="absolute inset-0 bg-black/40" />
-      <h1 class="relative z-10 text-4xl font-bold text-white">
-        {{ t('academia.title') }}
-      </h1>
-    </section>
+    <AcademyHero />
 
     <AcademyJoin />
 
-    <AcademyValues />
+    <AcademyHighlights />
 
-    <section style="height: 500px; background-color: black">
-      <p style="color: white">
-        Clases abiertas a todo el mundo. Todos los niveles.
-      </p>
-    </section>
+    <AcademyVideo />
 
     <AcademyCategories />
 
@@ -69,6 +52,11 @@ useSeoMeta({
 
     <AcademyUs />
 
+    <AcademyGallery />
+
     <AcademyFAQ />
+
+    <AcademiaForm />
+    <Socials />
   </div>
 </template>

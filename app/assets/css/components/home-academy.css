@@ -1,0 +1,218 @@
+.home-academy {
+  @apply w-full;
+  @apply pt-xxl pb-xxl;
+  @apply bg-gray-900;
+
+  margin-top: -1px;
+
+  /* Misma barra/track que .academy-us__bar-track en AcademyUs.vue
+     (sección "Quiénes somos" de la academia): se rellena con un muelle
+     a medida que entra en el viewport (ver script). */
+  & .home-academy__bar-track {
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply mb-l;
+    @apply h-[8px];
+    @apply bg-[rgb(255_255_255_/_10%)];
+
+    @apply lg:mb-xl;
+    @apply lg:h-[10px];
+  }
+
+  & .home-academy__bar-fill {
+    @apply block;
+    @apply h-full w-full;
+    @apply bg-white;
+    @apply origin-left;
+    @apply scale-x-0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    & .home-academy__bar-fill {
+      transform: scaleX(1);
+    }
+  }
+
+  & .home-academy__layout {
+    @apply flex flex-col;
+    @apply gap-l;
+
+    /* DOM ahora es [content, media]: en mobile eso ya deja el texto
+       primero y la foto después. En desktop se mantiene el mismo
+       resultado visual de antes (texto izquierda, foto derecha) con
+       flex-row normal, sin necesidad de row-reverse. */
+    @apply lg:flex-row lg:items-center;
+    @apply lg:gap-xl;
+  }
+
+  & .home-academy__media {
+    @apply relative;
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply rounded-md;
+    @apply aspect-[16/10];
+
+    @apply lg:w-[54%] lg:shrink-0;
+    @apply lg:aspect-[4/3];
+  }
+
+  & .home-academy__img {
+    @apply w-full h-full;
+    @apply block;
+    @apply object-cover;
+  }
+
+  & .home-academy__content {
+    @apply flex flex-col items-start;
+    @apply gap-xs;
+    @apply lg:self-start;
+
+    @apply lg:gap-s;
+  }
+
+  & .home-academy__heading {
+    @apply font-josefin font-bold uppercase;
+    @apply m-0;
+    @apply leading-display tracking-title;
+    @apply text-white;
+    @apply text-4xl;
+  }
+
+  & .home-academy__intro {
+    @apply font-body;
+    @apply m-0;
+    @apply text-s leading-tight;
+    @apply max-w-[38ch];
+    @apply text-gray-300;
+
+    @apply md:text-m md:leading-body;
+  }
+
+  & .home-academy__cta-link {
+    @apply mt-xs;
+    @apply no-underline;
+  }
+
+  /* ── Bloque extra: texto + imagen + vídeo ─────────────────── */
+  /*
+   * Grid de 4 columnas en desktop: imagen (col 1-2, ver más abajo: es
+   * a su vez OTRO grid con su propia fila 2) · vídeo vertical (col 3)
+   * · texto (col 4). En mobile se apilan en una sola columna, en el
+   * mismo orden del DOM.
+   */
+
+  & .home-academy__extra {
+    @apply flex flex-col;
+    @apply gap-s;
+    @apply mt-s;
+
+    @apply lg:grid lg:grid-cols-4 lg:items-start;
+    @apply lg:gap-m;
+    @apply lg:mt-l;
+  }
+
+  & .home-academy__extra-text {
+    @apply flex flex-col;
+    @apply justify-start;
+  }
+
+  /* Mismo border-top que .academy-us__description en AcademyUs.vue
+     (sección "Quiénes somos" de la academia). */
+  & .home-academy__extra-description {
+    @apply font-body;
+    @apply m-0;
+    @apply text-xl leading-snug;
+    @apply pt-s;
+    @apply max-w-narrow;
+    @apply text-gray-300;
+    @apply whitespace-pre-line;
+
+    border-top: 1px solid rgb(255 255 255 / 16%);
+  }
+
+  /*
+   * Ya no es solo el wrapper de la foto: es un grid propio de 2 filas,
+   * de 2 columnas ya desde mobile (antes era flex-col apilado y solo
+   * pasaba a grid en lg). Fila 1 (col-span-2): la foto de siempre.
+   * Fila 2: texto secundario + segunda foto (4/3), uno en cada
+   * columna. En desktop sigue ocupando las columnas 1-2 del grid de
+   * fuera (.home-academy__extra).
+   */
+  & .home-academy__extra-image {
+    @apply grid grid-cols-2 items-start;
+    @apply gap-s;
+
+    @apply lg:col-span-2;
+  }
+
+  & .home-academy__extra-image-media {
+    @apply relative w-full;
+    @apply overflow-hidden;
+    @apply rounded-md;
+    @apply h-[22rem];
+    @apply col-span-2;
+  }
+
+  & .home-academy__extra-img {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply block;
+    @apply object-cover;
+  }
+
+  /* Vídeo vertical (formato retrato, 9/16): la altura sale de su
+     propio ancho de columna en vez de un h-[…] fijo, así que siempre
+     queda más alto que la imagen. */
+  & .home-academy__extra-video {
+    @apply relative w-full;
+    @apply overflow-hidden;
+    @apply rounded-md;
+
+    aspect-ratio: 9 / 16;
+  }
+
+  & .home-academy__extra-video-el {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply block;
+    @apply object-cover;
+  }
+
+  /* ── Fila 2 del grid anidado: texto + imagen 4/3 ──────────── */
+
+  & .home-academy__extra-secondary-text {
+    @apply flex flex-col;
+    @apply justify-center;
+  }
+
+  & .home-academy__extra-secondary-description {
+    @apply font-body;
+    @apply m-0;
+    @apply text-m leading-body;
+    @apply text-gray-300;
+    @apply whitespace-pre-line;
+
+    @apply lg:text-l;
+  }
+
+  & .home-academy__extra-secondary-link {
+    @apply font-body;
+    @apply flex items-center gap-xxxs;
+    @apply text-m leading-body;
+    @apply text-gray-300;
+    @apply mt-xxs;
+
+    @apply lg:text-l;
+  }
+
+  & .home-academy__extra-secondary-link-text {
+    @apply underline underline-offset-2;
+  }
+
+  & .home-academy__extra-secondary-image {
+    @apply relative w-full;
+    @apply overflow-hidden;
+    @apply rounded-md;
+    @apply aspect-[5/5];
+  }
+}

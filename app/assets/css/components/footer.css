@@ -1,7 +1,7 @@
 .footer {
   @apply p-xs;
   @apply relative;
-  @apply pt-[14rem];
+  @apply bg-red-700;
 
   .footer__box {
     @apply mx-auto;
@@ -13,21 +13,6 @@
     @apply sm:p-s;
   }
 
-  .footer__gradient {
-    @apply absolute;
-    @apply h-full w-full;
-    @apply pointer-events-none;
-    @apply z-0;
-    @apply origin-bottom;
-    @apply inset-x-0 bottom-0;
-    @apply overflow-clip;
-    background-image: radial-gradient(
-      circle at 50% -190%,
-      transparent 68%,
-      var(--red-700) 83%
-    );
-  }
-
   .footer__top {
     @apply flex flex-col;
     @apply gap-xl;
@@ -35,24 +20,11 @@
   }
 
   .footer__logo {
-    @apply relative;
-    @apply overflow-hidden;
     @apply w-full;
 
-    &::before {
-      content: '';
-      @apply absolute;
-      @apply inset-0;
-      @apply bg-bottom bg-cover bg-no-repeat;
-      @apply m-xxxs;
-      background-image: url('/images/dummy-footer.jpg');
-    }
-
     img {
-      @apply relative;
       @apply block;
       @apply w-full h-auto;
-      @apply z-1;
     }
   }
 
@@ -64,10 +36,19 @@
   }
 
   .footer__contact-data {
-    @apply font-primary text-xs;
-    color: rgba(255, 255, 255, 0.45);
     @apply flex flex-col;
     @apply gap-xxs;
+  }
+
+  .footer__address-link {
+    @apply font-body text-m;
+    @apply no-underline;
+    color: rgba(255, 255, 255, 0.45);
+    @apply transition-colors duration-200;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
   }
 
   .footer__col {
@@ -79,14 +60,22 @@
     @apply grid grid-cols-2;
     @apply gap-xl;
 
-    @apply md:grid-cols-3;
+    @apply lg:justify-items-end;
   }
 
   .footer__col-title {
     @apply font-primary font-semibold uppercase;
     @apply text-xs tracking-nav;
     @apply text-white;
+    @apply no-underline;
     @apply m-0;
+    @apply transition-colors duration-200;
+
+    @apply lg:text-right;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
+    }
   }
 
   .footer__col-list {
@@ -95,6 +84,8 @@
     @apply p-0;
     @apply flex flex-col;
     @apply gap-xxs;
+
+    @apply lg:items-end;
   }
 
   .footer__col-link {
@@ -102,6 +93,8 @@
     @apply no-underline;
     color: rgba(255, 255, 255, 0.45);
     @apply transition-colors duration-200;
+
+    @apply lg:text-right;
 
     &:hover {
       color: rgba(255, 255, 255, 0.9);

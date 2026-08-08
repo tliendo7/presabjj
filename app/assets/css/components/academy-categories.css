@@ -2,57 +2,6 @@
   @apply w-full;
   @apply py-xl;
 
-  & .academy-categories__heading {
-    @apply font-josefin font-bold uppercase;
-    @apply text-black;
-    @apply m-0;
-    @apply leading-none;
-    @apply mb-s;
-    font-size: clamp(2rem, 4vw, 3.75rem);
-
-    @apply lg:mb-l;
-  }
-
-  & .academy-categories__intro {
-    @apply grid grid-cols-1;
-    @apply mb-m;
-    @apply gap-l;
-    @apply md:grid-cols-2;
-    @apply md:gap-s;
-
-    @apply lg:mb-l;
-  }
-
-  & .academy-categories__intro-col {
-    @apply relative;
-    @apply flex flex-col;
-    @apply gap-s;
-    @apply min-w-0;
-    @apply pt-[2rem];
-    border-top: 1px solid var(--themed-lines);
-
-    @apply md:pr-[16%];
-  }
-
-  & .academy-categories__intro-col--empty {
-    @apply hidden md:block;
-  }
-
-  & .academy-categories__intro-square {
-    @apply absolute;
-    @apply block;
-    @apply top-0 left-0;
-    @apply w-[0.8rem] h-[0.8rem];
-    @apply bg-black;
-  }
-
-  & .academy-categories__intro-title {
-    @apply font-body font-normal;
-    @apply m-0;
-    @apply text-m;
-    @apply text-black;
-  }
-
   & .academy-categories__stack {
     @apply relative;
   }
@@ -121,10 +70,11 @@
   & .academy-categories__disclosure-label {
     @apply font-josefin font-semibold uppercase;
     @apply text-xs;
+    @apply relative top-[2px];
   }
 
   & .academy-categories__disclosure-chevron {
-    @apply w-4 h-4;
+    @apply w-6 h-6;
     @apply shrink-0;
     @apply transition-transform duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)];
     @apply motion-reduce:transition-none;
@@ -160,11 +110,41 @@
     @apply max-w-[46ch];
   }
 
+  & .academy-categories__stats {
+    @apply grid grid-cols-2;
+    @apply gap-s;
+    @apply mt-s;
+  }
+
+  & .academy-categories__stat {
+    @apply flex flex-col;
+    @apply gap-xxs;
+    @apply min-w-0;
+    @apply pt-s;
+    border-top: 1px solid var(--themed-lines);
+  }
+
+  & .academy-categories__stat-label {
+    @apply font-josefin uppercase;
+    @apply text-gray-900;
+    @apply text-xs;
+  }
+
+  & .academy-categories__stat-value {
+    @apply font-body;
+    @apply text-black;
+    @apply leading-none;
+    @apply text-2xl;
+    font-variant-numeric: tabular-nums;
+
+    @apply lg:text-4xl;
+  }
+
   & .academy-categories__media {
     @apply relative;
     @apply w-full;
     @apply overflow-hidden;
-    @apply max-h-[320px];
+    @apply max-h-[250px];
     @apply rounded-sm;
     @apply aspect-[3/4];
     @apply bg-gray-100;

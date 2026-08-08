@@ -1,23 +1,36 @@
 <script setup lang="ts">
 interface SocialLink {
-  name: string;
+  id: string;
+  handle: string;
+  icon: string;
   url: string;
 }
 
+const { t } = useI18n();
+
 const SOCIAL_LINKS: SocialLink[] = [
-  { name: 'Instagram', url: '#' },
-  { name: 'YouTube', url: '#' }
+  { id: 'instagram-presabjj', handle: '@presabjj', icon: 'mdi:instagram', url: 'https://www.instagram.com/presabjj/' },
+  { id: 'instagram-presaacademybjj', handle: '@presaacademybjj', icon: 'mdi:instagram', url: 'https://www.instagram.com/presaacademybjj' },
+  { id: 'youtube-presabjj', handle: '@PRESABJJ', icon: 'mdi:youtube', url: 'https://www.youtube.com/@PRESABJJ' }
 ];
 
-const CARDS = [
-  { id: 1, image: '/images/rrss/rrss-1.jpg', alt: 'Social post 1' },
-  { id: 6, image: '/images/rrss/rrss-6.jpg', alt: 'Social post 6' },
-  { id: 10, image: '/images/rrss/rrss-10.jpg', alt: 'Social post 10' },
-  { id: 4, image: '/images/rrss/rrss-4.jpg', alt: 'Social post 4' },
-  { id: 8, image: '/images/rrss/rrss-8.jpg', alt: 'Social post 8' },
-  { id: 9, image: '/images/rrss/rrss-9.jpg', alt: 'Social post 9' },
-  { id: 3, image: '/images/rrss/rrss-3.jpg', alt: 'Social post 3' }
+const CARD_IMAGES = [
+  { id: 1, src: '/images/rrss/rrss-1.jpg' },
+  { id: 6, src: '/images/rrss/rrss-6.jpg' },
+  { id: 10, src: '/images/rrss/rrss-10.jpg' },
+  { id: 4, src: '/images/rrss/rrss-4.jpg' },
+  { id: 8, src: '/images/rrss/rrss-8.jpg' },
+  { id: 9, src: '/images/past-editions/presa-invitational-tournament-10.jpg' },
+  { id: 3, src: '/images/rrss/rrss-3.jpg' }
 ];
+
+const CARDS = computed(() =>
+  CARD_IMAGES.map(({ id, src }) => ({
+    id,
+    image: src,
+    alt: t('socials.cardAlt', { n: id })
+  }))
+);
 
 const sectionRef = ref<HTMLElement | null>(null);
 const isDeployed = ref(false);
@@ -54,8 +67,8 @@ onUnmounted(() => {
     <div class="socials__inner">
       <div class="socials__header">
         <h2 class="socials__title">
-          <span class="socials__title-eyebrow">No te</span>
-          <span class="socials__title-main">pierdas nada</span>
+          <span class="socials__title-eyebrow">{{ t('socials.titleEyebrow') }}</span>
+          <span class="socials__title-main">{{ t('socials.titleMain') }}</span>
         </h2>
       </div>
 
@@ -81,16 +94,22 @@ onUnmounted(() => {
 
       <div class="socials__footer">
         <p class="socials__subtitle">
-          Síguenos en redes
+          {{ t('socials.subtitle') }}
         </p>
         <nav class="socials__links">
           <a
             v-for="social in SOCIAL_LINKS"
-            :key="social.name"
+            :key="social.id"
             :href="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
             class="socials__link"
           >
-            {{ social.name }}
+            <Icon
+              :name="social.icon"
+              class="socials__link-icon"
+            />
+            <span class="socials__link-handle">{{ social.handle }}</span>
           </a>
         </nav>
       </div>

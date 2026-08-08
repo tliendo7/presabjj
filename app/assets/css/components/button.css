@@ -25,9 +25,43 @@
     }
   }
 
+  &.btn--outline {
+    @apply gap-xxs;
+    @apply pl-s pr-xxxs py-xxxs;
+    @apply rounded-full;
+    @apply border;
+    @apply bg-transparent text-white;
+    border-color: rgb(255 255 255 / 30%);
+
+    &:hover {
+      @apply bg-transparent;
+      border-color: rgb(255 255 255 / 80%);
+    }
+
+    .btn__icon {
+      @apply w-8 h-8;
+      @apply rounded-full;
+      @apply bg-white text-black;
+    }
+
+    .btn__icon-svg {
+      @apply w-4 h-4;
+    }
+
+    &:hover .btn__icon {
+      @apply translate-x-0.5;
+    }
+  }
+
   .btn__icon {
+    @apply inline-flex items-center justify-center;
     @apply w-4 h-4;
     @apply flex-shrink-0;
+    @apply transition-transform duration-200;
+  }
+
+  .btn__icon-svg {
+    @apply w-full h-full;
   }
 
   .btn__label {

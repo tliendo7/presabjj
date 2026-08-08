@@ -1,24 +1,286 @@
 {
   "nav": {
     "home": "Home",
-    "evento": "Event",
-    "academia": "Academy",
-    "culture": "Culture"
+    "evento": "Upcoming events",
+    "academia": "Academy"
+  },
+  "error": {
+    "notFound": {
+      "eyebrow": "Error 404",
+      "heading": "This page doesn't exist",
+      "description": "The link might be broken or the page may have moved."
+    },
+    "generic": {
+      "eyebrow": "Something went wrong",
+      "heading": "An error occurred",
+      "description": "Please try again in a few minutes."
+    },
+    "cta": "Back to home"
   },
   "home": {
-    "title": "Presa",
-    "subtitle": "Brazilian Jiu-Jitsu"
+    "title": "PRESA | Brazilian Jiu-Jitsu School in Tenerife",
+    "subtitle": "BJJ academy in La Laguna, Santa Cruz de Tenerife. Classes for all levels, events, seminars and competition.",
+    "hero": {
+      "ariaLabel": "Home hero"
+    },
+    "events": {
+      "heading": "A community in motion",
+      "intro": "Our gym is always active. Throughout the year we run events, seminars, special training sessions and open classes that enrich the experience of all our students and foster an environment of constant improvement. Practitioners of all levels and academies come together here.",
+      "prevLabel": "Previous",
+      "nextLabel": "Next",
+      "types": {
+        "evento": "Event",
+        "seminario": "Seminar",
+        "masterclass": "Master Class"
+      },
+      "items": [
+        {
+          "date": "Mar 2026",
+          "caption": "Taylor Pearman",
+          "type": "seminario"
+        },
+        {
+          "date": "Mar 2026",
+          "caption": "Canary Islands BJJ Circuit",
+          "type": "evento"
+        },
+        {
+          "date": "Dec 2025",
+          "caption": "Ezekiel Zayas",
+          "type": "seminario"
+        },
+        {
+          "date": "Nov 2025",
+          "caption": "Arón Hernández",
+          "type": "masterclass"
+        },
+        {
+          "date": "Mar 2025",
+          "caption": "Mani Tavanaei",
+          "type": "seminario"
+        },
+        {
+          "date": "Dec 2024",
+          "caption": "Santeri Lilius",
+          "type": "seminario"
+        },
+        {
+          "date": "Mar 2024",
+          "caption": "Spanish Championship",
+          "type": "evento"
+        }
+      ]
+    },
+    "store": {
+      "heading": "Gear Up",
+      "intro": "Explore our collection of apparel and accessories while helping power our events: the profit from every purchase goes toward the prize pool for the competitions and activities we organize.",
+      "cta": "Visit the store",
+      "items": [
+        {
+          "name": "Official T-Shirt"
+        },
+        {
+          "name": "Presa Hoodie"
+        },
+        {
+          "name": "Embroidered Cap"
+        },
+        {
+          "name": "Competition Pack"
+        },
+        {
+          "name": "Presa Backpack"
+        },
+        {
+          "name": "Presa Socks"
+        }
+      ]
+    },
+    "tournament": {
+      "eyebrow": "4th edition",
+      "title": "Presa Invitational Tournament",
+      "sponsorAlt": "Deporte Lagunero",
+      "ctaInfo": "More info",
+      "ctaTickets": "Buy tickets"
+    },
+    "academy": {
+      "heading": "Train with us",
+      "intro": "Kimono GI and No-Gi Grappling classes for every level, from your first trial class to competition. Discover our schedule, methodology and the team behind it.",
+      "imageAlt": "Students training at Presa Academy",
+      "cta": "Discover the academy",
+      "extra": {
+        "text": "Every class adds up: technique, discipline and community. That's what training at Presa looks like, on and off the mats.",
+        "imageAlt": "Students training at Presa Academy",
+        "videoAlt": "Video of a Presa Academy class",
+        "secondaryText": "We have two formats: Kimono Gi and Grappling. Whether you're a beginner or an advanced level, you can join our classes.",
+        "secondaryLink": "Check our schedule",
+        "secondaryImageAlt": "Instructor correcting a student's technique at Presa Academy"
+      }
+    }
   },
   "evento": {
-    "title": "BJJ Event",
-    "subtitle": "Upcoming events"
+    "title": "Presa Invitational Tournament | BJJ Tournament in Tenerife",
+    "subtitle": "Brazilian Jiu-Jitsu tournament in Tenerife: registration, categories and all the event information.",
+    "hero": {
+      "ariaLabel": "Event hero",
+      "edition": "4th edition",
+      "titleLine1": "Presa",
+      "titleLine2": "Invitational",
+      "titleLine3": "Tournament",
+      "dateDay": "14",
+      "dateMonth": "November",
+      "dateYear": "2026",
+      "description": "We're going all in again, the fourth edition is here. National and international BJJ competitors are back on the mats.",
+      "text1": "We're back with everything. The 4th edition is here. Bigger. More intense. More drive.",
+      "text2": "We're bringing competitors of every level, from local to international. Get ready to test yourself, push your limits and show how far you can go.",
+      "cta": "Buy your ticket"
+    },
+    "countdown": {
+      "ariaLabelPrefix": "Countdown until",
+      "label": "14 NOV 2026, 10:00",
+      "dayUnit": "D",
+      "hourUnit": "H",
+      "minuteUnit": "M",
+      "secondUnit": "S"
+    },
+    "manifesto": {
+      "heading1": "Effort is not negotiable",
+      "heading2": "Discipline beats talent",
+      "heading3": "Your limit is where you decide to stop",
+      "text1": "More than just a tournament, Presa Invitational Tournament is an initiative that fuses martial arts with culture and values.",
+      "text2": "La Laguna will once again become a benchmark for grappling in Spain, bringing together competitors from every island alongside top-level guest athletes, both national and international."
+    },
+    "info": {
+      "heading": "General information",
+      "aboutTitle": "About the event",
+      "description1": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel quasi quisquam earum explicabo ducimus facilis rem nobis hic itaque! Debitis eos necessitatibus accusamus quidem veniam voluptates quo a tempore minus!",
+      "description2": "The prize pool grows with every piece of merchandise the competitors sell. The more each fighter moves it, the bigger the prize split at the end. Submission only, no points: the format keeps the tension alive until the final second.",
+      "scheduleEyebrow": "Schedule",
+      "schedule": [
+        {
+          "time": "10.00h",
+          "name": "Doors open"
+        },
+        {
+          "time": "10.30h",
+          "name": "Fighter weigh-in"
+        },
+        {
+          "time": "12.00h",
+          "name": "Event start"
+        },
+        {
+          "time": "15.00h",
+          "name": "Expected event end time"
+        }
+      ],
+      "detailsTitle": "Details",
+      "detailLocationLabel": "Location",
+      "detailLocationValue": "Testa Training",
+      "detailHourLabel": "Time",
+      "detailHourValue": "16.00h",
+      "detailPrizeLabel": "Accumulated prize",
+      "detailPrizeValue": "€0",
+      "detailRefereeingLabel": "Refereeing",
+      "detailRefereeingValue": "International refereeing",
+      "detailRulesLabel": "Rules",
+      "detailRulesValue": "AJP Rulebook",
+      "categoriesTitle": "Categories",
+      "categories": [
+        "Female",
+        "Male",
+        "Junior",
+        "Youth",
+        "Senior",
+        "Master"
+      ],
+      "amenitiesTitle": "Available services",
+      "amenities": [
+        "Live streaming",
+        "Merchandising store",
+        "Lockers",
+        "Family access",
+        "Food & drinks area"
+      ],
+      "outroText": "Don't miss out. Secure your ticket before they sell out.",
+      "outroCta": "Buy tickets"
+    },
+    "merch": {
+      "headingLine1": "WEAR",
+      "headingLine2": "THE CULTURE",
+      "headingLine3": "PRESA",
+      "description": "Every t-shirt, hoodie and cap you buy adds to the prize pool. Official Presa Invitational Tournament merchandise is made for those who live the sport on and off the mat.",
+      "cta": "Visit the store",
+      "items": [
+        {
+          "alt": "Official Presa Invitational Tournament t-shirt"
+        },
+        {
+          "alt": "Official Presa Invitational Tournament hoodie"
+        },
+        {
+          "alt": "Product detail from the Presa collection"
+        },
+        {
+          "alt": "Official Presa Invitational Tournament collection"
+        },
+        {
+          "alt": "Presa Invitational Tournament logo"
+        }
+      ]
+    },
+    "collabs": {
+      "titleMain": "DRIVING THE",
+      "titleSub": "CULTURE TOGETHER",
+      "description": "Presa partners with brands that share our passion for sport, excellence and the competitive spirit."
+    },
+    "online": {
+      "titleLine1": "Follow the tournament",
+      "titleLine2": "live",
+      "description": "The event will be streamed live on YouTube on the day so you don't miss a minute, wherever you are. Until then, relive the intensity of the last edition and get ready for a day full of emotion.",
+      "pastEditionBadge": "Previous edition",
+      "comingSoonBadge": "Coming soon",
+      "liveLabel": "Live"
+    },
+    "gallery": {
+      "heading": "Previous editions",
+      "photoAlt": "Presa Invitational Tournament - photo {n}",
+      "editionsIntro": "Every edition tops the last. More infrastructure, more logistics, more level, and the best is always still to come.",
+      "editions": [
+        {
+          "label": "3rd edition",
+          "year": "JUL 2025",
+          "alt": "Edition 3 highlight video"
+        },
+        {
+          "label": "2nd edition",
+          "year": "DEC 2023",
+          "alt": "Edition 2"
+        },
+        {
+          "label": "1st edition",
+          "year": "JUN 2023",
+          "alt": "Edition 1"
+        }
+      ]
+    }
   },
   "academia": {
-    "title": "Academy",
-    "subtitle": "Train with us",
+    "title": "Brazilian Jiu-Jitsu Academy in Tenerife | Presa",
+    "subtitle": "Train BJJ in La Laguna, Tenerife. Classes for kids and adults, schedules, methodology and team.",
+    "video": {
+      "fixed": "Open classes for everyone, classes for ",
+      "words": [
+        "men.",
+        "women.",
+        "kids.",
+        "those returning.",
+        "beginners",
+        "advanced level.",
+        "everyone."
+      ]
+    },
     "categories": {
-      "heading": "Our disciplines",
-      "intro": "Our academy trains Jiu-Jitsu end to end: from your very first grip on the mat to the competition podium, through a method that blends technique, discipline and community.",
       "moreLabel": "More info",
       "cards": [
         {
@@ -28,7 +290,23 @@
           "cta": {
             "href": "#contacto"
           },
-          "image": "/images/past-events/presa-invitational-tournament-7.jpg"
+          "image": "/images/class/_CIR5394.jpg",
+          "stats": [
+            {
+              "label": "Weekly hours",
+              "value": 8,
+              "from": 4,
+              "prefix": "+",
+              "suffix": "h"
+            },
+            {
+              "label": "Students",
+              "value": 500,
+              "from": 350,
+              "prefix": "+",
+              "suffix": ""
+            }
+          ]
         },
         {
           "title": "No-Gi Grappling",
@@ -37,85 +315,103 @@
           "cta": {
             "href": "#contacto"
           },
-          "image": "/images/past-events/presa-invitational-tournament-11.jpg"
+          "image": "/images/class/291025_PASJ-48.jpg",
+          "stats": [
+            {
+              "label": "Weekly hours",
+              "value": 6,
+              "from": 3,
+              "prefix": "+",
+              "suffix": "h"
+            },
+            {
+              "label": "Black belts",
+              "value": 20,
+              "from": 12,
+              "prefix": "+",
+              "suffix": ""
+            }
+          ]
         }
-      ]
+      ],
+      "lessLabel": "Less info"
     },
     "schedule": {
       "heading": "Schedule",
-      "intro": "Check our class schedule by group. Sessions run throughout the whole week, so you can always find a time that fits your routine.",
-      "tabs": {
-        "kids": "Kids",
-        "adults": "Adults"
-      },
-      "alt": {
-        "kids": "Kids class schedule at Presa",
-        "adults": "Adults class schedule at Presa"
+      "intro": "Train at your own pace and find the schedule that best fits your day-to-day. We offer classes for kids and adults, organized in mixed groups, where every student learns and grows alongside their peers in an atmosphere of respect and collaboration.",
+      "imageAlt": "Weekly class schedule at Presa",
+      "levelsHeading": "Levels available:",
+      "levels": [
+        "Beginner",
+        "Standard"
+      ],
+      "modalitiesHeading": "Membership options:",
+      "modalities": [
+        "Monthly fee",
+        "Quarterly fee",
+        "Class pack",
+        "Drop-in class"
+      ],
+      "trial": {
+        "lead": "Your first class is free.",
+        "text": "Come try it out, no strings attached.",
+        "cta": "Ask about pricing on WhatsApp"
       }
     },
     "app": {
       "heading": "Book your class from your phone",
       "description": "Check the schedule, sign up for your class, and manage your bookings in seconds. Everything you need to train, right in your pocket.",
       "cta": "Download the app",
-      "ctaHref": "#",
+      "ctaHref": "https://maat-app.link/ELtLfWaEORb",
       "phoneAlt": "Presa app for booking classes",
       "bgAlt": "Training at Presa academy"
     },
     "join": {
-      "eyebrow": "Presa Academy",
       "heading": "TRAIN. COMPETE. RISE.",
       "description": "Our team of certified coaches is committed to helping you reach your goals, whether you want to compete, build confidence, or improve your overall fitness. We build a training plan tailored to you.",
       "cta": "Join today",
-      "reviews": [
-        {
-          "quote": "Love this gym!",
-          "author": "Alex K."
+      "gallery": {
+        "main": {
+          "label": "Training room",
+          "alt": "Students training on the mats at Presa Academy",
+          "caption": "Built for work on the mats"
         },
-        {
-          "quote": "Great place to work out",
-          "author": "María G."
+        "carousel": {
+          "label": "Life at the academy"
         },
-        {
-          "quote": "Big difference for me",
-          "author": "Javi R."
-        },
-        {
-          "quote": "Unbeatable atmosphere",
-          "author": "Laura P."
-        },
-        {
-          "quote": "Top-notch coaches",
-          "author": "Diego M."
-        },
-        {
-          "quote": "My second home",
-          "author": "Nerea S."
-        },
-        {
-          "quote": "Technique and community",
-          "author": "Carlos V."
-        },
-        {
-          "quote": "I come back every day",
-          "author": "Ana L."
-        }
-      ]
+        "prevLabel": "Previous image",
+        "nextLabel": "Next image",
+        "images": [
+          {
+            "alt": "Grappling training session at Presa Academy"
+          },
+          {
+            "alt": "Presa Academy students chatting after training"
+          },
+          {
+            "alt": "Presa Academy student focused before training"
+          }
+        ]
+      }
     },
     "values": {
-      "image": "/images/past-events/presa-invitational-tournament-5.jpg",
       "imageAlt": "Training at Presa",
       "points": [
         {
-          "title": "For everyone",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "title": "Open to every level",
+          "text": "Everyone starts from zero at some point. No prior experience or fitness level required: each student steps onto the mat at their own pace, with a method that adapts from day one."
         },
         {
-          "title": "Technique",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "title": "Discipline, respect and growth",
+          "text": "These are the foundation the whole art is built on. On the mat we're all equal, regardless of belt, age or strength - here you learn to win with humility and lose with dignity, on and off the mats."
         },
         {
-          "title": "Community",
-          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          "title": "More than a sport",
+          "text": "BJJ teaches you to stay calm under pressure, trust your preparation, and find solutions from a place of composure. The confidence you build on the mat stays with you in every challenge that follows."
+        },
+        {
+          "title": "You never train alone",
+          "text": "Individual progress is born from teamwork. From your first class you'll be part of a group that celebrates your progress, shares what it knows, and pushes you to give a little more in every session."
         }
       ]
     },
@@ -123,139 +419,117 @@
       "eyebrow": "Who we are",
       "heading": "The people and the space behind Presa",
       "intro": "From the mat to the competition circuit: the team and the facilities that make the academy possible.",
-      "blocks": [
-        {
-          "eyebrow": "The head coach",
-          "title": "Fran Santana",
-          "description": "Leading the academy since day one, Fran Santana blends years on the mat with a method built for every student to progress at their own pace, from their first class to black belt.",
-          "cta": "Meet the coach",
-          "image": "/images/__dummy/_CIR7604.jpg",
-          "imageAlt": "Fran Santana, head coach at Presa"
-        },
-        {
-          "eyebrow": "Competition",
-          "title": "Team Santana",
-          "description": "Our competition team trains under the wing of Team Gambaru, adding the experience and level of one of Jiu-Jitsu's benchmark teams to push our athletes to the top.",
-          "cta": "Meet the team",
-          "image": "/images/__dummy/_CIR5783.jpg",
-          "imageAlt": "Santana competition team"
-        },
-        {
-          "eyebrow": "The space",
-          "title": "Facilities",
-          "description": "A spacious mat, changing rooms and everything you need to train comfortably, built for day-to-day classes as well as seminars and special events.",
-          "cta": "",
-          "image": "/images/past-events/presa-invitational-tournament-3.jpg",
-          "imageAlt": "Presa academy facilities"
-        }
-      ]
+      "block": {
+        "description": "Leading the academy since day one, Fran Santana blends years on the mat with a method built for every student to progress at their own pace, from their first class to black belt.",
+        "image": "/images/class/_CIR7604.jpg",
+        "imageAlt": "Fran Santana, head coach at Presa"
+      },
+      "ganbaru": {
+        "text": "Equipo Santana is part of Team Ganbaru, one of the leading BJJ networks in Spain.\nThis affiliation lets us keep a shared technical curriculum, access ongoing coaching education, and be part of a wider community, backing our teaching with real experience.",
+        "image": "/images/class/_CUS0302.jpg",
+        "imageAlt": "Equipo Santana training session, affiliated with Team Ganbaru"
+      }
+    },
+    "gallery": {
+      "alt": "Presa academy photo {n}"
     },
     "faq": {
       "heading": "Frequently asked questions",
       "description": "Everything you need to know about the academy and how it works. Can't find your answer? Get in touch and we'll help.",
       "categories": [
         {
+          "id": "antes-de-empezar",
+          "label": "Before you start"
+        },
+        {
           "id": "kids",
           "label": "Kids"
         },
         {
-          "id": "material",
-          "label": "Gear"
-        },
-        {
-          "id": "metodologia",
-          "label": "Method"
-        },
-        {
-          "id": "reserva",
-          "label": "Booking"
-        },
-        {
-          "id": "generales",
-          "label": "General"
+          "id": "entrenamiento",
+          "label": "Training"
         }
       ],
       "questions": [
         {
-          "category": "kids",
-          "question": "What's the minimum age for kids to train?",
-          "answer": "We welcome kids from age 4. Classes are split by age and level so every group trains safely and in a way that suits their development."
+          "category": "antes-de-empezar",
+          "question": "Is there an age limit to start?",
+          "answer": "No. We have groups for kids from age 5 and adult classes with no age limit. Every student trains at their own pace, and we adapt the intensity whenever needed."
+        },
+        {
+          "category": "antes-de-empezar",
+          "question": "Do I need to buy a kimono before I start?",
+          "answer": "You won't need one for your first class. If you decide to continue, we'll point you to where you can buy one so you can pick an option that fits your size, budget and preferences."
+        },
+        {
+          "category": "antes-de-empezar",
+          "question": "I've never done a contact sport, do I need previous experience?",
+          "answer": "You don't need any previous experience. Many people start from scratch and classes are designed to learn step by step. You'll train with partners of different levels, always in a controlled way and adapted to your pace."
+        },
+        {
+          "category": "entrenamiento",
+          "question": "Can I compete?",
+          "answer": "Yes. Competing is entirely optional, but anyone who wants to compete will get technical support and specific preparation ahead of each tournament."
+        },
+        {
+          "category": "entrenamiento",
+          "question": "How are the groups organized?",
+          "answer": "Groups are organized mainly by age and level, with classes for beginners and general classes. This way, every student can train safely, progress at their own pace and share the mat with training partners suited to their experience."
         },
         {
           "category": "kids",
-          "question": "Is Jiu-Jitsu safe for children?",
-          "answer": "Yes. BJJ is a control-based martial art with no striking, and our kids' classes prioritise technique, respect and play. Coaches supervise every session closely."
+          "question": "What age can my child start?",
+          "answer": "Kids can start from age 5. We have two children's groups, ages 5 to 9 and 10 to 13, so classes suit each stage."
         },
         {
           "category": "kids",
-          "question": "What do children learn in class?",
-          "answer": "Beyond technique, we work on discipline, coordination, confidence and teamwork. Many families notice better focus and self-esteem within the first few weeks."
+          "question": "Does my child need a kimono from day one?",
+          "answer": "It's not necessary for the trial class. If they decide to continue, we'll point you to where to buy a kimono suited to their size and age."
         },
         {
-          "category": "material",
-          "question": "Do I need to buy a kimono to start?",
-          "answer": "You don't need anything for your first trial class: we lend you the gear. If you decide to stay, we'll help you pick your first kimono (Gi) at the best price."
+          "category": "kids",
+          "question": "Can parents stay and watch the class?",
+          "answer": "Yes. We have a viewing area set up so parents can watch the class comfortably."
         },
         {
-          "category": "material",
-          "question": "What's the difference between Gi and No-Gi?",
-          "answer": "The Gi is the traditional kimono and opens up a collar and sleeve grip game. No-Gi is trained in a rashguard and shorts, faster and more dynamic. You can practise both."
-        },
-        {
-          "category": "material",
-          "question": "What should I bring to each class?",
-          "answer": "A clean kimono (or rashguard and shorts for No-Gi), a water bottle and sandals for moving off the mat. Hygiene matters: short nails and clean kit, always."
-        },
-        {
-          "category": "metodologia",
-          "question": "What's the training methodology like?",
-          "answer": "We combine technique, positional sparring and progressive rolling. Each class has a clear goal and difficulty adapts to your level, from beginner to competitor."
-        },
-        {
-          "category": "metodologia",
-          "question": "I've never done contact sports, can I start?",
-          "answer": "Absolutely. Everyone starts from zero someday. Classes are open to everyone and we adapt the intensity to each person regardless of your starting point."
-        },
-        {
-          "category": "metodologia",
-          "question": "How often should I train to progress?",
-          "answer": "With two or three sessions a week you'll see steady progress. Consistency is what matters: little and often beats a lot every now and then."
-        },
-        {
-          "category": "reserva",
-          "question": "How do I book my free trial class?",
-          "answer": "Message us through the contact form or WhatsApp and we'll assign you a slot. Your first class is free and with no commitment."
-        },
-        {
-          "category": "reserva",
-          "question": "Do I book every class or is it open schedule?",
-          "answer": "With your membership you can attend your group's classes within the weekly schedule. For special events, seminars or trial classes we do ask you to book in advance."
-        },
-        {
-          "category": "reserva",
-          "question": "Can I cancel or change my booking?",
-          "answer": "Yes. If you can't make it, let us know in advance and we'll reschedule your session, no problem."
-        },
-        {
-          "category": "generales",
-          "question": "Where is the academy and what are the hours?",
-          "answer": "We're at the Presa training centre. Check the schedule section on this page to see all the available Kids and Adults time slots."
-        },
-        {
-          "category": "generales",
-          "question": "How much is the monthly membership?",
-          "answer": "We have several options depending on your training days. Check the pricing section or message us for the up-to-date details and the best fit for you."
-        },
-        {
-          "category": "generales",
-          "question": "Do you offer adult and competition classes?",
-          "answer": "Yes. We have groups for every level, from beginners to a competition team that represents Presa at national and international tournaments."
+          "category": "kids",
+          "question": "What do the kids do during class?",
+          "answer": "Classes combine kimono and grappling techniques adapted to their age with games and dynamic exercises. Beyond learning Jiu Jitsu, kids work on coordination, focus, discipline and respect for their teammates."
         }
       ]
+    },
+    "form": {
+      "heading": "Have questions?",
+      "description": "Write to us and we'll get back to you as soon as possible. We're here to help with anything you need about the academy.",
+      "contact": {
+        "email": "info{'@'}presa.com",
+        "phone": "(+34) 000 00 00 00",
+        "phoneHref": "+34000000000",
+        "location": "Cam. la Piterita, 107, Nave 5, 38329 La Laguna, Santa Cruz de Tenerife"
+      },
+      "fields": {
+        "name": "Name",
+        "namePlaceholder": "e.g. Jane Smith",
+        "phone": "Phone",
+        "phonePlaceholder": "e.g. 612 345 678",
+        "email": "Email",
+        "emailPlaceholder": "e.g. jane.smith{'@'}gmail.com",
+        "message": "Tell us your question",
+        "messagePlaceholder": "Write your message here...",
+        "consent": "I agree to be contacted by the academy using the details provided."
+      },
+      "submit": {
+        "default": "Send",
+        "loading": "Sending...",
+        "success": "Thank you! We've received your message and will get back to you shortly.",
+        "error": "Something went wrong submitting the form. Please try again."
+      }
     }
   },
-  "culture": {
-    "title": "Culture",
-    "subtitle": "Who we are"
+  "socials": {
+    "titleEyebrow": "Don't",
+    "titleMain": "miss a thing",
+    "subtitle": "Follow us on social media",
+    "cardAlt": "Social post {n}"
   }
 }

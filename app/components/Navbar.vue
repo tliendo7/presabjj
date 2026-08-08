@@ -6,49 +6,52 @@ const route = useRoute();
 
 const isMenuOpen = ref(false);
 
-watch(() => route.fullPath, () => {
-  isMenuOpen.value = false;
-});
+watch(
+  () => route.fullPath,
+  () => {
+    isMenuOpen.value = false;
+  }
+);
 </script>
 
 <template>
   <header class="navbar">
     <nav class="navbar__inner">
       <NuxtLink
-        :to="localePath('/')"
+        :to="localePath('index')"
         class="navbar__logo"
       >
         <img
           src="/images/logo.png"
           alt="Presa"
           class="navbar__logo-img"
-        >
+        />
       </NuxtLink>
 
       <ul class="navbar__links">
         <li>
           <NuxtLink
-            :to="localePath('/')"
+            :to="localePath('index')"
             class="navbar__link"
-          >{{ t('nav.home') }}</NuxtLink>
+          >
+            {{ t('nav.home') }}
+          </NuxtLink>
         </li>
         <li>
           <NuxtLink
-            :to="localePath('/evento')"
+            :to="localePath('academia')"
             class="navbar__link"
-          >{{ t('nav.evento') }}</NuxtLink>
+          >
+            {{ t('nav.academia') }}
+          </NuxtLink>
         </li>
         <li>
           <NuxtLink
-            :to="localePath('/academia')"
+            :to="localePath('torneo')"
             class="navbar__link"
-          >{{ t('nav.academia') }}</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
-            :to="localePath('/culture')"
-            class="navbar__link"
-          >{{ t('nav.culture') }}</NuxtLink>
+          >
+            {{ t('nav.evento') }}
+          </NuxtLink>
         </li>
       </ul>
 
@@ -58,13 +61,23 @@ watch(() => route.fullPath, () => {
           class="navbar__locale-btn"
           :class="{ 'is-active': locale === 'es' }"
           :aria-current="locale === 'es' ? true : undefined"
-        >ES</NuxtLink>
+        >
+          ES
+        </NuxtLink>
+        <span
+          class="navbar__locale-separator"
+          aria-hidden="true"
+        >
+          |
+        </span>
         <NuxtLink
           :to="switchLocalePath('en')"
           class="navbar__locale-btn"
           :class="{ 'is-active': locale === 'en' }"
           :aria-current="locale === 'en' ? true : undefined"
-        >EN</NuxtLink>
+        >
+          EN
+        </NuxtLink>
       </div>
 
       <button
@@ -88,27 +101,27 @@ watch(() => route.fullPath, () => {
       <ul class="navbar__mobile-links">
         <li>
           <NuxtLink
-            :to="localePath('/')"
+            :to="localePath('index')"
             class="navbar__mobile-link"
-          >{{ t('nav.home') }}</NuxtLink>
+          >
+            {{ t('nav.home') }}
+          </NuxtLink>
         </li>
         <li>
           <NuxtLink
-            :to="localePath('/evento')"
+            :to="localePath('academia')"
             class="navbar__mobile-link"
-          >{{ t('nav.evento') }}</NuxtLink>
+          >
+            {{ t('nav.academia') }}
+          </NuxtLink>
         </li>
         <li>
           <NuxtLink
-            :to="localePath('/academia')"
+            :to="localePath('torneo')"
             class="navbar__mobile-link"
-          >{{ t('nav.academia') }}</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
-            :to="localePath('/culture')"
-            class="navbar__mobile-link"
-          >{{ t('nav.culture') }}</NuxtLink>
+          >
+            {{ t('nav.evento') }}
+          </NuxtLink>
         </li>
       </ul>
 
@@ -118,13 +131,23 @@ watch(() => route.fullPath, () => {
           class="navbar__locale-btn"
           :class="{ 'is-active': locale === 'es' }"
           :aria-current="locale === 'es' ? true : undefined"
-        >ES</NuxtLink>
+        >
+          ES
+        </NuxtLink>
+        <span
+          class="navbar__locale-separator"
+          aria-hidden="true"
+        >
+          |
+        </span>
         <NuxtLink
           :to="switchLocalePath('en')"
           class="navbar__locale-btn"
           :class="{ 'is-active': locale === 'en' }"
           :aria-current="locale === 'en' ? true : undefined"
-        >EN</NuxtLink>
+        >
+          EN
+        </NuxtLink>
       </div>
     </div>
   </header>

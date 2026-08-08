@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { t } = useI18n();
+
 const { targetDate } = defineProps<{
   targetDate: string | Date;
 }>();
@@ -70,12 +72,15 @@ const formattedDate = computed(() => {
   <section
     class="countdown"
     role="timer"
-    :aria-label="`Cuenta atrás hasta el ${formattedDate}`"
+    :aria-label="`${t('evento.countdown.ariaLabelPrefix')} ${formattedDate}`"
   >
     <div class="countdown__inner">
       <div class="countdown__eyebrow">
+        <!-- TODO: fecha hardcodeada temporalmente para la demo con el
+        cliente (mismo formato que generaba formattedDate). Volver a usar
+        formattedDate cuando se revierta la fecha "trampa" del countdown. -->
         <p class="countdown__label">
-          {{ formattedDate }}
+          {{ t('evento.countdown.label') }}
         </p>
       </div>
 
@@ -85,19 +90,19 @@ const formattedDate = computed(() => {
       >
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.days }}</span>
-          <span class="countdown__unit">D</span>
+          <span class="countdown__unit">{{ t('evento.countdown.dayUnit') }}</span>
         </div>
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.hours }}</span>
-          <span class="countdown__unit">H</span>
+          <span class="countdown__unit">{{ t('evento.countdown.hourUnit') }}</span>
         </div>
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.minutes }}</span>
-          <span class="countdown__unit">M</span>
+          <span class="countdown__unit">{{ t('evento.countdown.minuteUnit') }}</span>
         </div>
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.seconds }}</span>
-          <span class="countdown__unit">S</span>
+          <span class="countdown__unit">{{ t('evento.countdown.secondUnit') }}</span>
         </div>
       </div>
     </div>

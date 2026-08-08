@@ -1,202 +1,96 @@
 .event-hero {
-  @apply relative;
-  @apply overflow-hidden;
-  @apply mb-xxl;
-  @apply h-[100svh];
+  @apply relative overflow-hidden;
+  @apply lg:mb-xxl;
 
-  .event-hero__container {
-    @apply relative;
-    @apply z-[2];
+  height: calc(100svh - 4rem);
+
+  .container,
+  .container__inner {
+    @apply h-full;
   }
 
-  .event-hero__text {
+  /* Mobile: bloque centrado verticalmente. Desktop: pegado al fondo. */
+  .event-hero__inner {
+    @apply relative;
+    @apply h-full;
+    @apply flex flex-col justify-center;
+    @apply pb-xl;
+
+    @apply md:justify-end;
+  }
+
+  /* Imagen de marca (perro), siempre pegada al top del giro. */
+  .event-hero__brand-image {
+    @apply absolute top-0 left-0;
+    @apply w-full h-auto;
+  }
+
+  /* Imagen del flyer + contenido: centrados en mobile, pegados al fondo
+   * del giro desde desktop (el `mt-auto` es lo que los empuja abajo, así
+   * que solo se aplica a partir de `md:` para no pelearse con el
+   * `justify-center` de mobile). */
+  .event-hero__bottom {
+    @apply relative;
     @apply flex flex-col;
     @apply gap-s;
-    @apply pb-[52svh];
 
-    @apply md:mt-m;
-    @apply md:pb-xxxl;
-    @apply md:max-w-[52%];
+    @apply md:mt-auto;
   }
 
-  .event-hero__online {
-    @apply relative;
-    @apply w-fit h-fit;
-    @apply flex items-center;
+  .event-hero__flyer-image {
+    @apply block w-full h-auto;
+    @apply rounded-sm;
+  }
+
+  /* Dos columnas: info (2/5) + copy (3/5). Apiladas en mobile. */
+  .event-hero__content {
+    @apply flex flex-col;
+    @apply gap-m;
+
+    @apply md:grid md:grid-cols-5 md:items-start;
+  }
+
+  /* Botón: centrado en mobile, alineado a la derecha en desktop. */
+  .event-hero__info {
+    @apply flex flex-col items-center;
+
+    @apply md:col-span-2;
+    @apply md:items-end;
+  }
+
+  /* Copy a dos columnas (párrafo izq / párrafo dcha) dentro de la columna de 3/5. */
+  .event-hero__copy {
+    @apply grid grid-cols-1;
     @apply gap-s;
-    @apply uppercase;
-    @apply text-gray;
-    @apply absolute;
-    @apply top-s;
+
+    @apply sm:grid-cols-2;
+    @apply md:col-span-3;
   }
 
-  .event-hero__online-wave-outer {
-    @apply border border-gray border-dashed rounded-full;
-    animation: spin-cw 40s linear infinite;
+  .event-hero__copy-col {
+    @apply flex flex-col;
+    @apply gap-xxs;
   }
 
-  .event-hero__online-wave-inner {
-    @apply border border-gray border-dotted rounded-full;
-    @apply m-s;
-    animation: spin-ccw 20s linear infinite;
-  }
-
-  .event-hero__online-cover {
-    @apply relative;
-    @apply w-24 h-24;
-    @apply bg-red;
-    @apply rounded-full;
-    @apply m-xs;
-    @apply bg-cover bg-center;
-    animation: spin-cw 40s linear infinite;
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-      url('/images/past-events/presa-invitational-tournament-7.jpg');
-
-    &::before {
-      content: '';
-      @apply w-[135%] h-[135%];
-      @apply absolute;
-      @apply top-1/2 left-1/2;
-      @apply rounded-full;
-      @apply -z-1;
-      border: 16px solid #b5b5b11f;
-      @apply -translate-x-1/2 -translate-y-1/2;
-      @apply opacity-0;
-      animation: event-hero-pulsate 1.6s ease-out infinite;
-    }
-  }
-
-  .event-hero__online-play {
-    @apply absolute;
-    @apply top-1/2 left-1/2;
-    @apply -translate-x-1/2 -translate-y-1/2;
-    @apply z-1;
-    @apply w-8 h-8;
-    @apply text-white;
-  }
-
-  .event-hero__eyebrow {
+  .event-hero__edition {
     @apply font-secondary font-bold uppercase;
     @apply text-xl leading-display tracking-title;
-    @apply text-blue;
+    @apply text-white;
 
-    @apply md:text-2xl;
+    @apply lg:text-3xl;
   }
 
-  .event-hero__title {
-    @apply flex flex-col;
-    @apply font-secondary font-bold uppercase;
-    @apply text-5xl leading-display tracking-title;
-    @apply mt-xl;
-    @apply pt-m;
+  .event-hero__paragraph {
+    @apply font-body;
+    @apply text-s leading-body;
+    @apply text-gray-300;
 
-    @apply md:text-6xl;
-
-    @apply lg:mt-0;
-    @apply lg:text-[150px];
-
-    & > span:nth-of-type(1),
-    & > strong {
-      @apply pl-xxxl;
-      @apply ml-l;
-    }
-
-    > span,
-    > em {
-      @apply lg:leading-[120px];
-    }
+    @apply lg:text-m;
   }
 
-  .event-hero__title-line--serif {
-    @apply font-brier;
-    @apply text-4xl;
-    @apply z-20;
-
-    @apply md:text-6xl;
-
-    @apply lg:text-[105px];
-
-    @apply xl:text-[150px];
-  }
-
-  .event-hero__date {
-    @apply flex items-start;
-    @apply gap-xs;
-  }
-
-  .event-hero__date-day {
-    @apply font-secondary font-bold uppercase;
-    @apply text-blue;
-    @apply text-5xl tracking-title;
-    @apply !leading-[37px];
-
-    @apply md:text-6xl;
-  }
-
-  .event-hero__date-month-year {
-    @apply flex flex-col;
-    @apply leading-none;
-  }
-
-  .event-hero__date-month {
-    @apply font-secondary font-bold uppercase;
-    @apply text-blue;
-    @apply text-2xl tracking-title;
-    @apply !leading-[25px];
-
-    @apply md:text-3xl;
-  }
-
-  .event-hero__date-year {
-    @apply font-primary font-light uppercase tracking-locale;
-    @apply text-gray-500;
-    @apply text-s;
-  }
-
-  .event-hero__description {
-    @apply text-s uppercase tracking-locale;
-    @apply text-gray-500;
-  }
-
-  .event-hero__image-wrap {
-    @apply absolute;
-    @apply bottom-0 left-0 right-0;
-    @apply h-[55svh];
-    @apply will-change-transform;
-
-    @apply md:left-auto md:bottom-auto md:top-[-10%];
-    @apply md:w-[59%] md:h-[120%];
-  }
-
-  .event-hero__image {
-    @apply w-full h-full;
-    @apply object-contain object-bottom;
-  }
-}
-
-@keyframes spin-cw {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin-ccw {
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes event-hero-pulsate {
-  0% {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
+  /* Segundo párrafo: oculto en mobile, visible desde que el copy pasa a 2 columnas. */
+  .event-hero__paragraph--secondary {
+    @apply hidden;
+    @apply sm:block;
   }
 }

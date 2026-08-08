@@ -3,6 +3,9 @@
   @apply overflow-hidden;
   @apply flex flex-col;
 
+  background-color: var(--presa-white);
+  margin-top: -1px;
+
   & .socials__inner {
     @apply flex flex-col items-center;
     @apply pt-xl pb-m;
@@ -27,6 +30,7 @@
     @apply font-primary font-bold;
     @apply uppercase italic;
     @apply leading-display tracking-subtitle;
+    color: var(--presa-black);
     font-size: clamp(2.5rem, 6vw, 5rem);
   }
 
@@ -34,6 +38,7 @@
     @apply font-primary font-bold;
     @apply uppercase;
     @apply leading-display tracking-title;
+    color: var(--presa-black);
     font-size: clamp(2.5rem, 6vw, 5rem);
   }
 
@@ -125,26 +130,45 @@
 
   & .socials__footer {
     @apply flex flex-col items-center;
-    @apply gap-s;
+    @apply gap-xs;
+    @apply -mt-[50px];
+
+    @apply lg:-mt-[100px];
   }
 
   & .socials__subtitle {
     @apply font-body text-m;
     @apply m-0;
-    @apply text-gray-100;
+    @apply text-gray-600;
   }
 
   & .socials__links {
-    @apply flex flex-wrap justify-center items-center;
-    gap: clamp(1rem, 3vw, 2.5rem);
+    @apply flex flex-col items-center;
+    @apply gap-xxs;
+
+    @apply md:gap-xs;
   }
 
   & .socials__link {
-    @apply font-primary font-bold uppercase text-s tracking-nav;
+    @apply inline-flex items-center;
+    @apply gap-xxs;
+    @apply font-body font-semibold text-s;
     @apply no-underline;
-    @apply text-gray-100;
+    @apply text-black;
 
-    @apply md:text-m;
+    @apply md:text-s;
+  }
+
+  & .socials__link-icon {
+    @apply flex-shrink-0;
+    @apply w-5 h-5;
+  }
+
+  @media (min-width: 768px) {
+    & .socials__links {
+      @apply flex-row flex-wrap justify-center;
+      gap: clamp(1rem, 3vw, 2.5rem);
+    }
   }
 
   @media (max-width: 480px) {

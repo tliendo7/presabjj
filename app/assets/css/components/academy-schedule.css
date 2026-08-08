@@ -2,9 +2,9 @@
   @apply w-full;
   @apply pt-l pb-xl;
 
-  & .academy-schedule__grid {
+  & .academy-schedule__top {
     @apply flex flex-col;
-    @apply gap-l;
+    @apply gap-m;
 
     @apply lg:grid;
     @apply lg:grid-cols-2;
@@ -15,11 +15,6 @@
   & .academy-schedule__intro-col {
     @apply flex flex-col;
     @apply gap-s;
-  }
-
-  & .academy-schedule__content {
-    @apply flex flex-col;
-    @apply gap-m;
   }
 
   & .academy-schedule__heading {
@@ -51,59 +46,74 @@
     @apply text-black;
   }
 
-  & .academy-schedule__tabs {
-    @apply mx-auto;
-    @apply w-fit;
-    @apply flex items-center;
-    @apply gap-xxxs;
-    @apply p-xxxs;
-    @apply bg-gray-100;
-    @apply rounded-lg;
+  & .academy-schedule__levels {
+    @apply flex flex-col;
+    @apply gap-xxs;
   }
 
-  & .academy-schedule__tab {
-    @apply font-body font-semibold uppercase;
-    @apply cursor-pointer;
-    @apply px-s py-xxs;
-    @apply text-s;
-    @apply leading-none;
-    @apply text-gray-400;
-    @apply bg-transparent;
-    @apply border-none;
-    @apply rounded-md;
-    @apply transition-[color,background-color,box-shadow] duration-[250ms] ease-[ease];
-  }
-
-  & .academy-schedule__tab:hover {
-    @apply text-gray-900;
-  }
-
-  & .academy-schedule__tab--active {
+  & .academy-schedule__levels-heading {
+    @apply font-body font-semibold;
+    @apply m-0;
+    @apply text-m;
     @apply text-black;
-    @apply bg-[#ffffffeb];
-    @apply shadow-[0_1px_2px_rgba(0,0,0,0.088)];
   }
 
-  & .academy-schedule__panel {
-    @apply w-full;
-    @apply overflow-hidden;
-    @apply rounded-sm;
+  & .academy-schedule__chips {
+    @apply flex flex-wrap;
+    @apply gap-xxs;
   }
 
-  & .academy-schedule__img {
+  & .academy-schedule__chip {
+    @apply inline-flex items-center justify-center;
+    @apply font-josefin uppercase;
+    @apply text-xs;
+    @apply text-black;
+    @apply px-xs py-xxxs;
+    @apply rounded-full;
+    border: 1px solid var(--gray-300);
+    line-height: 1;
+    /* Josefin Sans' line-box doesn't sit centered on its glyphs, so
+       flex-centering alone still reads a hair low — nudge it up. */
+    padding-bottom: calc(var(--space-xxxs) + 0.1em);
+  }
+
+  & .academy-schedule__note {
+    @apply pl-s;
+    @apply mt-xs;
+    border-left: 3px solid var(--presa-blue);
+  }
+
+  & .academy-schedule__note-text {
+    @apply font-body font-normal;
+    @apply m-0;
+    @apply text-m;
+    @apply text-black;
+  }
+
+  & .academy-schedule__note-cta-link {
+    @apply mt-xs;
+    @apply no-underline;
+    @apply w-fit;
+  }
+
+  /* .btn--outline is built for dark hero backgrounds (white text, white
+     30%-opacity border). On this white section that's invisible, so flip
+     it to dark text/border while keeping the outline shape. */
+  & .academy-schedule__note-cta.btn--outline {
+    @apply text-black;
+    border-color: rgb(0 0 0 / 30%);
+
+    &:hover {
+      border-color: rgb(0 0 0 / 60%);
+    }
+
+    & .btn__icon {
+      @apply bg-black text-white;
+    }
+  }
+
+  & .academy-schedule__reference-img {
     @apply block;
     @apply w-full h-auto;
-    @apply object-contain;
-    animation: academy-schedule-fade 0.35s ease;
-  }
-}
-
-@keyframes academy-schedule-fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }

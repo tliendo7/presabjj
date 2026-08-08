@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const { t } = useI18n();
 
@@ -9,17 +9,14 @@ const bgOffsetY = ref(0);
 
 const MAX_SCALE = 1.18;
 const MIN_SCALE = 1;
-const PARALLAX_SPEED = 0.12;
+// Max vertical drift (px) of the background image. Bounded and driven by
+// the clamped `progress` value below — NOT by raw scroll distance — so the
+// image never drifts further than the extra size the scale gives it,
+// however far offscreen the panel starts.
+const MAX_PARALLAX_OFFSET = 32;
 
 let ticking = false;
 let rafId: number | null = null;
-
-const heading = computed<string>(() => t('academia.app.heading'));
-const description = computed<string>(() => t('academia.app.description'));
-const cta = computed<string>(() => t('academia.app.cta'));
-const ctaHref = computed<string>(() => t('academia.app.ctaHref'));
-const phoneAlt = computed<string>(() => t('academia.app.phoneAlt'));
-const bgAlt = computed<string>(() => t('academia.app.bgAlt'));
 
 const clamp = (value: number, min: number, max: number): number =>
   Math.min(max, Math.max(min, value));
@@ -33,9 +30,7 @@ const update = (): void => {
   const progress = clamp((vh - rect.top) / (vh + rect.height), 0, 1);
 
   bgScale.value = MAX_SCALE - progress * (MAX_SCALE - MIN_SCALE);
-
-  const offset = -rect.top;
-  bgOffsetY.value = offset * PARALLAX_SPEED;
+  bgOffsetY.value = (progress - 0.5) * 2 * MAX_PARALLAX_OFFSET;
 };
 
 const onScroll = (): void => {
@@ -67,8 +62,8 @@ onUnmounted(() => {
       >
         <div class="academy-app__bg">
           <img
-            src="/images/past-events/presa-invitational-tournament-5.jpg"
-            :alt="bgAlt"
+            src="/images/class/_CIR5783.jpg"
+            :alt="t('academia.app.bgAlt')"
             class="academy-app__bg-image"
             :style="{
               transform: `translateY(${bgOffsetY}px) scale(${bgScale})`
@@ -83,26 +78,26 @@ onUnmounted(() => {
         <div class="academy-app__grid">
           <div class="academy-app__image-col">
             <img
-              src="/images/__dummy/mobile-product-1.avif"
-              :alt="phoneAlt"
+              src="/images/class/mobile.png"
+              :alt="t('academia.app.phoneAlt')"
               class="academy-app__phone"
             >
           </div>
 
           <div class="academy-app__text-col">
             <h2 class="academy-app__heading">
-              {{ heading }}
+              {{ t('academia.app.heading') }}
             </h2>
-            <TextLineReveal
-              class="academy-app__description"
-              :text="description"
-              color="#e4e4e4"
-            />
+            <p class="academy-app__description">
+              {{ t('academia.app.description') }}
+            </p>
             <a
               class="academy-app__cta"
-              :href="ctaHref"
+              :href="t('academia.app.ctaHref')"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {{ cta }}
+              {{ t('academia.app.cta') }}
             </a>
           </div>
         </div>

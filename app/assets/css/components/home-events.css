@@ -1,0 +1,255 @@
+.home-events {
+  @apply w-full;
+  @apply pt-xxl pb-xxl;
+  @apply bg-white;
+
+  & .home-events__header {
+    @apply flex flex-col;
+  }
+
+  /* ── Barra superior: línea + cuadrado, compartida por las dos
+     columnas (ocupa todo el ancho del header) ────────────────── */
+
+  & .home-events__header-bar {
+    @apply relative w-full;
+
+    height: 0.8rem;
+    border-top: 1px solid var(--themed-lines);
+  }
+
+  & .home-events__intro-square {
+    @apply absolute;
+    @apply block;
+    @apply top-0 left-0;
+    @apply w-[0.8rem] h-[0.8rem];
+    @apply bg-black;
+  }
+
+  /* ── Columnas: título a la izquierda, párrafo a la derecha ──── */
+
+  & .home-events__header-columns {
+    @apply flex flex-col;
+    @apply gap-l;
+    @apply mt-[2rem];
+
+    @apply lg:grid;
+    @apply lg:grid-cols-2;
+    @apply lg:items-start;
+    @apply lg:gap-xl;
+  }
+
+  & .home-events__heading {
+    @apply font-josefin font-bold uppercase;
+    @apply m-0;
+    @apply leading-display tracking-title;
+    @apply text-black;
+    @apply text-4xl;
+  }
+
+  /* ── Columna 2: párrafo descriptivo (misma línea superior) ── */
+
+  & .home-events__intro {
+    @apply font-body;
+    @apply m-0;
+    @apply text-s leading-tight;
+
+    color: rgba(0, 0, 0, 0.6);
+
+    @apply md:text-m md:leading-body;
+  }
+
+  & .home-events__carousel {
+    @apply relative;
+    @apply mt-l;
+  }
+
+  & .home-events__track {
+    @apply flex;
+    @apply overflow-x-auto;
+    @apply scroll-smooth;
+    @apply snap-x snap-mandatory;
+    @apply pb-xxs;
+    @apply gap-xs;
+
+    /* Mismo padding que .container, para que la primera y última card
+       queden alineadas con el margen real de la página. */
+    @apply px-xs;
+    @apply md:px-s;
+    @apply lg:px-xl;
+
+    scrollbar-width: none;
+
+    /* El snap debe respetar ese mismo padding como límite, si no el
+       navegador puede alinear la card justo contra el borde del track. */
+    scroll-padding-inline: var(--space-xs);
+  }
+
+  @media (min-width: 768px) {
+    & .home-events__track {
+      scroll-padding-inline: var(--space-s);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & .home-events__track {
+      scroll-padding-inline: var(--space-xl);
+    }
+  }
+
+  & .home-events__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  & .home-events__card {
+    @apply shrink-0;
+    @apply snap-start;
+    @apply w-[260px];
+
+    @apply lg:w-[300px];
+  }
+
+  & .home-events__media {
+    @apply relative;
+    @apply w-full;
+    @apply overflow-hidden;
+    @apply rounded-sm;
+    @apply h-[350px];
+  }
+
+  & .home-events__img {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply block;
+    @apply object-cover;
+    @apply transition-transform duration-500;
+  }
+
+  & .home-events__card:hover .home-events__img {
+    @apply scale-105;
+  }
+
+  & .home-events__type-chip {
+    @apply self-start;
+    @apply inline-block;
+    @apply font-body uppercase;
+    @apply text-xs leading-none tracking-wide;
+    @apply px-xxs py-xxxs;
+    @apply rounded-full;
+    @apply mb-xxxs;
+    @apply text-white;
+
+    border: 1px solid transparent;
+  }
+
+  & .home-events__type-chip--evento {
+    background-color: rgba(18, 202, 214, 0.65);
+    border-color: #12cad6;
+  }
+
+  & .home-events__type-chip--seminario {
+    background-color: rgba(242, 201, 76, 0.65);
+    border-color: #f2c94c;
+  }
+
+  & .home-events__type-chip--masterclass {
+    background-color: rgba(214, 22, 122, 0.65);
+    border-color: #d6167a;
+  }
+
+  & .home-events__caption-wrap {
+    @apply absolute bottom-0 left-0 right-0;
+    @apply flex flex-col justify-end;
+    @apply gap-xxxs;
+    @apply pt-l pb-s px-s;
+
+    height: 50%;
+
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.7) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  & .home-events__date {
+    @apply m-0;
+    @apply font-body font-medium uppercase;
+    @apply text-xs leading-snug tracking-wide;
+
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  & .home-events__caption {
+    @apply m-0;
+    @apply font-body font-medium;
+    @apply text-l leading-snug;
+    @apply text-white;
+  }
+
+  /* ── Arrows ───────────────────────────────────────────── */
+
+  & .home-events__arrow {
+    @apply hidden;
+    @apply md:flex md:items-center md:justify-center;
+    @apply absolute top-1/2 -translate-y-1/2;
+    @apply w-14 h-14;
+    @apply rounded-full;
+    @apply border-none cursor-pointer;
+    @apply bg-white text-black;
+    @apply text-2xl;
+    @apply z-1;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  & .home-events__arrow:hover:not(:disabled) {
+    @apply scale-105;
+  }
+
+  & .home-events__arrow:disabled {
+    @apply opacity-0;
+    @apply pointer-events-none;
+  }
+
+  & .home-events__arrow--prev {
+    @apply left-xxs;
+
+    @apply md:left-s;
+  }
+
+  & .home-events__arrow--next {
+    @apply right-xxs;
+
+    @apply md:right-s;
+  }
+
+  /* ── Dots ─────────────────────────────────────────────── */
+
+  & .home-events__dots {
+    @apply flex items-center justify-center;
+    @apply gap-xxs;
+    @apply mt-m;
+  }
+
+  & .home-events__dot {
+    @apply w-[0.5rem] h-[0.5rem];
+    @apply rounded-full;
+    @apply border-none cursor-pointer;
+    @apply p-0;
+    @apply bg-gray-300;
+
+    transition:
+      background-color 0.2s ease,
+      width 0.2s ease;
+  }
+
+  & .home-events__dot--active {
+    @apply bg-black;
+
+    width: 1.5rem;
+  }
+}

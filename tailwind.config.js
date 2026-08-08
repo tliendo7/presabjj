@@ -2,6 +2,12 @@
 export default {
   content: ['./app/**/*.vue'],
 
+  corePlugins: {
+    // Evita que choque con nuestra propia clase `.container` (Container.vue),
+    // que ya gestiona el max-width vía el token `site`.
+    container: false
+  },
+
   theme: {
     // ── Colors ──────────────────────────────────────────────
     colors: {

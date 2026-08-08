@@ -1,6 +1,7 @@
 .academy-faq {
   @apply w-full;
   @apply py-xxl;
+  @apply bg-white;
 
   & .academy-faq__grid {
     @apply flex flex-col;
@@ -22,10 +23,10 @@
   }
 
   & .academy-faq__heading {
-    @apply font-secondary font-bold uppercase;
+    @apply font-josefin font-bold uppercase;
     @apply text-black;
     @apply m-0;
-    @apply leading-display tracking-title;
+    @apply leading-none;
     font-size: clamp(2rem, 4vw, 3.125rem);
   }
 
@@ -34,7 +35,7 @@
     @apply m-0;
     @apply leading-body;
     @apply text-gray-500;
-    @apply text-l;
+    @apply text-m;
     @apply max-w-[42ch];
   }
 
@@ -49,21 +50,30 @@
     @apply text-s;
     @apply px-xs py-xxxs;
     @apply text-gray-600;
-    @apply bg-transparent;
-    border: 1px solid var(--themed-lines);
     @apply rounded-full;
     @apply cursor-pointer;
-    @apply transition-colors duration-300 ease-[ease];
+    background: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
+    border: 1px solid rgb(0 0 0 / 8%);
+    box-shadow:
+      inset 0 1px 1px rgb(255 255 255 / 90%),
+      inset 0 -1px 2px rgb(0 0 0 / 6%),
+      0 1px 2px rgb(0 0 0 / 6%);
+    @apply transition-all duration-300 ease-[ease];
   }
 
   & .academy-faq__chip:hover {
     @apply text-black;
-    @apply border-black;
+    border-color: rgb(0 0 0 / 16%);
   }
 
   & .academy-faq__chip.is-active {
-    @apply text-white bg-black;
-    @apply border-black;
+    @apply text-white;
+    background: linear-gradient(180deg, #2a2a2a 0%, #000000 100%);
+    border-color: #000000;
+    box-shadow:
+      inset 0 1px 1px rgb(255 255 255 / 15%),
+      inset 0 -1px 2px rgb(0 0 0 / 40%),
+      0 2px 4px rgb(0 0 0 / 20%);
   }
 
   & .academy-faq__list {
@@ -77,18 +87,18 @@
   }
 
   & .academy-faq__item {
-    border-bottom: 1px solid var(--themed-lines);
+    border-bottom: 1px solid rgb(0 0 0 / 12%);
   }
 
   & .academy-faq__item:first-child {
-    border-top: 1px solid var(--themed-lines);
+    border-top: 1px solid rgb(0 0 0 / 12%);
   }
 
   & .academy-faq__question {
     @apply flex items-center justify-between;
     @apply w-full;
     @apply gap-s;
-    @apply py-s;
+    @apply py-xs;
     @apply bg-transparent;
     @apply border-none;
     @apply cursor-pointer;
@@ -99,7 +109,7 @@
     @apply font-body font-semibold;
     @apply leading-snug;
     @apply text-black;
-    @apply text-l;
+    @apply text-m;
   }
 
   & .academy-faq__icon {

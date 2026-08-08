@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/sitemap'
   ],
 
   ssr: true,
@@ -19,6 +20,17 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
+
+  site: {
+    url: 'https://presaculturebjj.com'
+  },
+
+  runtimeConfig: {
+    googleAppsScriptUrl: '',
+    public: {
+      siteUrl: 'https://presaculturebjj.com'
+    }
+  },
   compatibilityDate: '2025-07-15',
 
   vite: {
@@ -42,17 +54,15 @@ export default defineNuxtConfig({
     download: true,
     families: {
       'Saira': {
-        wght: [300, 400, 500, 600, 700, 800, 900],
-        ital: [500, 700]
+        wght: [300, 400, 600, 700],
+        ital: [700]
       },
-      'Saira Condensed': [500, 600, 700, 800, 900],
-      'Saira Semi Condensed': [500, 600, 700, 800],
+      'Saira Condensed': [400, 700],
       'Mona Sans': {
-        wght: [300, 400, 500, 600, 700, 800]
+        wght: [400, 500, 600, 700]
       },
       'Josefin Sans': {
-        wght: [300, 400, 500, 600, 700],
-        ital: [400, 600]
+        wght: [400, 600, 700]
       }
     },
     display: 'swap',
@@ -77,10 +87,27 @@ export default defineNuxtConfig({
         file: 'en.json'
       }
     ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root'
+    detectBrowserLanguage: false,
+
+    // Ojo: con `customRoutes: 'config'`, el módulo de sitemap solo detecta
+    // como páginas del sitio las que aparecen aquí explícitamente (incluida
+    // "index", aunque no tenga ruta personalizada) — si se omite alguna,
+    // desaparece del sitemap en los dos idiomas aunque la URL siga
+    // funcionando con normalidad.
+    customRoutes: 'config',
+    pages: {
+      index: {
+        es: '/',
+        en: '/'
+      },
+      torneo: {
+        es: '/torneo',
+        en: '/tournament'
+      },
+      academia: {
+        es: '/academia',
+        en: '/academy'
+      }
     }
   }
 });

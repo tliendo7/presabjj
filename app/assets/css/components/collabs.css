@@ -5,6 +5,9 @@
 
   @apply lg:pb-xxl;
 
+  background-color: var(--presa-white);
+  margin-top: -1px;
+
   & .collabs__header {
     @apply grid items-start grid-cols-2;
     @apply gap-m;
@@ -22,6 +25,7 @@
     @apply font-secondary font-bold uppercase;
     @apply m-0;
     @apply leading-display tracking-title;
+    color: var(--presa-black);
     font-size: clamp(2rem, 5.2vw, 4.5rem);
   }
 
@@ -29,13 +33,14 @@
     @apply font-brier uppercase;
     @apply m-0;
     @apply leading-display tracking-subtitle;
+    color: var(--presa-black);
     font-size: clamp(2rem, 5.2vw, 4.5rem);
   }
 
   & .collabs__meta {
     @apply font-body;
     @apply self-end;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.6);
     @apply text-s leading-tight;
     @apply m-0;
     @apply max-w-full;
@@ -63,12 +68,12 @@
 
   & .collabs__marquee-wrap::before {
     @apply left-0;
-    background: linear-gradient(to right, var(--gray-900) 0%, transparent 100%);
+    background: linear-gradient(to right, var(--presa-white) 0%, transparent 100%);
   }
 
   & .collabs__marquee-wrap::after {
     @apply right-0;
-    background: linear-gradient(to left, var(--gray-900) 0%, transparent 100%);
+    background: linear-gradient(to left, var(--presa-white) 0%, transparent 100%);
   }
 
   & .collabs__marquee-track {
@@ -99,7 +104,7 @@
     @apply block;
     @apply object-contain;
     @apply h-[50px] w-auto;
-    @apply grayscale brightness-0 invert;
+    @apply grayscale brightness-0;
 
     @apply md:h-[80px];
   }
