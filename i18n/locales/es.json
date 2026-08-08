@@ -2,7 +2,9 @@
   "nav": {
     "home": "Inicio",
     "evento": "Torneo",
-    "academia": "Equipo Santana"
+    "academia": "Equipo Santana",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
   },
   "error": {
     "notFound": {

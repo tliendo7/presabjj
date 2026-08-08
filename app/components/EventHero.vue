@@ -9,11 +9,14 @@ const { t } = useI18n();
   >
     <Container>
       <div class="event-hero__inner">
+        <h1 class="sr-only">
+          {{ t('evento.title') }}
+        </h1>
         <img
           src="/images/deco/presa-brand-image-dog.png"
           alt="Presa"
           class="event-hero__brand-image"
-        />
+        >
 
         <div class="event-hero__bottom">
           <picture class="contents">
@@ -22,12 +25,12 @@ const { t } = useI18n();
               srcset="
                 /images/deco/presa-invitational-tournament-flyer-mobile.png
               "
-            />
+            >
             <img
               src="/images/deco/presa-invitational-tournament-flyer.png"
               alt="Presa Invitational Tournament"
               class="event-hero__flyer-image"
-            />
+            >
           </picture>
 
           <div class="event-hero__content">

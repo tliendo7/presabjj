@@ -83,7 +83,7 @@ watch(
       <button
         class="navbar__hamburger"
         :class="{ 'is-open': isMenuOpen }"
-        :aria-label="isMenuOpen ? 'Cerrar menú' : 'Abrir menú'"
+        :aria-label="isMenuOpen ? t('nav.menuClose') : t('nav.menuOpen')"
         :aria-expanded="isMenuOpen"
         @click="isMenuOpen = !isMenuOpen"
       >

@@ -2,7 +2,9 @@
   "nav": {
     "home": "Home",
     "evento": "Upcoming events",
-    "academia": "Academy"
+    "academia": "Academy",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "error": {
     "notFound": {

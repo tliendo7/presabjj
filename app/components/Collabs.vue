@@ -79,9 +79,9 @@ onUnmounted(() => {
           <h2 class="collabs__title-main">
             {{ t('evento.collabs.titleMain') }}
           </h2>
-          <h2 class="collabs__title-sub">
+          <p class="collabs__title-sub">
             {{ t('evento.collabs.titleSub') }}
-          </h2>
+          </p>
         </div>
         <TextLineReveal
           class="collabs__meta"

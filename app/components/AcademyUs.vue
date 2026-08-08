@@ -161,6 +161,7 @@ onUnmounted(() => {
             <div class="academy-us__media-wrap">
               <img
                 src="/images/class/_CIR8579.jpg"
+                alt="Clase de Brazilian Jiu-Jitsu en Presa Academy"
                 class="academy-us__img"
               />
             </div>

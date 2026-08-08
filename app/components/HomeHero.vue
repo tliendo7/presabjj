@@ -14,9 +14,9 @@ const { t } = useI18n();
           alt="Presa"
           class="home-hero__logo"
         >
-        <p class="home-hero__text">
+        <h1 class="home-hero__text">
           {{ t('home.subtitle') }}
-        </p>
+        </h1>
       </div>
     </Container>
   </section>
