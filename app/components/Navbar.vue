@@ -21,10 +21,11 @@ watch(
         :to="localePath('index')"
         class="navbar__logo"
       >
-        <img
+        <NuxtImg
           src="/images/logo.png"
           alt="Presa"
           class="navbar__logo-img"
+          format="webp"
         />
       </NuxtLink>
 

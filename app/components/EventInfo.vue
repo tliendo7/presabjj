@@ -158,10 +158,11 @@ const amenities = computed<string[]>(() =>
         id="comprar-entradas"
         class="event-info__outro"
       >
-        <img
+        <NuxtImg
           src="/images/A.png"
           alt="Presa logo mark"
           class="event-info__outro-icon"
+          format="webp"
         />
 
         <p class="event-info__outro-text">

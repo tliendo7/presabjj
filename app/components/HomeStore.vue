@@ -284,10 +284,11 @@ onUnmounted((): void => {
             </svg>
 
             <div class="home-store__media">
-              <img
+              <NuxtImg
                 :src="product.image"
                 :alt="product.name"
                 class="home-store__img"
+                format="webp"
                 loading="lazy"
               />
             </div>

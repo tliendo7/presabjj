@@ -70,10 +70,11 @@ const cards = computed((): VideoCard[] => [pastEditionCard.value, secondCard.val
     <Container>
       <div class="event-online__layout">
         <div class="event-online__map">
-          <img
+          <NuxtImg
             src="/images/planet.png"
             alt=""
             class="event-online__map-img"
+            format="webp"
           />
         </div>
 
@@ -106,10 +107,11 @@ const cards = computed((): VideoCard[] => [pastEditionCard.value, secondCard.val
               :class="{ 'event-online__card--disabled': !card.url }"
             >
               <template v-if="card.url">
-                <img
+                <NuxtImg
                   :src="card.image"
                   :alt="card.title"
                   class="event-online__card-img"
+                  format="webp"
                   loading="lazy"
                 />
                 <div class="event-online__card-overlay" />

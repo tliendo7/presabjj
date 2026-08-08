@@ -7,10 +7,13 @@ const { t } = useI18n();
     <h1 class="sr-only">
       {{ t('academia.title') }}
     </h1>
-    <img
-      class="academy-hero__media"
+    <NuxtPicture
       src="/images/class/presa-academia-brazilian-jiu-jitsu-tenerife.jpg"
       alt=""
-    >
+      :img-attrs="{ class: 'academy-hero__media' }"
+      format="avif,webp"
+      sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+      preload
+    />
   </section>
 </template>

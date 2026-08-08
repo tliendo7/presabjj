@@ -103,11 +103,13 @@ onUnmounted(() => {
             :key="photo.src"
             class="academy-gallery__item"
           >
-            <img
+            <NuxtImg
               :src="photo.src"
               :alt="photo.alt"
               class="academy-gallery__img"
-            >
+              format="webp"
+              loading="lazy"
+            />
           </div>
         </div>
         <div
@@ -119,11 +121,13 @@ onUnmounted(() => {
             :key="'dup-' + photo.src"
             class="academy-gallery__item"
           >
-            <img
+            <NuxtImg
               :src="photo.src"
               :alt="photo.alt"
               class="academy-gallery__img"
-            >
+              format="webp"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

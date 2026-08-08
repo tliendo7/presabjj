@@ -83,12 +83,13 @@ onUnmounted(() => {
           :class="`socials__card--${index}`"
           :style="{ transitionDelay: cardDelay(index) }"
         >
-          <img
+          <NuxtImg
             :src="card.image"
             :alt="card.alt"
             class="socials__card-img"
+            format="webp"
             loading="lazy"
-          >
+          />
         </div>
       </div>
 

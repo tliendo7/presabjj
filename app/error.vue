@@ -25,10 +25,11 @@ const goHome = () => clearError({ redirect: localePath('index') });
       class="error-page__logo-link"
       @click="goHome"
     >
-      <img
+      <NuxtImg
         src="/images/logo.png"
         alt="Presa"
         class="error-page__logo"
+        format="webp"
       />
     </NuxtLink>
 

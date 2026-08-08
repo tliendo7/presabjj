@@ -108,11 +108,12 @@ onUnmounted(() => {
         <div class="academy-highlights__media-col">
           <div class="academy-highlights__media">
             <transition name="academy-highlights-fade">
-              <img
+              <NuxtImg
                 :key="activeImage"
                 :src="activeImage"
                 :alt="t('academia.values.imageAlt')"
                 class="academy-highlights__img"
+                format="webp"
               />
             </transition>
           </div>

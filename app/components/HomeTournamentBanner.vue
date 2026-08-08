@@ -33,10 +33,11 @@ const formattedDate = computed<string>(() =>
           </span>
         </div>
 
-        <img
+        <NuxtImg
           src="/images/partners/deporte-lagunero.png"
           :alt="t('home.tournament.sponsorAlt')"
           class="home-tournament__sponsor"
+          format="webp"
           loading="lazy"
         />
       </div>
@@ -45,10 +46,11 @@ const formattedDate = computed<string>(() =>
         class="home-tournament__gallery"
         aria-hidden="true"
       >
-        <img
+        <NuxtImg
           src="/images/deco/mask.png"
           alt=""
           class="home-tournament__photo-img"
+          format="webp"
           loading="lazy"
         />
       </div>

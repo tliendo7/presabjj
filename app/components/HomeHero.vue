@@ -9,11 +9,12 @@ const { t } = useI18n();
   >
     <Container>
       <div class="home-hero__inner">
-        <img
+        <NuxtImg
           src="/images/deco/logo-white.png"
           alt="Presa"
           class="home-hero__logo"
-        >
+          format="webp"
+        />
         <h1 class="home-hero__text">
           {{ t('home.subtitle') }}
         </h1>

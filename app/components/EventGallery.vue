@@ -255,10 +255,11 @@ onUnmounted((): void => {
             :key="image.id"
             class="event-gallery__item"
           >
-            <img
+            <NuxtImg
               :src="image.src"
               :alt="image.alt"
               class="event-gallery__img"
+              format="webp"
               loading="lazy"
             />
           </div>
@@ -293,10 +294,12 @@ onUnmounted((): void => {
           }"
         >
           <div class="event-gallery__edition-media">
-            <img
+            <NuxtPicture
               :src="card.image"
               :alt="card.alt"
-              class="event-gallery__edition-img"
+              :img-attrs="{ class: 'event-gallery__edition-img' }"
+              format="avif,webp"
+              sizes="sm:100vw md:400px lg:400px xl:400px 2xl:400px"
               loading="lazy"
             />
 

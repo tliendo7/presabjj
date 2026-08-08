@@ -24,3 +24,4 @@ logs
 !.env.example
 
 working-tree.md
+_originals_backup/

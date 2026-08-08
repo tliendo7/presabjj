@@ -61,14 +61,16 @@ onUnmounted(() => {
         class="academy-app__panel"
       >
         <div class="academy-app__bg">
-          <img
+          <NuxtPicture
             src="/images/class/_CIR5783.jpg"
             :alt="t('academia.app.bgAlt')"
-            class="academy-app__bg-image"
-            :style="{
-              transform: `translateY(${bgOffsetY}px) scale(${bgScale})`
+            :img-attrs="{
+              class: 'academy-app__bg-image',
+              style: `transform: translateY(${bgOffsetY}px) scale(${bgScale})`
             }"
-          >
+            format="avif,webp"
+            sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          />
           <div
             class="academy-app__overlay"
             aria-hidden="true"
@@ -77,11 +79,13 @@ onUnmounted(() => {
 
         <div class="academy-app__grid">
           <div class="academy-app__image-col">
-            <img
+            <NuxtImg
               src="/images/class/mobile.png"
               :alt="t('academia.app.phoneAlt')"
               class="academy-app__phone"
-            >
+              format="webp"
+              loading="lazy"
+            />
           </div>
 
           <div class="academy-app__text-col">

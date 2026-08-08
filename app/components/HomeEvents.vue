@@ -182,10 +182,11 @@ onUnmounted((): void => {
           role="listitem"
         >
           <div class="home-events__media">
-            <img
+            <NuxtImg
               :src="event.image"
               :alt="event.caption"
               class="home-events__img"
+              format="webp"
               loading="lazy"
             />
             <div class="home-events__caption-wrap">

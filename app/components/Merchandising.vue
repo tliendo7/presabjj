@@ -47,7 +47,7 @@ const collageSrcs = [
   '/images/merch/090526_SBJJ_Camisetas-3.jpg',
   '/images/merch/090526_SBJJ_Camisetas-14.jpg',
   '/images/merch/090526_SBJJ_Camisetas-5.jpg',
-  '/images/090526_SBJJ_Camisetas-5.jpg',
+  '/images/merch/090526_SBJJ_Camisetas-5.jpg',
   '/images/merch/presa-culture.png'
 ];
 
@@ -102,10 +102,11 @@ const collageItems = computed<CollageItem[]>(() =>
           />
 
           <div class="merchandising__figure merchandising__figure--primary">
-            <img
+            <NuxtImg
               :src="collageItems[0]?.src"
               :alt="collageItems[0]?.alt"
               class="merchandising__img"
+              format="webp"
               loading="lazy"
             />
           </div>
@@ -113,37 +114,41 @@ const collageItems = computed<CollageItem[]>(() =>
 
         <div class="merchandising__collage">
           <div class="merchandising__figure merchandising__figure--secondary">
-            <img
+            <NuxtImg
               :src="collageItems[1]?.src"
               :alt="collageItems[1]?.alt"
               class="merchandising__img"
+              format="webp"
               loading="lazy"
             />
           </div>
 
           <div class="merchandising__figure merchandising__figure--tertiary">
-            <img
+            <NuxtImg
               :src="collageItems[3]?.src"
               :alt="collageItems[3]?.alt"
               class="merchandising__img"
+              format="webp"
               loading="lazy"
             />
           </div>
 
           <div class="merchandising__figure merchandising__figure--quaternary">
-            <img
+            <NuxtImg
               :src="collageItems[2]?.src"
               :alt="collageItems[2]?.alt"
               class="merchandising__img"
+              format="webp"
               loading="lazy"
             />
           </div>
 
           <div class="merchandising__figure merchandising__figure--quinary">
-            <img
+            <NuxtImg
               :src="collageItems[4]?.src"
               :alt="collageItems[4]?.alt"
               class="merchandising__img"
+              format="webp"
               loading="lazy"
             />
           </div>

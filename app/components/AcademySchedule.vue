@@ -85,12 +85,13 @@ const whatsappHref = 'https://wa.me/34600000000';
           </a>
         </div>
 
-        <img
+        <NuxtImg
           src="/images/schedule.png"
           :alt="t('academia.schedule.imageAlt')"
           class="academy-schedule__reference-img"
+          format="webp"
           loading="lazy"
-        >
+        />
       </div>
     </Container>
   </section>

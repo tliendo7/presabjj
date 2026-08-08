@@ -12,11 +12,12 @@ const { t } = useI18n();
         <h1 class="sr-only">
           {{ t('evento.title') }}
         </h1>
-        <img
+        <NuxtImg
           src="/images/deco/presa-brand-image-dog.png"
           alt="Presa"
           class="event-hero__brand-image"
-        >
+          format="webp"
+        />
 
         <div class="event-hero__bottom">
           <picture class="contents">

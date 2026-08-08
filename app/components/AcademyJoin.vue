@@ -20,7 +20,7 @@ const carouselSrcs = [
   '/images/seminars/090526_SBJJ_TaylorPearman-81.jpg',
   '/images/class/_CIR5266.jpg',
   '/images/class/_CIR5339.jpg',
-  '/images/past-events/presa-invitational-tournament-11.jpg'
+  '/images/past-editions/presa-invitational-tournament-11.jpg'
 ];
 
 const galleryImages = computed<GalleryImage[]>(() =>
@@ -56,11 +56,12 @@ const goToNextImage = (): void => {
         <div class="academy-join__grid">
           <div class="academy-join__intro">
             <div class="academy-join__icon">
-              <img
+              <NuxtImg
                 src="/images/A.png"
                 alt="Presa logo mark"
                 class="w-10"
-              >
+                format="webp"
+              />
               <span>Presa Culture</span>
             </div>
 
@@ -87,11 +88,12 @@ const goToNextImage = (): void => {
 
           <div class="academy-join__gallery">
             <div class="academy-join__gallery-item academy-join__gallery-item--main">
-              <img
+              <NuxtImg
                 :src="mainImage"
                 :alt="t('academia.join.gallery.main.alt')"
                 class="academy-join__gallery-img"
-              >
+                format="webp"
+              />
               <span class="academy-join__gallery-badge">{{ t('academia.join.gallery.main.label') }}</span>
               <div
                 class="academy-join__gallery-scrim"
@@ -104,12 +106,13 @@ const goToNextImage = (): void => {
 
             <div class="academy-join__gallery-item academy-join__gallery-item--carousel">
               <transition name="academy-join-fade">
-                <img
+                <NuxtImg
                   :key="activeCarouselSrc"
                   :src="activeCarouselSrc"
                   :alt="activeCarouselAlt"
                   class="academy-join__gallery-img"
-                >
+                  format="webp"
+                />
               </transition>
               <span class="academy-join__gallery-badge">{{ t('academia.join.gallery.carousel.label') }}</span>
             </div>

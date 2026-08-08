@@ -320,11 +320,12 @@ onUnmounted(() => {
 
             <!-- ── Media column (right on desktop, top on mobile) ── -->
             <div class="academy-categories__media">
-              <img
+              <NuxtImg
                 :src="category.image"
                 :alt="category.title"
                 class="academy-categories__img"
                 :style="{ objectPosition: category.imagePosition }"
+                format="webp"
                 loading="lazy"
               />
             </div>

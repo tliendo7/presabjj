@@ -101,11 +101,12 @@ onUnmounted(() => {
             :key="logo.name"
             class="collabs__logo-item"
           >
-            <img
+            <NuxtImg
               :src="logo.src"
               :alt="logo.name"
               class="collabs__logo-img"
-            >
+              format="webp"
+            />
           </div>
         </div>
         <div
@@ -117,11 +118,12 @@ onUnmounted(() => {
             :key="'dup-' + logo.name"
             class="collabs__logo-item"
           >
-            <img
+            <NuxtImg
               :src="logo.src"
               :alt="logo.name"
               class="collabs__logo-img"
-            >
+              format="webp"
+            />
           </div>
         </div>
       </div>

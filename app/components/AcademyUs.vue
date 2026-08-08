@@ -159,10 +159,12 @@ onUnmounted(() => {
 
           <div class="academy-us__media">
             <div class="academy-us__media-wrap">
-              <img
+              <NuxtImg
                 src="/images/class/_CIR8579.jpg"
                 alt="Clase de Brazilian Jiu-Jitsu en Presa Academy"
                 class="academy-us__img"
+                format="webp"
+                loading="lazy"
               />
             </div>
           </div>
@@ -172,10 +174,12 @@ onUnmounted(() => {
       <div class="academy-us__block academy-us__block--ganbaru">
         <div class="academy-us__content academy-us__content--ganbaru">
           <div class="academy-us__ganbaru-media">
-            <img
+            <NuxtImg
               :src="ganbaru.image"
               :alt="ganbaru.imageAlt"
               class="academy-us__ganbaru-logo"
+              format="webp"
+              loading="lazy"
             />
           </div>
 

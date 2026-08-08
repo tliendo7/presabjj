@@ -106,10 +106,12 @@ onUnmounted((): void => {
         </div>
 
         <div class="home-academy__media">
-          <img
+          <NuxtPicture
             src="/images/seminars/090526_SBJJ_TaylorPearman-83.jpg"
             :alt="t('home.academy.imageAlt')"
-            class="home-academy__img"
+            :img-attrs="{ class: 'home-academy__img' }"
+            format="avif,webp"
+            sizes="sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw"
             loading="lazy"
           />
         </div>
@@ -124,10 +126,11 @@ onUnmounted((): void => {
       <div class="home-academy__extra">
         <div class="home-academy__extra-image">
           <div class="home-academy__extra-image-media">
-            <img
+            <NuxtImg
               src="/images/class/_CIR7888.jpg"
               :alt="t('home.academy.extra.imageAlt')"
               class="home-academy__extra-img"
+              format="webp"
               loading="lazy"
             />
           </div>
@@ -146,10 +149,11 @@ onUnmounted((): void => {
           </div>
 
           <div class="home-academy__extra-secondary-image">
-            <img
+            <NuxtImg
               src="/images/class/_CUS-girls.jpg"
               :alt="t('home.academy.extra.secondaryImageAlt')"
               class="home-academy__extra-img"
+              format="webp"
               loading="lazy"
             />
           </div>

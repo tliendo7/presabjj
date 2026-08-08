@@ -62,9 +62,10 @@ const navColumns: {
         <div class="footer__top">
           <NuxtLink :to="localePath('index')">
             <div class="footer__logo">
-              <img
+              <NuxtImg
                 src="/images/deco/presa-dark.png"
                 alt="Presa logo"
+                format="webp"
                 loading="lazy"
               />
             </div>
