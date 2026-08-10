@@ -9,4 +9,19 @@
     @apply w-full h-full;
     @apply object-cover;
   }
+
+  & .academy-hero__badge {
+    @apply absolute top-[20%] left-1/2;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    @apply flex items-center justify-center;
+    @apply text-center;
+    @apply w-full max-w-[700px] max-h-[225px] h-full;
+    @apply font-body text-s uppercase;
+    @apply text-black;
+    /* @apply bg-gray-100/80; */
+    @apply rounded-lg;
+    border: 1px dashed rgba(144, 144, 144, 0.783);
+    background: rgba(203, 203, 203, 0.804);
+  }
 }

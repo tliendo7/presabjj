@@ -278,6 +278,9 @@
   "academia": {
     "title": "Brazilian Jiu-Jitsu Academy in Tenerife | Presa",
     "subtitle": "Train BJJ in La Laguna, Tenerife. Classes for kids and adults, schedules, methodology and team.",
+    "hero": {
+      "badge": "Presa Academy — Pending"
+    },
     "video": {
       "fixed": "Open classes for everyone, classes for ",
       "words": [
@@ -350,22 +353,10 @@
       "heading": "Schedule",
       "intro": "Train at your own pace and find the schedule that best fits your day-to-day. We offer classes for kids and adults, organized in mixed groups, where every student learns and grows alongside their peers in an atmosphere of respect and collaboration.",
       "imageAlt": "Weekly class schedule at Presa",
-      "levelsHeading": "Levels available:",
-      "levels": [
-        "Beginner",
-        "Standard"
-      ],
-      "modalitiesHeading": "Membership options:",
-      "modalities": [
-        "Monthly fee",
-        "Quarterly fee",
-        "Class pack",
-        "Drop-in class"
-      ],
       "trial": {
         "lead": "Your first class is free.",
         "text": "Come try it out, no strings attached.",
-        "cta": "Ask about pricing on WhatsApp"
+        "cta": "Check pricing"
       }
     },
     "app": {

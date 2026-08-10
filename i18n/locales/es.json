@@ -277,6 +277,9 @@
   "academia": {
     "title": "Presa Academy BJJ",
     "subtitle": "Entrena BJJ en La Laguna, Tenerife. Clases para todos los niveles y edades.",
+    "hero": {
+      "badge": "Presa Academy — Pendiente"
+    },
     "video": {
       "fixed": "Clases abiertas a todo el mundo.\n Clases para ",
       "words": [
@@ -347,24 +350,12 @@
     },
     "schedule": {
       "heading": "Horarios",
-      "intro": "Entrena a tu ritmo y encuentra el horario que mejor se adapte a tu día a día. Contamos con clases para niños y adultos, organizadas en grupos mixtos, donde cada alumno aprende y evoluciona junto a sus compañeros en un ambiente de respeto y colaboración.",
+      "intro": "Entrena a tu ritmo y encuentra el horario que mejor se adapte a tu día a día. Contamos con clases para niños y adultos, organizadas en grupos mixtos, donde cada alumno aprende y evoluciona a su ritmo.",
       "imageAlt": "Horario semanal de clases en Presa",
-      "levelsHeading": "Niveles disponibles:",
-      "levels": [
-        "Principiante",
-        "General"
-      ],
-      "modalitiesHeading": "Modalidades:",
-      "modalities": [
-        "Cuota mensual",
-        "Cuota trimestral",
-        "Bono",
-        "Clase suelta"
-      ],
       "trial": {
         "lead": "Tu primera clase es gratuita.",
         "text": "Ven a probar sin compromiso antes de decidir.",
-        "cta": "Consultar tarifas por WhatsApp"
+        "cta": "Consultar tarifas"
       }
     },
     "app": {

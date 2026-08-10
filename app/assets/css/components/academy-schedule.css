@@ -4,12 +4,11 @@
 
   & .academy-schedule__top {
     @apply flex flex-col;
-    @apply gap-m;
+    @apply gap-xl;
 
     @apply lg:grid;
     @apply lg:grid-cols-2;
     @apply lg:items-start;
-    @apply lg:gap-xl;
   }
 
   & .academy-schedule__intro-col {
@@ -46,41 +45,19 @@
     @apply text-black;
   }
 
-  & .academy-schedule__levels {
-    @apply flex flex-col;
-    @apply gap-xxs;
-  }
-
-  & .academy-schedule__levels-heading {
-    @apply font-body font-semibold;
-    @apply m-0;
-    @apply text-m;
-    @apply text-black;
-  }
-
-  & .academy-schedule__chips {
-    @apply flex flex-wrap;
-    @apply gap-xxs;
-  }
-
-  & .academy-schedule__chip {
-    @apply inline-flex items-center justify-center;
-    @apply font-josefin uppercase;
-    @apply text-xs;
-    @apply text-black;
-    @apply px-xs py-xxxs;
-    @apply rounded-full;
-    border: 1px solid var(--gray-300);
-    line-height: 1;
-    /* Josefin Sans' line-box doesn't sit centered on its glyphs, so
-       flex-centering alone still reads a hair low — nudge it up. */
-    padding-bottom: calc(var(--space-xxxs) + 0.1em);
-  }
-
   & .academy-schedule__note {
+    @apply flex flex-col;
+    @apply gap-xxxs;
     @apply pl-s;
     @apply mt-xs;
     border-left: 3px solid var(--presa-blue);
+  }
+
+  & .academy-schedule__note-lead {
+    @apply font-body font-semibold;
+    @apply m-0;
+    @apply text-xl;
+    @apply text-blue;
   }
 
   & .academy-schedule__note-text {
@@ -91,20 +68,24 @@
   }
 
   & .academy-schedule__note-cta-link {
+    @apply self-center;
     @apply mt-xs;
     @apply no-underline;
     @apply w-fit;
+
+    @apply lg:self-end;
   }
 
-  /* .btn--outline is built for dark hero backgrounds (white text, white
-     30%-opacity border). On this white section that's invisible, so flip
-     it to dark text/border while keeping the outline shape. */
+  /* Misma forma que .btn--outline (paddings, border, icono circular), solo
+     cambiamos el color: fondo blanco, borde y texto negro, e icono de
+     WhatsApp en blanco sobre círculo negro. */
   & .academy-schedule__note-cta.btn--outline {
-    @apply text-black;
-    border-color: rgb(0 0 0 / 30%);
+    @apply bg-white text-black;
+    border-color: var(--presa-black);
 
     &:hover {
-      border-color: rgb(0 0 0 / 60%);
+      @apply bg-gray-100;
+      border-color: var(--presa-black);
     }
 
     & .btn__icon {

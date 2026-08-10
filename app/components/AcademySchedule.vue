@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const { t, tm, rt } = useI18n();
-
-// `tm` compiles each string leaf into a message AST node, so every
-// entry still needs `rt` to resolve to plain text.
-const levels = computed<string[]>(
-  () => (tm('academia.schedule.levels') as string[]).map(level => rt(level))
-);
-
-const modalities = computed<string[]>(
-  () => (tm('academia.schedule.modalities') as string[]).map(modality => rt(modality))
-);
+const { t } = useI18n();
 
 // TODO: swap for the real academy WhatsApp number once we have it.
 const whatsappHref = 'https://wa.me/34600000000';
@@ -37,35 +27,12 @@ const whatsappHref = 'https://wa.me/34600000000';
             </p>
           </div>
 
-          <div class="academy-schedule__levels">
-            <p class="academy-schedule__levels-heading">
-              {{ t('academia.schedule.levelsHeading') }}
-            </p>
-            <div class="academy-schedule__chips">
-              <span
-                v-for="level in levels"
-                :key="level"
-                class="academy-schedule__chip"
-              >{{ level }}</span>
-            </div>
-          </div>
-
-          <div class="academy-schedule__levels">
-            <p class="academy-schedule__levels-heading">
-              {{ t('academia.schedule.modalitiesHeading') }}
-            </p>
-            <div class="academy-schedule__chips">
-              <span
-                v-for="modality in modalities"
-                :key="modality"
-                class="academy-schedule__chip"
-              >{{ modality }}</span>
-            </div>
-          </div>
-
           <div class="academy-schedule__note">
+            <p class="academy-schedule__note-lead">
+              {{ t('academia.schedule.trial.lead') }}
+            </p>
             <p class="academy-schedule__note-text">
-              <strong>{{ t('academia.schedule.trial.lead') }}</strong> {{ t('academia.schedule.trial.text') }}
+              {{ t('academia.schedule.trial.text') }}
             </p>
           </div>
 
@@ -77,7 +44,7 @@ const whatsappHref = 'https://wa.me/34600000000';
           >
             <Button
               :label="t('academia.schedule.trial.cta')"
-              icon-name="mdi:arrow-right"
+              icon-name="mdi:whatsapp"
               icon-position="right"
               variant="outline"
               class="academy-schedule__note-cta"
