@@ -9,14 +9,13 @@
     @apply h-full;
   }
 
-  /* Mobile: bloque centrado verticalmente. Desktop: pegado al fondo. */
   .event-hero__inner {
     @apply relative;
     @apply h-full;
     @apply flex flex-col justify-center;
     @apply pb-xl;
 
-    @apply md:justify-end;
+    @apply lg:justify-end;
   }
 
   /* Imagen de marca (perro), siempre pegada al top del giro. */
@@ -25,16 +24,17 @@
     @apply w-full h-auto;
   }
 
-  /* Imagen del flyer + contenido: centrados en mobile, pegados al fondo
-   * del giro desde desktop (el `mt-auto` es lo que los empuja abajo, así
-   * que solo se aplica a partir de `md:` para no pelearse con el
-   * `justify-center` de mobile). */
   .event-hero__bottom {
     @apply relative;
     @apply flex flex-col;
     @apply gap-s;
 
-    @apply md:mt-auto;
+    @apply md:absolute md:inset-x-0;
+    @apply md:top-[60%] md:-translate-y-1/2;
+
+    @apply lg:static;
+    @apply lg:top-auto lg:translate-y-0;
+    @apply lg:mt-auto;
   }
 
   .event-hero__flyer-image {
@@ -42,20 +42,20 @@
     @apply rounded-sm;
   }
 
-  /* Dos columnas: info (2/5) + copy (3/5). Apiladas en mobile. */
+  /* Dos columnas: info (2/5) + copy (3/5). Apiladas en mobile y tablet. */
   .event-hero__content {
     @apply flex flex-col;
     @apply gap-m;
 
-    @apply md:grid md:grid-cols-5 md:items-start;
+    @apply lg:grid lg:grid-cols-5 lg:items-start;
   }
 
-  /* Botón: centrado en mobile, alineado a la derecha en desktop. */
+  /* Botón: centrado en mobile y tablet, alineado a la derecha en desktop. */
   .event-hero__info {
     @apply flex flex-col items-center;
 
-    @apply md:col-span-2;
-    @apply md:items-end;
+    @apply lg:col-span-2;
+    @apply lg:items-end;
   }
 
   /* Copy a dos columnas (párrafo izq / párrafo dcha) dentro de la columna de 3/5. */
@@ -64,7 +64,7 @@
     @apply gap-s;
 
     @apply sm:grid-cols-2;
-    @apply md:col-span-3;
+    @apply lg:col-span-3;
   }
 
   .event-hero__copy-col {

@@ -19,9 +19,26 @@
     @apply flex flex-col-reverse;
     @apply gap-s;
     @apply pt-m;
+
+    /* Mobile: alto fijo al viewport. La imagen (flex-1 más abajo) es la
+       que cede espacio cuando el bloque de texto/stats crece al abrir
+       "más información", en vez de que la card entera crezca por
+       encima del viewport y las stats queden tapadas por la
+       siguiente card sticky. */
+    @apply h-[100dvh];
+
     @apply md:grid md:grid-cols-[1fr_2fr] md:items-stretch;
     @apply md:pt-l;
-    @apply md:h-[660px];
+    @apply md:h-auto;
+
+    /* El alto fijo de escritorio (660px) solo entra desde lg: a ese
+       ancho el texto (lg:text-xl / lg:text-4xl en los stats) y la
+       imagen (lg:max-h-[500px]) ya son lo bastante grandes como para
+       llenarlo. En tablet (md, por debajo de lg) ese mismo fijo dejaba
+       un hueco en blanco enorme debajo del contenido, porque ahí ni el
+       texto ni la imagen (antes limitada a 250px) llegaban a esa
+       altura. En tablet la card mide lo que necesita su contenido. */
+    @apply lg:h-[660px];
   }
 
   & .academy-categories__info {
@@ -29,6 +46,7 @@
     @apply gap-xs;
     @apply pt-s pb-s;
     @apply min-w-0;
+    @apply shrink-0;
     border-top: 1px solid var(--themed-lines);
 
     @apply md:justify-start;
@@ -104,10 +122,11 @@
     @apply font-body;
     @apply m-0;
     @apply leading-body;
-    @apply pt-xs;
     @apply text-gray-500;
     font-size: clamp(0.9rem, 1vw, 1rem);
     @apply max-w-[46ch];
+
+    @apply md:pt-xs;
   }
 
   & .academy-categories__stats {
@@ -144,16 +163,41 @@
     @apply relative;
     @apply w-full;
     @apply overflow-hidden;
-    @apply max-h-[250px];
     @apply rounded-sm;
-    @apply aspect-[3/4];
     @apply bg-gray-100;
 
-    @apply lg:max-h-[500px];
+    /* Mobile: ocupa el espacio que le sobra a la card (h-[100dvh] en
+       .academy-categories__card) y se encoge automáticamente cuando el
+       texto/stats de al lado crecen al abrir "más información". Al
+       depender del mismo layout que ya anima .academy-categories__more
+       (grid-template-rows), el achicado sigue el mismo ritmo y no se
+       siente brusco, sin necesidad de una transición propia. */
+    @apply flex-1 min-h-0;
+
+    /* En tablet (md) sin alto fijo en la card (ver arriba), la imagen
+       ya no lleva aspect-ratio ni max-height propios: al ser
+       items-stretch dentro de un grid cuya fila mide lo que necesite
+       el texto, la imagen simplemente se estira para llenar esa misma
+       altura (recortada con object-cover). Así, si el texto crece al
+       abrir "más información", la imagen crece con él en vez de
+       quedarse fija en un tamaño pequeño con hueco debajo. Desde lg
+       vuelve a su tamaño de escritorio de siempre. */
+    @apply md:min-h-0;
+
+    @apply lg:aspect-[3/4] lg:max-h-[500px];
   }
 
   & .academy-categories__img {
-    @apply block;
+    /* Absoluta a propósito: si fuera un bloque normal (w-full h-full),
+       en md (sin alto fijo en la card) el navegador no puede resolver
+       ese "h-full" contra un contenedor de alto indefinido y cae en el
+       aspect-ratio natural de la foto para calcular el alto "auto" de
+       .academy-categories__media — eso es lo que hacía que la imagen
+       mandase en el alto de la fila en vez del texto. Al sacarla del
+       flujo con position:absolute, deja de aportar tamaño propio: el
+       texto es el único que decide el alto de la fila, y la imagen
+       simplemente lo rellena (recortada con object-cover). */
+    @apply absolute inset-0;
     @apply w-full h-full;
     @apply object-cover;
     @apply transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)];

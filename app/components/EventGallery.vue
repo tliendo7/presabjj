@@ -44,16 +44,28 @@ let springs: SpringState[] = [
 const titleSpring: SpringState = { current: 0, velocity: 0, target: 0 };
 let rafId = 0;
 
-const images = computed<GalleryImage[]>(() =>
-  Array.from({ length: 15 }, (_, i): GalleryImage => {
+const AVAILABLE_PHOTOS = 15;
+
+// En mobile (3 columnas) y desktop (5) las 15 fotos reparten perfecto.
+// Solo en tablet (colCount === 4, ver updateColumnCount) 15 no se
+// reparte igual entre columnas y la última se queda con una foto de
+// menos, así que solo ahí se añade la 16ª foto para completar la
+// columna.
+const TABLET_COL_COUNT = 4;
+
+const images = computed<GalleryImage[]>(() => {
+  const total =
+    colCount.value === TABLET_COL_COUNT ? AVAILABLE_PHOTOS + 1 : AVAILABLE_PHOTOS;
+
+  return Array.from({ length: total }, (_, i): GalleryImage => {
     const n = i + 1;
     return {
       id: n,
       src: `/images/past-editions/presa-invitational-tournament-${n}.jpg`,
       alt: t('evento.gallery.photoAlt', { n })
     };
-  })
-);
+  });
+});
 
 // TODO: sustituir por los vídeos/imagen y enlaces definitivos de cada
 // edición cuando estén disponibles.

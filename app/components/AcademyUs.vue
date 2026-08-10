@@ -142,13 +142,24 @@ onUnmounted(() => {
       </div>
 
       <div class="academy-us__intro">
-        <span class="academy-us__intro-eyebrow">{{ t('academia.us.eyebrow') }}</span>
-        <h2 class="academy-us__intro-heading">
-          {{ t('academia.us.heading') }}
-        </h2>
-        <p class="academy-us__intro-text">
-          {{ t('academia.us.intro') }}
-        </p>
+        <div class="academy-us__intro-row">
+          <div class="academy-us__intro-content">
+            <span class="academy-us__intro-eyebrow">{{ t('academia.us.eyebrow') }}</span>
+            <h2 class="academy-us__intro-heading">
+              {{ t('academia.us.heading') }}
+            </h2>
+            <p class="academy-us__intro-text">
+              {{ t('academia.us.intro') }}
+            </p>
+          </div>
+
+          <!-- Placeholder del logo de Equipo Santana: el cliente todavía no
+               nos ha pasado el logotipo definitivo. Sustituir este div por
+               la imagen real en cuanto esté disponible. -->
+          <div class="academy-us__logo-placeholder">
+            {{ t('academia.us.logoPlaceholder') }}
+          </div>
+        </div>
       </div>
 
       <div class="academy-us__block">

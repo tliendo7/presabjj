@@ -9,7 +9,7 @@ usePageSeo('home');
   <div class="home-page">
     <HomeHero />
     <HomeMarquee />
-    <HomeIntro />
+    <!-- <HomeIntro /> -->
     <HomeTournamentBanner />
     <HomeEvents />
     <HomeAcademy />

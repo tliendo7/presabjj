@@ -8,7 +8,7 @@
     @apply relative;
     @apply w-full;
     @apply rounded-2xl;
-    @apply px-s pb-m;
+    @apply px-s pb-0;
     @apply bg-gray-900;
 
     @apply md:px-l;
@@ -59,7 +59,7 @@
   & .academy-app__phone {
     @apply w-full h-auto;
     @apply max-w-[275px];
-    @apply mt-[50px];
+    @apply mt-0;
     @apply drop-shadow-[0_24px_40px_rgba(0,0,0,0.45)];
 
     @apply lg:h-fit lg:max-w-[325px];
@@ -84,7 +84,9 @@
     @apply text-white;
     @apply m-0;
     @apply leading-none;
-    @apply text-3xl;
+    @apply text-2xl;
+
+    @apply lg:text-3xl;
   }
 
   & .academy-app__description {

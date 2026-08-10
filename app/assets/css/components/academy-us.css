@@ -5,7 +5,15 @@
 
   @apply lg:py-xxl;
 
-  & .academy-us__intro {
+  & .academy-us__intro-row {
+    @apply flex flex-col;
+    @apply gap-s;
+
+    @apply lg:grid lg:grid-cols-[2fr_1fr] lg:items-start;
+    @apply lg:gap-m;
+  }
+
+  & .academy-us__intro-content {
     @apply flex flex-col;
     @apply gap-xs;
     @apply max-w-[46ch];
@@ -33,6 +41,19 @@
     @apply whitespace-pre-line;
 
     @apply lg:text-l;
+  }
+
+  /* Placeholder temporal del logo de Equipo Santana, a la espera de que
+     el cliente facilite el archivo definitivo. */
+  & .academy-us__logo-placeholder {
+    @apply flex items-center justify-center;
+    @apply mx-auto;
+    @apply w-full max-w-[400px] aspect-square;
+    @apply font-body text-s uppercase text-center;
+    @apply text-black;
+    @apply bg-gray-100;
+    @apply rounded-lg;
+    border: 1px dashed rgba(144, 144, 144, 0.783);
   }
 
   & .academy-us__block {

@@ -3,7 +3,7 @@
   @apply w-full;
   @apply overflow-hidden;
   @apply bg-red-700;
-  height: calc(60svh - 4rem);
+  height: calc(75svh - 4rem);
 
   .container,
   .container__inner {

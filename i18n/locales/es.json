@@ -21,7 +21,7 @@
   },
   "home": {
     "title": "PRESA | Unéte a la comunidad de BJJ en Tenerife",
-    "subtitle": "Comunidad de Brazilian Jiu-Jitsu en Tenerife. Clases para todos los niveles, eventos, seminarios y competición.",
+    "subtitle": "Brazilian Jiu-Jitsu en Tenerife. Clases, eventos, seminarios, competición y más.",
     "hero": {
       "ariaLabel": "Hero de inicio"
     },
@@ -98,6 +98,13 @@
         }
       ]
     },
+    "marquee": {
+      "phrases": [
+        "BJJ en La Laguna, Tenerife",
+        "Clase de prueba gratuita",
+        "Presa invitational Tournament 2026 4th edition"
+      ]
+    },
     "tournament": {
       "eyebrow": "4ª edición",
       "title": "Presa Invitational Tournament",
@@ -116,7 +123,8 @@
         "videoAlt": "Vídeo de una clase de Presa Academy",
         "secondaryText": "Tenemos dos modalidades: Kimono Gi, y Grappling. Tanto si eres nuevo, como nivel avanzado, puedes unirte a nuestras clases.",
         "secondaryLink": "Consulta los horarios",
-        "secondaryImageAlt": "Instructor corrigiendo la técnica de un alumno en Presa Academy"
+        "secondaryImageAlt": "Instructor corrigiendo la técnica de un alumno en Presa Academy",
+        "logoPlaceholder": "Logo Equipo Santana — pendiente"
       }
     }
   },
@@ -199,10 +207,9 @@
       "amenitiesTitle": "Servicios disponibles",
       "amenities": [
         "Streaming en directo",
-        "Tienda merchandising",
         "Taquillas",
-        "Acceso para familias",
-        "Zona de bebidas y snacks"
+        "Tienda merchandising",
+        "Zona de bebidas"
       ],
       "outroText": "No te quedes fuera. Asegura tu entrada antes de que se agoten.",
       "outroCta": "Comprar entradas"
@@ -212,7 +219,7 @@
       "headingLine2": "LA CULTURA",
       "headingLine3": "PRESA",
       "description": "Cada camiseta, sudadera y gorra que compras suma al bote de premios. El merchandising oficial de Presa Invitational Tournament está hecho para quienes viven el deporte dentro y fuera del tatami.",
-      "cta": "Visitar la tienda",
+      "cta": "Visitar tienda",
       "items": [
         {
           "alt": "Camiseta oficial Presa Invitational Tournament"
@@ -304,9 +311,9 @@
             },
             {
               "items": [
-                "20 alumnos/clase",
-                "Basic & All-levels",
-                "Adultos & niños"
+                "Todos los niveles",
+                "Adultos & niños",
+                "Compite si quieres"
               ]
             }
           ]
@@ -322,16 +329,15 @@
           "stats": [
             {
               "label": "Horas semanales",
-              "value": 8,
+              "value": 9,
               "from": 0,
               "prefix": "+",
               "suffix": "h"
             },
             {
               "items": [
-                "Basic & All-levels",
+                "Todos los niveles",
                 "Adultos & niños",
-                "+50 alumnos activos",
                 "Compite si quieres"
               ]
             }
@@ -376,7 +382,7 @@
       "gallery": {
         "main": {
           "label": "Sala de entrenamiento",
-          "alt": "Alumnos entrenando en el tatami de Presa Academia",
+          "alt": "Alumnos entrenando en el tatami de Presa Academy",
           "caption": "Espacio pensado para el trabajo en el tatami"
         },
         "carousel": {
@@ -386,13 +392,13 @@
         "nextLabel": "Imagen siguiente",
         "images": [
           {
-            "alt": "Entrenamiento de grappling en Presa Academia"
+            "alt": "Entrenamiento de grappling en Presa Academy"
           },
           {
-            "alt": "Alumnas de Presa Academia charlando tras el entrenamiento"
+            "alt": "Alumnas de Presa Academy charlando tras el entrenamiento"
           },
           {
-            "alt": "Alumno de Presa Academia concentrado antes de entrenar"
+            "alt": "Alumno de Presa Academy concentrado antes de entrenar"
           }
         ]
       }
@@ -421,7 +427,8 @@
     "us": {
       "eyebrow": "Quiénes somos",
       "heading": "Conoce la academia",
-      "intro": "Presa Academia nace con un objetivo claro: crear un espacio donde cualquier persona pueda descubrir el Brazilian Jiu-Jitsu.\nUn lugar de referencia en Tenerife para quienes buscan aprender y evolucionar en el BJJ.",
+      "intro": "Presa Academy nace con un objetivo claro: crear un espacio donde cualquier persona pueda descubrir el Brazilian Jiu-Jitsu.\nUn lugar de referencia en Tenerife para quienes buscan aprender y evolucionar en el BJJ.",
+      "logoPlaceholder": "Logo Equipo Santana — pendiente",
       "block": {
         "description": "Aquí entrenarás formando parte de Equipo Santana, el equipo deportivo que está bajo la dirección de Fran Santana, cinturón negro de BJJ.\nCon años de experiencia sobre el tatami, combina la enseñanza técnica con un enfoque cercano, acompañando a cada alumno en su evolución.\n\nSu trabajo como instructor ha contribuido al desarrollo de competidores que han logrado subir al podio en el Campeonato de España de BJJ, reflejando el compromiso de la academia con una formación sólida y de calidad.",
         "image": "/images/class/_CIR7604.jpg",
@@ -505,9 +512,8 @@
       "heading": "¿Tienes dudas?",
       "description": "Escríbenos y te respondemos lo antes posible. Estamos para ayudarte con lo que necesites sobre la academia.",
       "contact": {
-        "email": "info{'@'}presa.com",
-        "phone": "(+34) 000 00 00 00",
-        "phoneHref": "+34000000000",
+        "phone": "+34 673 64 53 24",
+        "phoneHref": "34673645324",
         "location": "Cam. la Piterita, 107, Nave 5, 38329 La Laguna, Santa Cruz de Tenerife"
       },
       "fields": {

@@ -169,13 +169,17 @@ const amenities = computed<string[]>(() =>
           {{ t('evento.info.outroText') }}
         </p>
 
-        <Button
-          class="event-info__outro-button"
-          :label="t('evento.info.outroCta')"
-          icon-name="mdi:arrow-right"
-          icon-position="right"
-          variant="secondary"
-        />
+        <!-- TODO: sustituir "#" por la URL externa de venta de entradas
+             en cuanto el cliente la facilite. -->
+        <NuxtLink to="#">
+          <Button
+            class="event-info__outro-button"
+            :label="t('evento.info.outroCta')"
+            icon-name="mdi:arrow-right"
+            icon-position="right"
+            variant="secondary"
+          />
+        </NuxtLink>
       </div>
     </Container>
   </section>

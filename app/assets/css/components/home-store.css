@@ -54,11 +54,9 @@
   & .home-store__intro {
     @apply font-body;
     @apply m-0;
-    @apply text-s leading-tight;
+    @apply text-m leading-body;
 
     color: rgba(0, 0, 0, 0.6);
-
-    @apply md:text-m md:leading-body;
   }
 
   & .home-store__cta {
@@ -150,6 +148,19 @@
     & .home-store__card {
       grid-column: var(--card-col);
       grid-row: var(--card-row);
+    }
+
+    /*
+     * Las dos cards de la fila 1 (Camiseta Oficial y Sudadera Presa)
+     * comparten esa fila con .home-store__content, que suele ser más
+     * alto que ellas (texto + botón). Con items-start (heredado del
+     * grid) esa diferencia de alto dejaba un hueco en blanco debajo de
+     * las cards antes de que empezara la fila 2. Se ancla esta fila
+     * concreta al fondo de su propio hueco para que quede pegada a las
+     * cards de abajo sin tocar la alineación del resto.
+     */
+    & .home-store__card--top-row {
+      align-self: end;
     }
   }
 

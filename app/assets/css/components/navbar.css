@@ -18,7 +18,9 @@
   }
 
   .navbar__logo-img {
-    @apply h-8 w-auto;
+    @apply h-[1.4rem] w-auto;
+
+    @apply md:h-8;
   }
 
   .navbar__links {

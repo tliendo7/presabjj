@@ -50,7 +50,9 @@ const { t } = useI18n();
             </div>
 
             <div class="event-hero__info">
-              <NuxtLink :to="{ hash: '#comprar-entradas' }">
+              <!-- TODO: sustituir "#" por la URL externa de venta de
+                   entradas en cuanto el cliente la facilite. -->
+              <NuxtLink to="#">
                 <Button
                   :label="t('evento.hero.cta')"
                   icon-name="mdi:arrow-right"

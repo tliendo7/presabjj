@@ -175,6 +175,13 @@ onUnmounted((): void => {
           <p class="home-academy__extra-description">
             {{ t('home.academy.extra.text') }}
           </p>
+
+          <!-- Placeholder del logo de Equipo Santana: el cliente todavía no
+               nos ha pasado el logotipo definitivo. Sustituir este div por
+               la imagen real en cuanto esté disponible. -->
+          <div class="home-academy__extra-logo-placeholder">
+            {{ t('home.academy.extra.logoPlaceholder') }}
+          </div>
         </div>
       </div>
     </Container>

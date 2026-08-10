@@ -9,17 +9,22 @@
     @apply grid grid-cols-1 items-center;
     @apply gap-l;
 
-    @apply md:grid-cols-2 md:gap-0;
+    @apply lg:gap-0;
 
     /* En desktop le damos algo más de ancho a la columna de contenido
        (título + cards) para que las cards crezcan un poco. */
     @apply lg:grid-cols-[1fr_1.2fr];
   }
 
-  /* Mobile: el mapa queda como fondo a pantalla completa, detrás del
-     título/párrafo, sangrando fuera del container (left-1/2 + w-screen
-     + -translate-x-1/2 es el truco clásico de full-bleed). A partir de
-     md vuelve a ser una columna normal dentro del grid de dos columnas. */
+  /* Mobile y tablet: el mapa queda como fondo a pantalla completa,
+     detrás del título/párrafo, sangrando fuera del container (left-1/2
+     + w-screen + -translate-x-1/2 es el truco clásico de full-bleed).
+     Con el grid de 2 columnas real a partir de md, las cards quedaban
+     apretadas en la mitad del ancho y se veían muy pequeñas en tablet;
+     al mantener el mapa como fondo en vez de columna hasta lg, el
+     contenido (y las cards) usan el ancho completo también en tablet.
+     Solo a partir de escritorio (lg) el mapa pasa a ser una columna
+     real dentro del grid de dos columnas. */
   & .event-online__map {
     @apply absolute top-[130px] left-1/2;
     @apply w-screen;
@@ -27,10 +32,10 @@
     @apply z-0;
     @apply order-2;
 
-    @apply md:static md:top-auto md:bottom-auto md:left-auto;
-    @apply md:w-full;
-    @apply md:translate-x-0;
-    @apply md:order-1;
+    @apply lg:static lg:top-auto lg:bottom-auto lg:left-auto;
+    @apply lg:w-full;
+    @apply lg:translate-x-0;
+    @apply lg:order-1;
 
     /* A partir de escritorio (lg), el mapa se desplaza hacia la izquierda
        para "sangrar" fuera de la pantalla. El propio overflow-hidden de
@@ -48,9 +53,9 @@
     @apply object-cover;
     @apply opacity-30;
 
-    @apply md:h-auto;
-    @apply md:object-contain;
-    @apply md:opacity-50;
+    @apply lg:h-auto;
+    @apply lg:object-contain;
+    @apply lg:opacity-50;
   }
 
   & .event-online__live-chip {
@@ -93,10 +98,10 @@
     @apply order-1;
     @apply text-center;
 
-    @apply md:gap-m;
-    @apply md:z-auto;
-    @apply md:order-2;
-    @apply md:text-right;
+    @apply lg:gap-m;
+    @apply lg:z-auto;
+    @apply lg:order-2;
+    @apply lg:text-right;
   }
 
   & .event-online__title-block {
@@ -104,7 +109,7 @@
     @apply items-center;
     @apply gap-xxs;
 
-    @apply md:items-end;
+    @apply lg:items-end;
   }
 
   & .event-online__title-main {
@@ -130,8 +135,8 @@
     @apply m-0;
     color: rgba(0, 0, 0, 0.6);
 
-    @apply md:self-end;
-    @apply md:leading-body md:text-m;
+    @apply lg:self-end;
+    @apply lg:leading-body lg:text-m;
   }
 
   @keyframes event-online-live-pulse {
@@ -172,6 +177,11 @@
     @apply absolute inset-0;
     @apply w-full h-full;
     @apply object-cover object-top;
+    transition: opacity 0.6s ease;
+  }
+
+  & .event-online__card:hover .event-online__card-img {
+    @apply opacity-40;
   }
 
   & .event-online__card-duration {
@@ -188,11 +198,26 @@
 
   & .event-online__card-overlay {
     @apply absolute inset-0;
-    background: linear-gradient(
+    background-image: linear-gradient(
       to top,
       rgba(0, 0, 0, 1) 15%,
       rgba(0, 0, 0, 0.3) 60%
     );
+    background-color: transparent;
+    transition: background-color 0.6s ease;
+  }
+
+  & .event-online__card:hover .event-online__card-overlay {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  /* La chip "Edición anterior" (siempre la primera card, ver
+     pastEditionCard en el script) se oculta solo en este rango de
+     anchos concreto, a petición de Clara. */
+  @media (min-width: 1024px) and (max-width: 1350px) {
+    & .event-online__cards > :first-child .event-online__card-badge {
+      display: none;
+    }
   }
 
   & .event-online__card-badge {

@@ -67,7 +67,7 @@ const formattedDate = computed<string>(() =>
 
         <div class="home-tournament__actions">
           <NuxtLink
-            :to="localePath('torneo')"
+            to="#"
             class="home-tournament__cta-link"
           >
             <Button

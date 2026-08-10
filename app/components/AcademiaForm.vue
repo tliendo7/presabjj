@@ -20,25 +20,20 @@ type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
 
 const { t } = useI18n();
 
-const asideImage = '/images/class/291025_PASJ-48.jpg';
+const asideImage = '/images/class/_CIR5266.jpg';
 
 const contactInfo = computed<ContactInfo[]>(() => [
   {
-    id: 'email',
-    icon: 'mdi:email-outline',
-    value: t('academia.form.contact.email'),
-    href: `mailto:${t('academia.form.contact.email')}`
-  },
-  {
     id: 'phone',
-    icon: 'mdi:phone-outline',
+    icon: 'mdi:whatsapp',
     value: t('academia.form.contact.phone'),
-    href: `tel:${t('academia.form.contact.phoneHref')}`
+    href: `https://wa.me/${t('academia.form.contact.phoneHref')}`
   },
   {
     id: 'location',
     icon: 'mdi:map-marker-outline',
-    value: t('academia.form.contact.location')
+    value: t('academia.form.contact.location'),
+    href: 'https://maps.app.goo.gl/pKCQMHTGET9vWKMi9'
   }
 ]);
 
@@ -54,11 +49,11 @@ const status = ref<SubmitStatus>('idle');
 
 const isValid = computed<boolean>(() =>
   Boolean(
-    form.name.trim() &&
-    form.phone.trim() &&
-    form.email.trim() &&
-    form.message.trim() &&
-    form.consent
+    form.name.trim()
+    && form.phone.trim()
+    && form.email.trim()
+    && form.message.trim()
+    && form.consent
   )
 );
 
@@ -145,12 +140,16 @@ const submitForm = async (): Promise<void> => {
                 <a
                   v-if="item.href"
                   :href="item.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="academia-form__contact-value"
-                >{{ item.value }}</a>
+                  >{{ item.value }}</a
+                >
                 <span
                   v-else
                   class="academia-form__contact-value"
-                >{{ item.value }}</span>
+                  >{{ item.value }}</span
+                >
               </li>
             </ul>
           </div>
@@ -165,7 +164,8 @@ const submitForm = async (): Promise<void> => {
               <label
                 class="academia-form__label"
                 for="academia-form-name"
-              >{{ t('academia.form.fields.name') }}</label>
+                >{{ t('academia.form.fields.name') }}</label
+              >
               <input
                 id="academia-form-name"
                 v-model="form.name"
@@ -173,13 +173,14 @@ const submitForm = async (): Promise<void> => {
                 class="academia-form__input"
                 :placeholder="t('academia.form.fields.namePlaceholder')"
                 required
-              >
+              />
             </div>
             <div class="academia-form__field">
               <label
                 class="academia-form__label"
                 for="academia-form-phone"
-              >{{ t('academia.form.fields.phone') }}</label>
+                >{{ t('academia.form.fields.phone') }}</label
+              >
               <input
                 id="academia-form-phone"
                 :value="form.phone"
@@ -190,7 +191,7 @@ const submitForm = async (): Promise<void> => {
                 :placeholder="t('academia.form.fields.phonePlaceholder')"
                 required
                 @input="onPhoneInput"
-              >
+              />
             </div>
           </div>
 
@@ -198,7 +199,8 @@ const submitForm = async (): Promise<void> => {
             <label
               class="academia-form__label"
               for="academia-form-email"
-            >{{ t('academia.form.fields.email') }}</label>
+              >{{ t('academia.form.fields.email') }}</label
+            >
             <input
               id="academia-form-email"
               v-model="form.email"
@@ -206,14 +208,15 @@ const submitForm = async (): Promise<void> => {
               class="academia-form__input"
               :placeholder="t('academia.form.fields.emailPlaceholder')"
               required
-            >
+            />
           </div>
 
           <div class="academia-form__field">
             <label
               class="academia-form__label"
               for="academia-form-message"
-            >{{ t('academia.form.fields.message') }}</label>
+              >{{ t('academia.form.fields.message') }}</label
+            >
             <textarea
               id="academia-form-message"
               v-model="form.message"
@@ -231,11 +234,12 @@ const submitForm = async (): Promise<void> => {
               type="checkbox"
               class="academia-form__checkbox"
               required
-            >
+            />
             <label
               class="academia-form__consent-label"
               for="academia-form-consent"
-            >{{ t('academia.form.fields.consent') }}</label>
+              >{{ t('academia.form.fields.consent') }}</label
+            >
           </div>
 
           <button
@@ -244,7 +248,11 @@ const submitForm = async (): Promise<void> => {
             :disabled="!isValid || status === 'loading'"
           >
             <span class="academia-form__submit-label">
-              {{ status === 'loading' ? t('academia.form.submit.loading') : t('academia.form.submit.default') }}
+              {{
+                status === 'loading'
+                  ? t('academia.form.submit.loading')
+                  : t('academia.form.submit.default')
+              }}
             </span>
             <span class="academia-form__submit-icon">
               <Icon name="mdi:arrow-right" />

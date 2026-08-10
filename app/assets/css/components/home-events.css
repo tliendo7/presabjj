@@ -43,7 +43,9 @@
     @apply m-0;
     @apply leading-display tracking-title;
     @apply text-black;
-    @apply text-4xl;
+    @apply text-3xl;
+
+    @apply md:text-4xl;
   }
 
   /* ── Columna 2: párrafo descriptivo (misma línea superior) ── */
@@ -51,11 +53,9 @@
   & .home-events__intro {
     @apply font-body;
     @apply m-0;
-    @apply text-s leading-tight;
+    @apply text-m leading-body;
 
     color: rgba(0, 0, 0, 0.6);
-
-    @apply md:text-m md:leading-body;
   }
 
   & .home-events__carousel {

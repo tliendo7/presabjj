@@ -98,6 +98,13 @@
         }
       ]
     },
+    "marquee": {
+      "phrases": [
+        "BJJ in La Laguna, Tenerife",
+        "Free trial class",
+        "Presa Invitational Tournament 2026 4th edition"
+      ]
+    },
     "tournament": {
       "eyebrow": "4th edition",
       "title": "Presa Invitational Tournament",
@@ -116,7 +123,8 @@
         "videoAlt": "Video of a Presa Academy class",
         "secondaryText": "We have two formats: Kimono Gi and Grappling. Whether you're a beginner or an advanced level, you can join our classes.",
         "secondaryLink": "Check our schedule",
-        "secondaryImageAlt": "Instructor correcting a student's technique at Presa Academy"
+        "secondaryImageAlt": "Instructor correcting a student's technique at Presa Academy",
+        "logoPlaceholder": "Equipo Santana logo — pending"
       }
     }
   },
@@ -321,7 +329,7 @@
           "stats": [
             {
               "label": "Weekly hours",
-              "value": 6,
+              "value": 9,
               "from": 3,
               "prefix": "+",
               "suffix": "h"
@@ -421,6 +429,7 @@
       "eyebrow": "Who we are",
       "heading": "The people and the space behind Presa",
       "intro": "From the mat to the competition circuit: the team and the facilities that make the academy possible.",
+      "logoPlaceholder": "Equipo Santana logo — pending",
       "block": {
         "description": "Leading the academy since day one, Fran Santana blends years on the mat with a method built for every student to progress at their own pace, from their first class to black belt.",
         "image": "/images/class/_CIR7604.jpg",
@@ -504,9 +513,8 @@
       "heading": "Have questions?",
       "description": "Write to us and we'll get back to you as soon as possible. We're here to help with anything you need about the academy.",
       "contact": {
-        "email": "info{'@'}presa.com",
-        "phone": "(+34) 000 00 00 00",
-        "phoneHref": "+34000000000",
+        "phone": "+34 673 64 53 24",
+        "phoneHref": "34673645324",
         "location": "Cam. la Piterita, 107, Nave 5, 38329 La Laguna, Santa Cruz de Tenerife"
       },
       "fields": {

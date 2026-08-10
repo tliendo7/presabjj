@@ -247,6 +247,7 @@ onUnmounted((): void => {
           v-for="product in products"
           :key="product.id"
           class="home-store__card"
+          :class="{ 'home-store__card--top-row': product.gridRow === 1 }"
           :style="{
             '--card-col': product.gridColumn,
             '--card-row': product.gridRow,

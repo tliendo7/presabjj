@@ -2,16 +2,11 @@
   @apply w-full;
   @apply py-m;
 
-  @apply max-lg:h-[100dvh] max-lg:max-h-[100dvh];
-  @apply max-lg:overflow-hidden;
-
   @apply lg:py-xxl;
 
   & .academy-highlights__grid {
     @apply flex flex-col-reverse;
     @apply gap-l;
-
-    @apply max-lg:h-full;
 
     @apply lg:flex-row-reverse lg:items-stretch;
     @apply lg:gap-xl;
@@ -23,13 +18,6 @@
     @apply m-0 p-0;
     @apply list-none;
     @apply gap-s;
-
-    /* Altura fija, lo bastante grande como para que quepa el item más
-       largo ya expandido: así al cambiar de item activo la lista no
-       cambia de tamaño ni desplaza lo de debajo. */
-    @apply max-lg:h-[380px] max-lg:shrink-0;
-    @apply max-lg:justify-center;
-    @apply max-lg:overflow-hidden;
 
     @apply lg:w-1/2 lg:flex-none;
     @apply lg:gap-m;
@@ -105,7 +93,7 @@
     @apply min-h-0;
     @apply leading-snug;
     @apply text-gray-500;
-    @apply text-l;
+    @apply text-m;
     @apply overflow-hidden;
 
     @apply lg:text-[22px];

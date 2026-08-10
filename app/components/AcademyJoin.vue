@@ -32,11 +32,12 @@ const galleryImages = computed<GalleryImage[]>(() =>
 const activeCarouselIndex = ref(0);
 
 const activeCarouselSrc = computed<string>(
-  () =>
-    carouselSrcs[activeCarouselIndex.value % carouselSrcs.length] as string
+  () => carouselSrcs[activeCarouselIndex.value % carouselSrcs.length] as string
 );
 const activeCarouselAlt = computed<string | undefined>(
-  () => galleryImages.value[activeCarouselIndex.value % galleryImages.value.length]?.alt
+  () =>
+    galleryImages.value[activeCarouselIndex.value % galleryImages.value.length]
+      ?.alt
 );
 
 const goToPrevImage = (): void => {
@@ -45,7 +46,8 @@ const goToPrevImage = (): void => {
 };
 
 const goToNextImage = (): void => {
-  activeCarouselIndex.value = (activeCarouselIndex.value + 1) % carouselSrcs.length;
+  activeCarouselIndex.value =
+    (activeCarouselIndex.value + 1) % carouselSrcs.length;
 };
 </script>
 
@@ -70,7 +72,8 @@ const goToNextImage = (): void => {
                 v-for="(word, i) in headingWords"
                 :key="i + word"
                 class="academy-join__heading-line"
-              >{{ word }}</span>
+                >{{ word }}</span
+              >
             </h2>
             <TextLineReveal
               class="academy-join__description"
@@ -87,14 +90,18 @@ const goToNextImage = (): void => {
           </div>
 
           <div class="academy-join__gallery">
-            <div class="academy-join__gallery-item academy-join__gallery-item--main">
+            <div
+              class="academy-join__gallery-item academy-join__gallery-item--main"
+            >
               <NuxtImg
                 :src="mainImage"
                 :alt="t('academia.join.gallery.main.alt')"
                 class="academy-join__gallery-img"
                 format="webp"
               />
-              <span class="academy-join__gallery-badge">{{ t('academia.join.gallery.main.label') }}</span>
+              <span class="academy-join__gallery-badge">{{
+                t('academia.join.gallery.main.label')
+              }}</span>
               <div
                 class="academy-join__gallery-scrim"
                 aria-hidden="true"
@@ -104,7 +111,9 @@ const goToNextImage = (): void => {
               </p>
             </div>
 
-            <div class="academy-join__gallery-item academy-join__gallery-item--carousel">
+            <div
+              class="academy-join__gallery-item academy-join__gallery-item--carousel"
+            >
               <transition name="academy-join-fade">
                 <NuxtImg
                   :key="activeCarouselSrc"
@@ -114,7 +123,9 @@ const goToNextImage = (): void => {
                   format="webp"
                 />
               </transition>
-              <span class="academy-join__gallery-badge">{{ t('academia.join.gallery.carousel.label') }}</span>
+              <span class="academy-join__gallery-badge">{{
+                t('academia.join.gallery.carousel.label')
+              }}</span>
             </div>
 
             <div class="academy-join__gallery-nav">

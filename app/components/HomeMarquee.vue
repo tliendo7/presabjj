@@ -3,20 +3,25 @@
 // torneo): velocidad base + boost según velocidad de scroll, y cambia de
 // dirección si el scroll va hacia arriba o hacia abajo.
 
-const phrases = [
-  'Effort is not negotiable',
-  'Disfruta de una clase gratis',
-  'Conoce nuestro torneo 2026'
-];
+const { tm, rt } = useI18n();
+
+const phrases = computed<string[]>(() =>
+  (tm('home.marquee.phrases') as string[]).map(phrase => rt(phrase))
+);
 
 // Repetimos las frases varias veces para que el track tenga suficiente
 // ancho y el loop del marquee sea continuo.
-const items = Array.from({ length: 6 }, (_, i) => phrases[i % phrases.length]) as string[];
+const items = computed<string[]>(() =>
+  Array.from(
+    { length: 6 },
+    (_, i) => phrases.value[i % phrases.value.length]
+  )
+);
 
 const trackRef = ref<HTMLElement | null>(null);
 
-const SPEED_DESKTOP = 1.3;
-const SPEED_MOBILE = 0.7;
+const SPEED_DESKTOP = 0.7;
+const SPEED_MOBILE = 0.5;
 const VELOCITY_MULT = 0.08;
 const VELOCITY_DECAY = 0.1;
 
@@ -85,7 +90,7 @@ onUnmounted(() => {
           >
             {{ phrase }}
             <Icon
-              name="mdi:asterisk"
+              name="mdi:chevron-triple-right"
               class="home-marquee__asterisk"
             />
           </span>
@@ -101,7 +106,7 @@ onUnmounted(() => {
           >
             {{ phrase }}
             <Icon
-              name="mdi:asterisk"
+              name="mdi:chevron-triple-right"
               class="home-marquee__asterisk"
             />
           </span>

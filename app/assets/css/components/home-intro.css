@@ -15,11 +15,11 @@
   }
 
   & .home-intro__heading {
-    @apply font-secondary font-bold uppercase;
+    @apply font-josefin font-bold uppercase;
     @apply m-0;
-    @apply leading-none;
+    @apply leading-display tracking-title;
     @apply text-black;
-    font-size: clamp(2rem, 4vw, 3.75rem);
+    @apply text-4xl;
   }
 
   & .home-intro__content {

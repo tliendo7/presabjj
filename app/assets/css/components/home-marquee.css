@@ -7,7 +7,7 @@
     @apply relative;
     @apply overflow-hidden;
     @apply w-full;
-    @apply py-xxs;
+    @apply py-xs;
   }
 
   & .home-marquee__track {
@@ -25,15 +25,15 @@
     @apply flex items-center;
     @apply gap-m;
     @apply px-s;
-    @apply font-secondary uppercase;
+    @apply font-primary uppercase;
     @apply whitespace-nowrap;
     @apply text-white;
-    @apply text-xl;
+    @apply text-l;
   }
 
   & .home-marquee__asterisk {
     @apply inline-block;
-    @apply w-[0.7em] h-[0.7em];
-    color: var(--presa-white);
+    @apply w-5 h-5;
+    @apply text-white;
   }
 }
