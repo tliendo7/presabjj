@@ -186,7 +186,4 @@ Legal` y `Política de Privacidad` (`app/pages/aviso-legal.vue`,
 
 ## Documentación relacionada
 
-- [`docs/auditoria-pre-lanzamiento.md`](./docs/auditoria-pre-lanzamiento.md) — auditoría completa (SEO, rendimiento, accesibilidad, seguridad) previa al lanzamiento.
-- [`docs/code-review/`](./docs/code-review/) — informes de revisión de código generados con el prompt de `prompts/code-review.md`.
 - [`GOOGLE_SHEETS_SETUP.md`](./GOOGLE_SHEETS_SETUP.md) — cómo conectar los formularios a Google Sheets.
-- [`pendientes.md`](./pendientes.md) — mejoras pendientes conocidas.
