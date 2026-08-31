@@ -55,7 +55,9 @@ const TABLET_COL_COUNT = 4;
 
 const images = computed<GalleryImage[]>(() => {
   const total =
-    colCount.value === TABLET_COL_COUNT ? AVAILABLE_PHOTOS + 1 : AVAILABLE_PHOTOS;
+    colCount.value === TABLET_COL_COUNT
+      ? AVAILABLE_PHOTOS + 1
+      : AVAILABLE_PHOTOS;
 
   return Array.from({ length: total }, (_, i): GalleryImage => {
     const n = i + 1;
@@ -101,12 +103,14 @@ interface EditionTranslation {
 }
 
 const pastEditionCards = computed<PastEditionCard[]>(() =>
-  (tm('evento.gallery.editions') as EditionTranslation[]).map((edition, index) => ({
-    ...EDITION_STATIC_DATA[index],
-    label: rt(edition.label),
-    year: rt(edition.year),
-    alt: rt(edition.alt)
-  }))
+  (tm('evento.gallery.editions') as EditionTranslation[]).map(
+    (edition, index) => ({
+      ...EDITION_STATIC_DATA[index],
+      label: rt(edition.label),
+      year: rt(edition.year),
+      alt: rt(edition.alt)
+    })
+  )
 );
 
 // Las cards de "Ediciones anteriores" reutilizan el mismo desplazamiento
@@ -149,9 +153,11 @@ const getColTargets = (progress: number, count: number): number[] =>
 
 const initSprings = (count: number, progress: number): void => {
   const targets = getColTargets(progress, count);
-  springs = targets.map(
-    (t: number): SpringState => ({ current: t, velocity: 0, target: t })
-  );
+  springs = targets.map((t: number): SpringState => ({
+    current: t,
+    velocity: 0,
+    target: t
+  }));
   colOffsets.value = [...targets];
 };
 
@@ -271,6 +277,8 @@ onUnmounted((): void => {
               :src="image.src"
               :alt="image.alt"
               class="event-gallery__img"
+              width="900"
+              height="1200"
               format="webp"
               loading="lazy"
             />

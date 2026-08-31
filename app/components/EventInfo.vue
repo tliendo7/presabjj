@@ -162,6 +162,8 @@ const amenities = computed<string[]>(() =>
           src="/images/A.png"
           alt="Presa logo mark"
           class="event-info__outro-icon"
+          width="80"
+          height="64"
           format="webp"
         />
 

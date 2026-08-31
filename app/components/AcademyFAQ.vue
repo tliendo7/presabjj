@@ -37,7 +37,9 @@ const selectedCategory = computed<string>(
 );
 
 const visibleQuestions = computed<FaqQuestion[]>(() =>
-  questions.value.filter(question => question.category === selectedCategory.value)
+  questions.value.filter(
+    question => question.category === selectedCategory.value
+  )
 );
 
 const selectCategory = (id: string): void => {
@@ -107,7 +109,9 @@ const toggle = (index: number): void => {
                 aria-hidden="true"
               >
                 <span class="academy-faq__icon-bar" />
-                <span class="academy-faq__icon-bar academy-faq__icon-bar--vertical" />
+                <span
+                  class="academy-faq__icon-bar academy-faq__icon-bar--vertical"
+                />
               </span>
             </button>
 

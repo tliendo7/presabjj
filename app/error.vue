@@ -29,6 +29,8 @@ const goHome = () => clearError({ redirect: localePath('index') });
         src="/images/logo.png"
         alt="Presa"
         class="error-page__logo"
+        width="700"
+        height="191"
         format="webp"
       />
     </NuxtLink>

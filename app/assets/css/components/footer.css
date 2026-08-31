@@ -1,3 +1,14 @@
+@keyframes footer-ig-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .footer {
   @apply p-xs;
   @apply relative;
@@ -15,12 +26,13 @@
 
   .footer__top {
     @apply flex flex-col;
-    @apply gap-xl;
+    @apply gap-m;
     @apply mb-xl;
   }
 
   .footer__logo {
     @apply w-full;
+    max-width: 200px;
 
     img {
       @apply block;
@@ -28,6 +40,8 @@
     }
   }
 
+  /* Debajo del logo: ubicación (primera columna) y linktree (segunda
+     columna) en desktop. */
   .footer__wrapper {
     @apply flex flex-col justify-between;
     @apply gap-xl;
@@ -40,15 +54,27 @@
     @apply gap-xxs;
   }
 
-  .footer__address-link {
-    @apply font-body text-m;
+  .footer__contact-link {
+    @apply inline-flex items-start;
+    @apply gap-xxs;
+    @apply font-body text-s;
     @apply no-underline;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.6);
     @apply transition-colors duration-200;
 
     &:hover {
       color: rgba(255, 255, 255, 0.9);
+
+      span {
+        text-decoration: underline;
+      }
     }
+  }
+
+  .footer__contact-icon {
+    @apply flex-shrink-0;
+    @apply w-5 h-5;
+    margin-top: 3px;
   }
 
   .footer__col {
@@ -102,10 +128,150 @@
   }
 
   .footer__bottom {
-    @apply flex items-center;
+    /* items-start (no items-center): en mobile, al abrirse, el
+       grupo de Instagram crece en altura (columna) y no queremos
+       que eso desplace verticalmente al icono de YouTube. El único
+       que se centra es .footer__legal (ver su align-self). */
+    @apply flex items-start flex-nowrap justify-between;
     @apply gap-s;
     @apply pt-s;
+    /* Red de seguridad por si en una pantalla muy estrecha algo no
+       cupiese: scroll horizontal en vez de romper el layout. */
+    @apply overflow-x-auto;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    @apply md:items-center;
+  }
+
+  .footer__legal {
+    @apply flex items-center;
+    @apply self-center;
+    @apply gap-xxs;
+    @apply ml-auto pl-s;
+    @apply shrink-0;
+    @apply whitespace-nowrap;
+    @apply font-body;
+    @apply text-xs;
+    color: rgba(255, 255, 255, 0.4);
+
+    /* En mobile, mientras se despliegan las cuentas de Instagram, se
+       ocultan para no competir por espacio con ese contenido; vuelven
+       a aparecer en cuanto se colapsa. En desktop el despliegue es
+       horizontal (max-width) y no afecta al alto de la fila, así que
+       ahí se quedan siempre visibles. */
+    @media (max-width: 767px) {
+      &.is-hidden {
+        display: none;
+      }
+    }
+
+    & a {
+      @apply no-underline;
+      color: rgba(255, 255, 255, 0.5);
+      @apply transition-colors duration-200;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.9);
+      }
+    }
+  }
+
+  /* Envuelve el icono de Instagram (siempre visible) y el grupo de
+     texto que se despliega a su lado. El gap entre ambos solo
+     existe cuando está abierto, para que en collapsed no quede un
+     hueco de más antes del icono de YouTube. */
+  .footer__ig-wrap {
+    @apply flex items-start;
+    @apply shrink-0;
+    gap: 0;
+    transition: gap 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-open {
+      @apply gap-xxs;
+    }
+  }
+
+  /* Grupo de texto de Instagram. En mobile, en columna (cada handle
+     en su propia línea) para no forzar scroll horizontal: se anima
+     con max-height. En desktop (ver @media más abajo), en fila con
+     max-width, como antes. */
+  .footer__ig-group {
+    @apply flex flex-col items-start;
+    @apply gap-xxs;
+    overflow: hidden;
+    width: 0;
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  & .footer__ig-wrap.is-open .footer__ig-group {
+    width: auto;
+    max-height: 6.5rem;
+  }
+
+  @media (min-width: 768px) {
+    & .footer__ig-wrap {
+      @apply items-center;
+
+      &.is-open {
+        @apply gap-s;
+      }
+    }
+
+    & .footer__ig-group {
+      @apply flex-row items-center;
+      @apply gap-s;
+      /* En desktop el ancho lo controla solo max-width (como antes);
+         se resetea el width:0 heredado de la versión mobile. */
+      width: auto;
+      max-width: 0;
+      max-height: none;
+      transition: max-width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    & .footer__ig-wrap.is-open .footer__ig-group {
+      max-width: 40rem;
+    }
+  }
+
+  .footer__ig-link {
+    @apply no-underline;
+    @apply font-body font-semibold text-s;
+    @apply whitespace-nowrap;
+    color: rgba(255, 255, 255, 0.6);
+    @apply transition-colors duration-200;
+
+    opacity: 0;
+    /* Duración y delays pensados para terminar justo cuando acaba la
+       transición del contenedor (0.5s), en vez de seguir animando
+       después (lo que se sentía como dos movimientos separados). */
+    animation: footer-ig-fade-in 0.3s ease-out forwards;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: underline;
+    }
+
+    &:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.25s;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    & .footer__ig-group {
+      transition: none;
+    }
+
+    & .footer__ig-link {
+      animation: none;
+      opacity: 1;
+    }
   }
 
   .footer__social-link {
@@ -114,6 +280,12 @@
     @apply no-underline;
     @apply shrink-0;
     @apply w-10 h-10;
+    /* Reset para cuando .footer__social-link se usa en un <button>
+       (el toggle de Instagram) en vez de un <a>. */
+    @apply cursor-pointer;
+    border: none;
+    padding: 0;
+    font: inherit;
     background-color: rgba(255, 255, 255, 0.08);
     color: rgba(255, 255, 255, 0.6);
   }

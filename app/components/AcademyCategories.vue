@@ -325,6 +325,8 @@ onUnmounted(() => {
                 :alt="category.title"
                 class="academy-categories__img"
                 :style="{ objectPosition: category.imagePosition }"
+                width="750"
+                height="1000"
                 format="webp"
                 loading="lazy"
               />

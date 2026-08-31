@@ -186,6 +186,8 @@ onUnmounted((): void => {
               :src="event.image"
               :alt="event.caption"
               class="home-events__img"
+              width="900"
+              height="1200"
               format="webp"
               loading="lazy"
             />

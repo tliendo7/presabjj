@@ -27,9 +27,9 @@ function doPost(e) {
     data.message || ''
   ]);
 
-  return ContentService
-    .createTextOutput(JSON.stringify({ ok: true }))
-    .setMimeType(ContentService.MimeType.JSON);
+  return ContentService.createTextOutput(
+    JSON.stringify({ ok: true })
+  ).setMimeType(ContentService.MimeType.JSON);
 }
 ```
 

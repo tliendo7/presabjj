@@ -90,19 +90,27 @@ const formattedDate = computed(() => {
       >
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.days }}</span>
-          <span class="countdown__unit">{{ t('evento.countdown.dayUnit') }}</span>
+          <span class="countdown__unit">{{
+            t('evento.countdown.dayUnit')
+          }}</span>
         </div>
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.hours }}</span>
-          <span class="countdown__unit">{{ t('evento.countdown.hourUnit') }}</span>
+          <span class="countdown__unit">{{
+            t('evento.countdown.hourUnit')
+          }}</span>
         </div>
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.minutes }}</span>
-          <span class="countdown__unit">{{ t('evento.countdown.minuteUnit') }}</span>
+          <span class="countdown__unit">{{
+            t('evento.countdown.minuteUnit')
+          }}</span>
         </div>
         <div class="countdown__item">
           <span class="countdown__number">{{ timeLeft.seconds }}</span>
-          <span class="countdown__unit">{{ t('evento.countdown.secondUnit') }}</span>
+          <span class="countdown__unit">{{
+            t('evento.countdown.secondUnit')
+          }}</span>
         </div>
       </div>
     </div>

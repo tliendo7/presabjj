@@ -1,8 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 
-// TODO: swap for the real academy WhatsApp number once we have it.
-const whatsappHref = 'https://wa.me/34600000000';
+const whatsappHref = 'https://wa.me/34673645324';
 </script>
 
 <template>
@@ -56,6 +55,8 @@ const whatsappHref = 'https://wa.me/34600000000';
           src="/images/schedule.png"
           :alt="t('academia.schedule.imageAlt')"
           class="academy-schedule__reference-img"
+          width="1600"
+          height="1348"
           format="webp"
           loading="lazy"
         />

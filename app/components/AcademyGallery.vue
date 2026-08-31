@@ -49,7 +49,8 @@ let rafId: number | null = null;
 let mobileQuery: MediaQueryList | null = null;
 
 const lerp = (a: number, b: number, t: number): number => a + (b - a) * t;
-const baseSpeed = (): number => (mobileQuery?.matches ? SPEED_MOBILE : SPEED_DESKTOP);
+const baseSpeed = (): number =>
+  mobileQuery?.matches ? SPEED_MOBILE : SPEED_DESKTOP;
 
 const handleScroll = (): void => {
   const delta = window.scrollY - lastScrollY;
@@ -107,6 +108,8 @@ onUnmounted(() => {
               :src="photo.src"
               :alt="photo.alt"
               class="academy-gallery__img"
+              width="520"
+              height="693"
               format="webp"
               loading="lazy"
             />
@@ -125,6 +128,8 @@ onUnmounted(() => {
               :src="photo.src"
               :alt="photo.alt"
               class="academy-gallery__img"
+              width="520"
+              height="693"
               format="webp"
               loading="lazy"
             />

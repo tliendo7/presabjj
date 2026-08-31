@@ -19,6 +19,7 @@ interface FormState {
 type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
 
 const { t } = useI18n();
+const localePath = useLocalePath();
 
 const asideImage = '/images/class/_CIR5266.jpg';
 
@@ -143,13 +144,11 @@ const submitForm = async (): Promise<void> => {
                   target="_blank"
                   rel="noopener noreferrer"
                   class="academia-form__contact-value"
-                  >{{ item.value }}</a
-                >
+                >{{ item.value }}</a>
                 <span
                   v-else
                   class="academia-form__contact-value"
-                  >{{ item.value }}</span
-                >
+                >{{ item.value }}</span>
               </li>
             </ul>
           </div>
@@ -164,8 +163,7 @@ const submitForm = async (): Promise<void> => {
               <label
                 class="academia-form__label"
                 for="academia-form-name"
-                >{{ t('academia.form.fields.name') }}</label
-              >
+              >{{ t('academia.form.fields.name') }}</label>
               <input
                 id="academia-form-name"
                 v-model="form.name"
@@ -173,14 +171,13 @@ const submitForm = async (): Promise<void> => {
                 class="academia-form__input"
                 :placeholder="t('academia.form.fields.namePlaceholder')"
                 required
-              />
+              >
             </div>
             <div class="academia-form__field">
               <label
                 class="academia-form__label"
                 for="academia-form-phone"
-                >{{ t('academia.form.fields.phone') }}</label
-              >
+              >{{ t('academia.form.fields.phone') }}</label>
               <input
                 id="academia-form-phone"
                 :value="form.phone"
@@ -191,7 +188,7 @@ const submitForm = async (): Promise<void> => {
                 :placeholder="t('academia.form.fields.phonePlaceholder')"
                 required
                 @input="onPhoneInput"
-              />
+              >
             </div>
           </div>
 
@@ -199,8 +196,7 @@ const submitForm = async (): Promise<void> => {
             <label
               class="academia-form__label"
               for="academia-form-email"
-              >{{ t('academia.form.fields.email') }}</label
-            >
+            >{{ t('academia.form.fields.email') }}</label>
             <input
               id="academia-form-email"
               v-model="form.email"
@@ -208,15 +204,14 @@ const submitForm = async (): Promise<void> => {
               class="academia-form__input"
               :placeholder="t('academia.form.fields.emailPlaceholder')"
               required
-            />
+            >
           </div>
 
           <div class="academia-form__field">
             <label
               class="academia-form__label"
               for="academia-form-message"
-              >{{ t('academia.form.fields.message') }}</label
-            >
+            >{{ t('academia.form.fields.message') }}</label>
             <textarea
               id="academia-form-message"
               v-model="form.message"
@@ -234,12 +229,22 @@ const submitForm = async (): Promise<void> => {
               type="checkbox"
               class="academia-form__checkbox"
               required
-            />
-            <label
+            >
+            <i18n-t
+              keypath="academia.form.fields.consent"
+              tag="label"
               class="academia-form__consent-label"
               for="academia-form-consent"
-              >{{ t('academia.form.fields.consent') }}</label
+              scope="global"
             >
+              <template #privacyLink>
+                <NuxtLink
+                  :to="localePath('privacidad')"
+                  target="_blank"
+                  class="academia-form__consent-link"
+                >{{ t('academia.form.fields.consentPrivacyLink') }}</NuxtLink>
+              </template>
+            </i18n-t>
           </div>
 
           <button

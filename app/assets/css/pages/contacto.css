@@ -1,0 +1,4 @@
+.contacto-page {
+  @apply min-h-screen;
+  @apply bg-white text-black;
+}

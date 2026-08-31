@@ -63,8 +63,10 @@
     @apply mt-xs;
 
     &.btn--outline {
-      color: var(--presa-black);
+      @apply text-black;
       border-color: rgba(0, 0, 0, 0.2);
+
+      @apply py-xxs px-s;
 
       &:hover {
         border-color: rgba(0, 0, 0, 0.6);
@@ -224,5 +226,17 @@
     @apply -mb-1;
 
     @apply lg:text-m;
+  }
+
+  /* ── Versión simple (sin muesca ni label) ─────────────────
+     Mientras no esté cerrado el catálogo real de la tienda: mismo
+     posicionamiento/parallax que .home-store__card, pero sin la
+     máscara SVG — solo un rectángulo con el border-radius estándar
+     del sitio (ver comentario en HomeStore.vue). */
+  & .home-store__simple-media {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply overflow-hidden;
+    @apply rounded-lg;
   }
 }

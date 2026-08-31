@@ -144,7 +144,9 @@ onUnmounted(() => {
       <div class="academy-us__intro">
         <div class="academy-us__intro-row">
           <div class="academy-us__intro-content">
-            <span class="academy-us__intro-eyebrow">{{ t('academia.us.eyebrow') }}</span>
+            <span class="academy-us__intro-eyebrow">{{
+              t('academia.us.eyebrow')
+            }}</span>
             <h2 class="academy-us__intro-heading">
               {{ t('academia.us.heading') }}
             </h2>
@@ -153,11 +155,24 @@ onUnmounted(() => {
             </p>
           </div>
 
-          <!-- Placeholder del logo de Equipo Santana: el cliente todavía no
-               nos ha pasado el logotipo definitivo. Sustituir este div por
-               la imagen real en cuanto esté disponible. -->
-          <div class="academy-us__logo-placeholder">
-            {{ t('academia.us.logoPlaceholder') }}
+          <!--
+            Logos de los dos equipos, uno debajo del otro: primero Equipo
+            Santana, después Team Ganbaru (la afiliación). El de Santana
+            sigue siendo un placeholder -el cliente todavía no nos ha
+            pasado el logotipo definitivo-, sustituir este div por la
+            imagen real en cuanto esté disponible. El de Ganbaru ya es
+            el logo real (SVG extraído del PDF que pasó el cliente).
+          -->
+          <div class="academy-us__logos">
+            <div class="academy-us__logo-placeholder">
+              {{ t('academia.us.logoPlaceholder') }}
+            </div>
+
+            <img
+              src="/images/partners/team-ganbaru.svg"
+              alt="Team Ganbaru"
+              class="academy-us__logo-ganbaru"
+            >
           </div>
         </div>
       </div>
@@ -174,6 +189,8 @@ onUnmounted(() => {
                 src="/images/class/_CIR8579.jpg"
                 alt="Clase de Brazilian Jiu-Jitsu en Presa Academy"
                 class="academy-us__img"
+                width="900"
+                height="1200"
                 format="webp"
                 loading="lazy"
               />
@@ -189,6 +206,8 @@ onUnmounted(() => {
               :src="ganbaru.image"
               :alt="ganbaru.imageAlt"
               class="academy-us__ganbaru-logo"
+              width="900"
+              height="1200"
               format="webp"
               loading="lazy"
             />

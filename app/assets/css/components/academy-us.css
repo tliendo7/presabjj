@@ -43,17 +43,31 @@
     @apply lg:text-l;
   }
 
+  /* Contenedor de los dos logos de equipo, uno al lado del otro y al
+     50/50: primero Equipo Santana (placeholder), después Team Ganbaru
+     (logo real). Grid en vez de flex para que el gap no rompa el
+     reparto exacto de ancho entre las dos columnas. */
+  & .academy-us__logos {
+    @apply grid grid-cols-2 items-center;
+    @apply gap-s;
+    @apply mx-auto;
+    @apply w-full max-w-[400px];
+  }
+
   /* Placeholder temporal del logo de Equipo Santana, a la espera de que
      el cliente facilite el archivo definitivo. */
   & .academy-us__logo-placeholder {
     @apply flex items-center justify-center;
-    @apply mx-auto;
-    @apply w-full max-w-[400px] aspect-square;
+    @apply w-full aspect-square;
     @apply font-body text-s uppercase text-center;
     @apply text-black;
     @apply bg-gray-100;
     @apply rounded-lg;
     border: 1px dashed rgba(144, 144, 144, 0.783);
+  }
+
+  & .academy-us__logo-ganbaru {
+    @apply w-full h-auto;
   }
 
   & .academy-us__block {

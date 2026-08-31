@@ -12,10 +12,7 @@ const phrases = computed<string[]>(() =>
 // Repetimos las frases varias veces para que el track tenga suficiente
 // ancho y el loop del marquee sea continuo.
 const items = computed<string[]>(() =>
-  Array.from(
-    { length: 6 },
-    (_, i) => phrases.value[i % phrases.value.length]
-  )
+  Array.from({ length: 6 }, (_, i) => phrases.value[i % phrases.value.length])
 );
 
 const trackRef = ref<HTMLElement | null>(null);

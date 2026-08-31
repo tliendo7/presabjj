@@ -83,6 +83,8 @@ onUnmounted(() => {
               src="/images/class/mobile.png"
               :alt="t('academia.app.phoneAlt')"
               class="academy-app__phone"
+              width="650"
+              height="854"
               format="webp"
               loading="lazy"
             />

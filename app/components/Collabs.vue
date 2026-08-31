@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n();
 
-const logos = [
+// Usado por el carrusel comentado más abajo (ver nota en el template).
+const _logos = [
   { name: 'Deporte Lagunero', src: '/images/partners/deporte-lagunero.png' },
   { name: 'DxD', src: '/images/partners/dxd.png' },
   { name: 'Ganbaru', src: '/images/partners/ganbaru.png' },
@@ -83,13 +84,30 @@ onUnmounted(() => {
             {{ t('evento.collabs.titleSub') }}
           </p>
         </div>
-        <TextLineReveal
-          class="collabs__meta"
-          :text="t('evento.collabs.description')"
-        />
+        <div class="collabs__meta-col">
+          <!-- Único patrocinador confirmado a día de hoy. El resto de
+          logos (más abajo, comentados) se reintroducirán en el carrusel
+          cuando se firmen los acuerdos con los demás colaboradores. -->
+          <TextLineReveal
+            class="collabs__meta"
+            :text="t('evento.collabs.description')"
+          />
+          <NuxtImg
+            src="/images/partners/deporte-lagunero.png"
+            alt="Deporte Lagunero"
+            class="collabs__solo-logo"
+            width="600"
+            height="115"
+            format="webp"
+          />
+        </div>
       </div>
     </Container>
 
+    <!-- Carrusel de colaboradores: comentado temporalmente porque, a día
+    de hoy, el único patrocinador confirmado es Deporte Lagunero (ya
+    mostrado arriba). Reintroducir este slider cuando se cierren más
+    acuerdos de colaboración.
     <div class="collabs__marquee-wrap">
       <div
         ref="trackRef"
@@ -128,5 +146,6 @@ onUnmounted(() => {
         </div>
       </div>
     </div>
+    -->
   </section>
 </template>

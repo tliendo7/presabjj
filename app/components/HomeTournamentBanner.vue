@@ -4,10 +4,11 @@
 
 // 2. TS types or constants
 
-// La fecha del torneo vive también en app/pages/evento.vue (prop
-// target-date del <Countdown>). Si cambia la fecha del evento, hay que
-// actualizarla en los dos sitios.
-const TOURNAMENT_DATE = '2026-11-14T10:00:00Z';
+// La fecha y hora del torneo vive en 2 sitios más: app/pages/torneo.vue
+// (prop target-date del <Countdown>) y app/components/EventOnline.vue
+// (EVENT_START_DATE). Si cambia la fecha/hora del evento, hay que
+// actualizarla en los 3 sitios.
+const TOURNAMENT_DATE = '2026-11-14T18:00:00Z';
 
 // 5. Composables
 const { t } = useI18n();
@@ -32,14 +33,6 @@ const formattedDate = computed<string>(() =>
             {{ t('home.tournament.eyebrow') }}
           </span>
         </div>
-
-        <NuxtImg
-          src="/images/partners/deporte-lagunero.png"
-          :alt="t('home.tournament.sponsorAlt')"
-          class="home-tournament__sponsor"
-          format="webp"
-          loading="lazy"
-        />
       </div>
 
       <div
@@ -50,6 +43,8 @@ const formattedDate = computed<string>(() =>
           src="/images/deco/mask.png"
           alt=""
           class="home-tournament__photo-img"
+          width="1600"
+          height="1087"
           format="webp"
           loading="lazy"
         />

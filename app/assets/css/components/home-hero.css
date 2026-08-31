@@ -3,7 +3,9 @@
   @apply w-full;
   @apply overflow-hidden;
   @apply bg-red-700;
-  height: calc(75svh - 4rem);
+  height: calc(40svh - 4rem);
+
+  @apply md:h-[calc(55svh-4rem)];
 
   .container,
   .container__inner {
@@ -18,7 +20,7 @@
   }
 
   .home-hero__logo {
-    @apply w-[min(80%,28rem)] h-auto;
+    @apply w-[min(80%,15rem)] h-auto;
   }
 
   .home-hero__text {

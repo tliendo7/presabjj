@@ -23,7 +23,7 @@ const LIVE_EVENT_IMAGE = '/images/deco/bg-2.jpg';
 
 // Fecha real del evento (ver TODO equivalente en evento.vue sobre la
 // fecha "trampa" del countdown para la demo con el cliente).
-const EVENT_START_DATE = new Date('2026-11-14T10:00:00Z');
+const EVENT_START_DATE = new Date('2026-11-14T18:00:00Z');
 
 const pastEditionCard = computed<VideoCard>(() => ({
   id: 'past-edition',
@@ -58,11 +58,14 @@ onMounted(() => {
   isEventLive.value = new Date() >= EVENT_START_DATE;
 });
 
-const secondCard = computed(
-  (): VideoCard => (isEventLive.value ? liveCard : comingSoonCard.value)
+const secondCard = computed((): VideoCard =>
+  isEventLive.value ? liveCard : comingSoonCard.value
 );
 
-const cards = computed((): VideoCard[] => [pastEditionCard.value, secondCard.value]);
+const cards = computed((): VideoCard[] => [
+  pastEditionCard.value,
+  secondCard.value
+]);
 </script>
 
 <template>
@@ -74,6 +77,8 @@ const cards = computed((): VideoCard[] => [pastEditionCard.value, secondCard.val
             src="/images/planet.png"
             alt=""
             class="event-online__map-img"
+            width="1600"
+            height="640"
             format="webp"
           />
         </div>
@@ -81,7 +86,9 @@ const cards = computed((): VideoCard[] => [pastEditionCard.value, secondCard.val
         <div class="event-online__content">
           <div class="event-online__title-block">
             <h2 class="event-online__title-main">
-              <span class="event-online__title-line">{{ t('evento.online.titleLine1') }}</span>
+              <span class="event-online__title-line">{{
+                t('evento.online.titleLine1')
+              }}</span>
               <span
                 class="event-online__title-line event-online__title-line--brier"
               >
@@ -111,6 +118,8 @@ const cards = computed((): VideoCard[] => [pastEditionCard.value, secondCard.val
                   :src="card.image"
                   :alt="card.title"
                   class="event-online__card-img"
+                  width="960"
+                  height="1200"
                   format="webp"
                   loading="lazy"
                 />
@@ -127,14 +136,12 @@ const cards = computed((): VideoCard[] => [pastEditionCard.value, secondCard.val
                 <span
                   v-if="card.badge"
                   class="event-online__card-badge"
-                  >{{ card.badge }}</span
-                >
+                >{{ card.badge }}</span>
 
                 <span
                   v-if="card.duration"
                   class="event-online__card-duration"
-                  >{{ card.duration }}</span
-                >
+                >{{ card.duration }}</span>
 
                 <Icon
                   name="mdi:youtube"

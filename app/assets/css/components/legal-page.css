@@ -1,0 +1,39 @@
+.legal-page {
+  @apply py-xl;
+
+  @apply lg:py-xxl;
+
+  & .legal-page__eyebrow {
+    @apply font-josefin font-semibold uppercase tracking-nav;
+    @apply text-xs;
+    color: var(--gray-600);
+  }
+
+  & .legal-page__heading {
+    @apply font-josefin font-bold uppercase;
+    @apply m-0 mt-xs;
+    @apply tracking-title leading-none;
+    color: var(--presa-black);
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  & .legal-page__body {
+    @apply flex flex-col;
+    @apply gap-m;
+    @apply mt-l;
+  }
+
+  & .legal-page__section-heading {
+    @apply font-josefin font-bold uppercase;
+    @apply m-0 mb-xxs;
+    @apply text-l tracking-nav;
+    color: var(--presa-black);
+  }
+
+  & .legal-page__section-body {
+    @apply font-body;
+    @apply m-0;
+    @apply text-s leading-body;
+    color: var(--gray-600);
+  }
+}

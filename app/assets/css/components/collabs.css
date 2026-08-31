@@ -37,9 +37,26 @@
     font-size: clamp(2rem, 5.2vw, 4.5rem);
   }
 
+  & .collabs__meta-col {
+    @apply flex flex-col;
+    @apply self-end;
+    @apply w-full;
+    @apply gap-xs;
+  }
+
+  & .collabs__solo-logo {
+    @apply block self-end;
+    @apply object-contain;
+    @apply grayscale brightness-0;
+    @apply opacity-75;
+    @apply w-full h-auto;
+    @apply mt-xs;
+
+    @apply md:max-h-[50px];
+  }
+
   & .collabs__meta {
     @apply font-body;
-    @apply self-end;
     color: rgba(0, 0, 0, 0.6);
     @apply text-s leading-tight;
     @apply m-0;
@@ -68,12 +85,20 @@
 
   & .collabs__marquee-wrap::before {
     @apply left-0;
-    background: linear-gradient(to right, var(--presa-white) 0%, transparent 100%);
+    background: linear-gradient(
+      to right,
+      var(--presa-white) 0%,
+      transparent 100%
+    );
   }
 
   & .collabs__marquee-wrap::after {
     @apply right-0;
-    background: linear-gradient(to left, var(--presa-white) 0%, transparent 100%);
+    background: linear-gradient(
+      to left,
+      var(--presa-white) 0%,
+      transparent 100%
+    );
   }
 
   & .collabs__marquee-track {

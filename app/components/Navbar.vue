@@ -25,6 +25,8 @@ watch(
           src="/images/logo.png"
           alt="Presa"
           class="navbar__logo-img"
+          width="234"
+          height="64"
           format="webp"
         />
       </NuxtLink>
@@ -52,6 +54,14 @@ watch(
             class="navbar__link"
           >
             {{ t('nav.evento') }}
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            :to="localePath('contacto')"
+            class="navbar__link"
+          >
+            {{ t('nav.contacto') }}
           </NuxtLink>
         </li>
       </ul>
@@ -122,6 +132,14 @@ watch(
             class="navbar__mobile-link"
           >
             {{ t('nav.evento') }}
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink
+            :to="localePath('contacto')"
+            class="navbar__mobile-link"
+          >
+            {{ t('nav.contacto') }}
           </NuxtLink>
         </li>
       </ul>

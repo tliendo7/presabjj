@@ -15,7 +15,28 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '32x32',
+          href: '/favicon-32x32.png'
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          sizes: '16x16',
+          href: '/favicon-16x16.png'
+        },
+        {
+          rel: 'apple-touch-icon',
+          sizes: '180x180',
+          href: '/apple-touch-icon.png'
+        },
+        { rel: 'manifest', href: '/site.webmanifest' }
+      ],
+      meta: [{ name: 'theme-color', content: '#a40a2f' }]
     }
   },
 
@@ -29,6 +50,35 @@ export default defineNuxtConfig({
     googleAppsScriptUrl: '',
     public: {
       siteUrl: 'https://presaculturebjj.com'
+    }
+  },
+
+  // Estrategia de caché de los estáticos (ver docs/auditoria-pre-lanzamiento.md
+  // y la conversación sobre el punto 2 de la auditoría del cliente): sin esto,
+  // Nitro no le manda a los navegadores/CDN ninguna cabecera de caché fuerte
+  // para lo que vive en `public/`, así que cada visita vuelve a pedir cada
+  // imagen/vídeo/fuente entera al servidor.
+  routeRules: {
+    // JS/CSS generados por el build: llevan un hash en el propio nombre de
+    // archivo (p. ej. `entry.ABC123.js`), así que son inmutables por
+    // definición — si el contenido cambia, cambia el nombre. Caché máxima
+    // segura.
+    '/_nuxt/**': {
+      headers: { 'cache-control': 'public, max-age=31536000, immutable' }
+    },
+    // Imágenes, vídeos y fuentes de `public/`: NO llevan hash en el nombre,
+    // así que "immutable" sería peligroso si en el futuro se sustituye un
+    // archivo manteniendo el mismo nombre (ya ha pasado en este proyecto).
+    // Caché moderada (1 día) + revalidación: menos peticiones repetidas sin
+    // arriesgarse a servir una versión vieja indefinidamente.
+    '/images/**': {
+      headers: { 'cache-control': 'public, max-age=86400, must-revalidate' }
+    },
+    '/videos/**': {
+      headers: { 'cache-control': 'public, max-age=86400, must-revalidate' }
+    },
+    '/fonts/**': {
+      headers: { 'cache-control': 'public, max-age=86400, must-revalidate' }
     }
   },
   compatibilityDate: '2025-07-15',
@@ -96,18 +146,30 @@ export default defineNuxtConfig({
     // funcionando con normalidad.
     customRoutes: 'config',
     pages: {
-      index: {
+      'index': {
         es: '/',
         en: '/'
       },
-      torneo: {
+      'torneo': {
         es: '/torneo',
         en: '/tournament'
       },
-      academia: {
+      'academia': {
         es: '/academia',
         en: '/academy'
+      },
+      'contacto': {
+        es: '/contacto',
+        en: '/contact'
+      },
+      'aviso-legal': {
+        es: '/aviso-legal',
+        en: '/legal-notice'
+      },
+      'privacidad': {
+        es: '/privacidad',
+        en: '/privacy'
       }
     }
-  }
+  },
 });

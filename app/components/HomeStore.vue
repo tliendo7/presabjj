@@ -54,7 +54,8 @@ const imageSrcs: string[] = [
   '/images/merch/090526_SBJJ_Camisetas-14.jpg',
   '/images/merch/090526_SBJJ_Camisetas-16.jpg',
   '/images/merch/090526_SBJJ_Camisetas-3.jpg',
-  '/images/merch/090526_SBJJ_Camisetas-5.jpg'
+  '/images/merch/090526_SBJJ_Camisetas-5.jpg',
+  '/images/merch/090526_SBJJ_Camisetas-17.jpg'
 ];
 
 // Posición de cada card en el grid de 4 columnas de escritorio (ver
@@ -64,7 +65,11 @@ const imageSrcs: string[] = [
 // cards originales se quedan en columnas 3-4 (filas 1 y 2). En mobile
 // (grid de 2 columnas) este orden coincide 1:1 con el auto-flow, así
 // que no hace falta ninguna posición explícita ahí.
-const CARD_LAYOUT: { gridColumn: number; gridRow: number; parallaxGroup: number }[] = [
+const CARD_LAYOUT: {
+  gridColumn: number;
+  gridRow: number;
+  parallaxGroup: number;
+}[] = [
   { gridColumn: 3, gridRow: 1, parallaxGroup: 0 },
   { gridColumn: 4, gridRow: 1, parallaxGroup: 1 },
   { gridColumn: 3, gridRow: 2, parallaxGroup: 0 },
@@ -75,20 +80,18 @@ const CARD_LAYOUT: { gridColumn: number; gridRow: number; parallaxGroup: number 
 
 // 7. Computed properties
 const products = computed<Product[]>(() =>
-  (tm('home.store.items') as { name: string }[]).map(
-    (item, i): Product => {
-      const layout = CARD_LAYOUT[i % CARD_LAYOUT.length];
+  (tm('home.store.items') as { name: string }[]).map((item, i): Product => {
+    const layout = CARD_LAYOUT[i % CARD_LAYOUT.length];
 
-      return {
-        id: `product-${i}`,
-        image: imageSrcs[i % imageSrcs.length],
-        name: rt(item.name),
-        gridColumn: layout.gridColumn,
-        gridRow: layout.gridRow,
-        parallaxGroup: layout.parallaxGroup
-      };
-    }
-  )
+    return {
+      id: `product-${i}`,
+      image: imageSrcs[i % imageSrcs.length],
+      name: rt(item.name),
+      gridColumn: layout.gridColumn,
+      gridRow: layout.gridRow,
+      parallaxGroup: layout.parallaxGroup
+    };
+  })
 );
 
 // 8. Functions
@@ -125,13 +128,11 @@ const getGroupTargets = (progress: number): number[] => {
 
 const initSprings = (progress: number): void => {
   const targets = getGroupTargets(progress);
-  springs = targets.map(
-    (value: number): SpringState => ({
-      current: value,
-      velocity: 0,
-      target: value
-    })
-  );
+  springs = targets.map((value: number): SpringState => ({
+    current: value,
+    velocity: 0,
+    target: value
+  }));
   groupOffsets.value = [...targets];
 };
 
@@ -234,11 +235,16 @@ onUnmounted((): void => {
           <p class="home-store__intro">
             {{ t('home.store.intro') }}
           </p>
+          <!--
+            Sin icon-name: de momento la tienda no está montada (no
+            hay a dónde enlazar en Shopify todavía), así que el CTA
+            es solo un botón informativo "Próximamente", sin flecha.
+            En cuanto haya tienda real, se puede volver a añadir
+            icon-name="mdi:arrow-top-right" icon-position="right".
+          -->
           <Button
             class="home-store__cta"
             :label="t('home.store.cta')"
-            icon-name="mdi:arrow-top-right"
-            icon-position="right"
             variant="outline"
           />
         </div>
@@ -251,15 +257,19 @@ onUnmounted((): void => {
           :style="{
             '--card-col': product.gridColumn,
             '--card-row': product.gridRow,
-            transform: `translateY(${groupOffsets[product.parallaxGroup]}px)`,
-            willChange: 'transform'
+            'transform': `translateY(${groupOffsets[product.parallaxGroup]}px)`,
+            'willChange': 'transform'
           }"
         >
           <!--
-            El recorte con muesca se hace con mask-image, que clipa TODO
-            lo que haya dentro de este wrapper (por eso el label vive
-            fuera, como hermano, y no como hijo de esta capa).
-          -->
+            DISEÑO ORIGINAL (muesca recortada con mask-image + label
+            con el nombre del producto). No se borra: el cliente
+            quiere retomarlo cuando el catálogo de la tienda esté
+            cerrado. De momento se sustituye por la versión simple de
+            abajo (rectángulo con el border-radius estándar del
+            sitio), porque aún no está decidido qué productos van a
+            estar en la tienda.
+
           <div class="home-store__frame-mask">
             <svg
               class="home-store__frame home-store__frame--base"
@@ -289,6 +299,8 @@ onUnmounted((): void => {
                 :src="product.image"
                 :alt="product.name"
                 class="home-store__img"
+                width="700"
+                height="933"
                 format="webp"
                 loading="lazy"
               />
@@ -299,6 +311,19 @@ onUnmounted((): void => {
             <span class="home-store__label-name">
               {{ product.name }}
             </span>
+          </div>
+          -->
+
+          <div class="home-store__simple-media">
+            <NuxtImg
+              :src="product.image"
+              :alt="product.name"
+              class="home-store__img"
+              width="700"
+              height="933"
+              format="webp"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>

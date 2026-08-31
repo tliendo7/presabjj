@@ -130,6 +130,8 @@ onUnmounted((): void => {
               src="/images/class/_CIR7888.jpg"
               :alt="t('home.academy.extra.imageAlt')"
               class="home-academy__extra-img"
+              width="1440"
+              height="1080"
               format="webp"
               loading="lazy"
             />
@@ -143,16 +145,20 @@ onUnmounted((): void => {
               :to="localePath({ name: 'academia', hash: '#horarios' })"
               class="home-academy__extra-secondary-link"
             >
-              <span class="home-academy__extra-secondary-link-text">{{ t('home.academy.extra.secondaryLink') }}</span>
+              <span class="home-academy__extra-secondary-link-text">{{
+                t('home.academy.extra.secondaryLink')
+              }}</span>
               <Icon name="mdi:arrow-right" />
             </NuxtLink>
           </div>
 
           <div class="home-academy__extra-secondary-image">
             <NuxtImg
-              src="/images/class/_CUS-girls.jpg"
+              src="/images/class/_CUS-santana-ganbaru-roll.jpg"
               :alt="t('home.academy.extra.secondaryImageAlt')"
               class="home-academy__extra-img"
+              width="1080"
+              height="1080"
               format="webp"
               loading="lazy"
             />
@@ -163,6 +169,8 @@ onUnmounted((): void => {
           <video
             class="home-academy__extra-video-el"
             src="/videos/video-niños-bjj.mp4"
+            poster="/videos/posters/video-ninos-bjj.jpg"
+            preload="metadata"
             :aria-label="t('home.academy.extra.videoAlt')"
             autoplay
             muted

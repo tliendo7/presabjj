@@ -109,6 +109,8 @@ onUnmounted(() => {
     <video
       class="academy-video__media"
       src="/videos/bjj-tenerife-para-todos.mp4"
+      poster="/videos/posters/bjj-tenerife-para-todos.jpg"
+      preload="metadata"
       autoplay
       muted
       loop

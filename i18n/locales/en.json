@@ -1,8 +1,9 @@
 {
   "nav": {
     "home": "Home",
-    "evento": "Upcoming events",
-    "academia": "Academy",
+    "evento": "Tournament",
+    "academia": "Santana Academy",
+    "contacto": "Contact",
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   },
@@ -74,9 +75,9 @@
       ]
     },
     "store": {
-      "heading": "Gear Up",
-      "intro": "Explore our collection of apparel and accessories while helping power our events: the profit from every purchase goes toward the prize pool for the competitions and activities we organize.",
-      "cta": "Visit the store",
+      "heading": "Coming Soon: Our Online Store",
+      "intro": "We're putting together our collection of apparel and accessories. The profit from every purchase will go straight to the prize pool for the competitions and activities we organize. In the meantime, you can get our gear directly at the academy.",
+      "cta": "Coming soon",
       "items": [
         {
           "name": "Official T-Shirt"
@@ -108,7 +109,6 @@
     "tournament": {
       "eyebrow": "4th edition",
       "title": "Presa Invitational Tournament",
-      "sponsorAlt": "Deporte Lagunero",
       "ctaInfo": "More info",
       "ctaTickets": "Buy tickets"
     },
@@ -147,7 +147,7 @@
     },
     "countdown": {
       "ariaLabelPrefix": "Countdown until",
-      "label": "14 NOV 2026, 10:00",
+      "label": "14 NOV 2026, 18:00",
       "dayUnit": "D",
       "hourUnit": "H",
       "minuteUnit": "M",
@@ -168,19 +168,19 @@
       "scheduleEyebrow": "Schedule",
       "schedule": [
         {
-          "time": "10.00h",
-          "name": "Doors open"
-        },
-        {
-          "time": "10.30h",
+          "time": "4:00 PM",
           "name": "Fighter weigh-in"
         },
         {
-          "time": "12.00h",
+          "time": "5:00 PM",
+          "name": "Doors open"
+        },
+        {
+          "time": "6:00 PM",
           "name": "Event start"
         },
         {
-          "time": "15.00h",
+          "time": "9:00 PM",
           "name": "Expected event end time"
         }
       ],
@@ -188,7 +188,7 @@
       "detailLocationLabel": "Location",
       "detailLocationValue": "Testa Training",
       "detailHourLabel": "Time",
-      "detailHourValue": "16.00h",
+      "detailHourValue": "6:00 PM",
       "detailPrizeLabel": "Accumulated prize",
       "detailPrizeValue": "€0",
       "detailRefereeingLabel": "Refereeing",
@@ -219,8 +219,8 @@
       "headingLine1": "WEAR",
       "headingLine2": "THE CULTURE",
       "headingLine3": "PRESA",
-      "description": "Every t-shirt, hoodie and cap you buy adds to the prize pool. Official Presa Invitational Tournament merchandise is made for those who live the sport on and off the mat.",
-      "cta": "Visit the store",
+      "description": "Every item you buy adds to the prize pool. Official Presa Invitational Tournament merchandise is made for those who live the sport on and off the mat.",
+      "academyNote": "You can get all our products at our academy, and soon, online too.",
       "items": [
         {
           "alt": "Official Presa Invitational Tournament t-shirt"
@@ -356,7 +356,7 @@
       "trial": {
         "lead": "Your first class is free.",
         "text": "Come try it out, no strings attached.",
-        "cta": "Check pricing"
+        "cta": "Check memberships"
       }
     },
     "app": {
@@ -517,7 +517,8 @@
         "emailPlaceholder": "e.g. jane.smith{'@'}gmail.com",
         "message": "Tell us your question",
         "messagePlaceholder": "Write your message here...",
-        "consent": "I agree to be contacted by the academy using the details provided."
+        "consent": "I agree to be contacted by the academy using the details provided, in accordance with our {privacyLink}.",
+        "consentPrivacyLink": "Privacy Policy"
       },
       "submit": {
         "default": "Send",
@@ -527,9 +528,123 @@
       }
     }
   },
+  "footer": {
+    "nav": {
+      "academia": {
+        "title": "ACADEMY",
+        "links": {
+          "aboutUs": "ABOUT US",
+          "team": "SANTANA TEAM",
+          "schedule": "SCHEDULES & PRICING",
+          "contact": "CONTACT"
+        }
+      },
+      "torneo": {
+        "title": "BJJ TOURNAMENT",
+        "links": {
+          "info": "GENERAL INFO",
+          "tickets": "BUY YOUR TICKET"
+        }
+      }
+    },
+    "legal": {
+      "avisoLegal": "Legal notice",
+      "privacidad": "Privacy policy"
+    }
+  },
+  "contacto": {
+    "title": "Contact | Presa Academy BJJ",
+    "subtitle": "Get in touch with Presa Academy BJJ in La Laguna, Tenerife.",
+    "eyebrow": "Learn more",
+    "heading": "Get in touch",
+    "description": "At Presa we believe effort is not negotiable, on and off the mat. We're a Brazilian Jiu-Jitsu community in La Laguna, Tenerife, committed to discipline, respect and the growth of everyone who trains with us. Have a question? Write to us and we'll get back to you as soon as possible.",
+    "cta": "Visit us",
+    "info": {
+      "phone": "673 64 53 24",
+      "email": "presaacademybjj{'@'}gmail.com",
+      "address": "Cam. la Piterita, 107, Nave 5, 38329 La Laguna, Santa Cruz de Tenerife"
+    },
+    "list": {
+      "whatsapp": "Write to us on WhatsApp",
+      "email": "Write to us by email",
+      "form": "Leave us your message"
+    }
+  },
+  "avisoLegal":   {
+    "title": "Legal Notice | Presa Academy BJJ",
+    "subtitle": "Legal information about the site owner and the terms of use of presaculturebjj.com.",
+    "heading": "Legal Notice",
+    "updated": "Last updated: August 31, 2026",
+    "sections": [
+      {
+        "heading": "1. Identifying information",
+        "body": "In compliance with the information duty set out in article 10 of Spanish Law 34/2002 on Information Society Services and Electronic Commerce (LSSICE), the following information is provided: the owner of this website (presaculturebjj.com) is [FULL NAME OR COMPANY NAME], with tax ID [TAX ID], registered at [FULL ADDRESS]. You can contact us at presaacademybjj{'@'}gmail.com."
+      },
+      {
+        "heading": "2. Purpose",
+        "body": "This Legal Notice governs access to and use of this website (the \"Site\"), whose main activity is to share information about the classes, events and activities of Presa Academy BJJ. Accessing the Site makes you a user and implies acceptance of the terms set out in this document."
+      },
+      {
+        "heading": "3. Terms of use",
+        "body": "The user agrees to make appropriate and lawful use of the Site, in accordance with applicable law, good faith and public order, and to refrain from using it for unlawful purposes or in ways that could cause harm to third parties or to the normal operation of the Site."
+      },
+      {
+        "heading": "4. Intellectual and industrial property",
+        "body": "All content on the Site (text, images, videos, logos, design and source code) is owned by [FULL NAME OR COMPANY NAME] or by third parties who have authorized its use, and is protected by intellectual and industrial property regulations. Reproduction, distribution or public communication without express authorization is prohibited."
+      },
+      {
+        "heading": "5. Liability",
+        "body": "The site owner is not responsible for interruptions, errors or failures that may occur while accessing the Site, nor for any damages arising from such incidents. Nor is it responsible for the content of external sites linked from this page (social media, WhatsApp, Google Maps, etc.)."
+      },
+      {
+        "heading": "6. Applicable law and jurisdiction",
+        "body": "This Legal Notice is governed by Spanish law. For any dispute arising from access to or use of the Site, the parties submit to the courts that have jurisdiction under applicable regulations."
+      }
+    ]
+  },
+  "privacidad":   {
+    "title": "Privacy Policy | Presa Academy BJJ",
+    "subtitle": "How we handle your personal data on presaculturebjj.com.",
+    "heading": "Privacy Policy",
+    "updated": "Last updated: August 31, 2026",
+    "sections": [
+      {
+        "heading": "1. Data controller",
+        "body": "The controller responsible for the personal data collected through this website is [FULL NAME OR COMPANY NAME], with tax ID [TAX ID], registered at [FULL ADDRESS]. You can contact us for any data protection matter at presaacademybjj{'@'}gmail.com."
+      },
+      {
+        "heading": "2. What data we collect and why",
+        "body": "Through the Academy and Contact page forms we collect the name, phone number, email and message you voluntarily provide, solely to respond to your inquiry about our classes and activities. If you write to us directly via WhatsApp, phone or email, we process the data you provide yourself in that conversation for the same purpose."
+      },
+      {
+        "heading": "3. Legal basis",
+        "body": "The legal basis for processing your data is the consent you give by checking the box on the form before submitting it, or by starting the conversation yourself via WhatsApp, phone or email."
+      },
+      {
+        "heading": "4. Data retention",
+        "body": "We keep your data only for as long as necessary to handle your inquiry and, where applicable, for the period required by law."
+      },
+      {
+        "heading": "5. Recipients and data processors",
+        "body": "We do not share your data with third parties, except where legally required. The Site's forms use Google Sheets (Google LLC) to store and manage the requests received, acting as a data processor."
+      },
+      {
+        "heading": "6. Cookies",
+        "body": "This Site does not use analytics, advertising or third-party cookies, nor does it use cookies to remember your selected language. Should any such tool be added in the future, this policy will be updated to inform you and, if applicable, request your consent."
+      },
+      {
+        "heading": "7. Your rights",
+        "body": "You can exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to us at presaacademybjj{'@'}gmail.com, stating the right you wish to exercise and attaching a copy of your ID. You also have the right to lodge a complaint with the Spanish Data Protection Agency (www.aepd.es) if you believe the processing of your data does not comply with the regulations."
+      },
+      {
+        "heading": "8. Security measures",
+        "body": "We apply reasonable technical and organizational measures to protect your personal data against unauthorized access, loss or alteration."
+      }
+    ]
+  },
   "socials": {
-    "titleEyebrow": "Don't",
-    "titleMain": "miss a thing",
+    "titleEyebrow": "Effort",
+    "titleMain": "is not negotiable",
     "subtitle": "Follow us on social media",
     "cardAlt": "Social post {n}"
   }

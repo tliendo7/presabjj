@@ -32,7 +32,7 @@ Según se vayan solucionando, se borran de aquí.
 ## Código / mantenimiento
 
 - [ ] **Script de `typecheck`**: no hay un `npm run typecheck` (`nuxi
-      typecheck`) en `package.json` para pillar errores de tipos antes de
+    typecheck`) en `package.json` para pillar errores de tipos antes de
       deploy.
 - [ ] **Componentes comentados sin usar**: `EventManifesto` y `Parallax`
       están comentados en `evento.vue` pero sus ficheros siguen en el

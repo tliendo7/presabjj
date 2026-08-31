@@ -13,6 +13,8 @@ const { t } = useI18n();
           src="/images/deco/logo-white.png"
           alt="Presa"
           class="home-hero__logo"
+          width="480"
+          height="120"
           format="webp"
         />
         <h1 class="home-hero__text">

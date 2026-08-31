@@ -167,7 +167,17 @@
   @media (min-width: 768px) {
     & .socials__links {
       @apply flex-row flex-wrap justify-center;
-      gap: clamp(1rem, 3vw, 2.5rem);
+      /* row-gap (entre la línea de Instagram y la de YouTube) más
+         corto que el column-gap (entre los propios iconos). */
+      gap: clamp(0.5rem, 1.5vw, 1rem) clamp(1rem, 3vw, 2.5rem);
+    }
+
+    /* Los 3 Instagram van en la primera línea; el link de YouTube
+       (último) siempre se fuerza a su propia línea debajo, en vez de
+       depender de si el ancho disponible lo hace encajar o no. */
+    & .socials__link:last-child {
+      flex-basis: 100%;
+      justify-content: center;
     }
   }
 

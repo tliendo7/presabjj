@@ -16,6 +16,8 @@ const { t } = useI18n();
           src="/images/deco/presa-brand-image-dog.png"
           alt="Presa"
           class="event-hero__brand-image"
+          width="2400"
+          height="989"
           format="webp"
         />
 

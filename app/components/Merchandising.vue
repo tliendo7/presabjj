@@ -79,8 +79,12 @@ const collageItems = computed<CollageItem[]>(() =>
       <div class="merchandising__layout">
         <div class="merchandising__content">
           <h2 class="merchandising__heading">
-            <span class="merchandising__heading-line"> {{ t('evento.merch.headingLine1') }} </span>
-            <span class="merchandising__heading-line"> {{ t('evento.merch.headingLine2') }} </span>
+            <span class="merchandising__heading-line">
+              {{ t('evento.merch.headingLine1') }}
+            </span>
+            <span class="merchandising__heading-line">
+              {{ t('evento.merch.headingLine2') }}
+            </span>
             <span
               class="merchandising__heading-line merchandising__heading-line--accent"
             >
@@ -93,12 +97,11 @@ const collageItems = computed<CollageItem[]>(() =>
             :text="t('evento.merch.description')"
           />
 
-          <Button
-            class="merchandising__cta"
-            :label="t('evento.merch.cta')"
-            icon-name="mdi:arrow-top-right"
-            icon-position="right"
-            variant="outline"
+          <!-- Todavía no hay ecommerce, así que en vez de un botón que
+          llevaría a una tienda inexistente, indicamos dónde comprar. -->
+          <TextLineReveal
+            class="merchandising__description"
+            :text="t('evento.merch.academyNote')"
           />
 
           <div class="merchandising__figure merchandising__figure--primary">
@@ -106,6 +109,8 @@ const collageItems = computed<CollageItem[]>(() =>
               :src="collageItems[0]?.src"
               :alt="collageItems[0]?.alt"
               class="merchandising__img"
+              width="700"
+              height="933"
               format="webp"
               loading="lazy"
             />
@@ -118,6 +123,8 @@ const collageItems = computed<CollageItem[]>(() =>
               :src="collageItems[1]?.src"
               :alt="collageItems[1]?.alt"
               class="merchandising__img"
+              width="700"
+              height="933"
               format="webp"
               loading="lazy"
             />
@@ -128,6 +135,8 @@ const collageItems = computed<CollageItem[]>(() =>
               :src="collageItems[3]?.src"
               :alt="collageItems[3]?.alt"
               class="merchandising__img"
+              width="700"
+              height="933"
               format="webp"
               loading="lazy"
             />
@@ -138,6 +147,8 @@ const collageItems = computed<CollageItem[]>(() =>
               :src="collageItems[2]?.src"
               :alt="collageItems[2]?.alt"
               class="merchandising__img"
+              width="700"
+              height="933"
               format="webp"
               loading="lazy"
             />
@@ -148,6 +159,8 @@ const collageItems = computed<CollageItem[]>(() =>
               :src="collageItems[4]?.src"
               :alt="collageItems[4]?.alt"
               class="merchandising__img"
+              width="500"
+              height="355"
               format="webp"
               loading="lazy"
             />

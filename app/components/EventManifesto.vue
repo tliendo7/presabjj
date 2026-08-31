@@ -64,6 +64,8 @@ const { t } = useI18n();
           <video
             class="event-manifesto__image"
             src="/videos/2025_reel_resumen.mp4"
+            poster="/videos/posters/2025_reel_resumen.jpg"
+            preload="metadata"
             autoplay
             muted
             loop

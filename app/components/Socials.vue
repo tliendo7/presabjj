@@ -9,9 +9,30 @@ interface SocialLink {
 const { t } = useI18n();
 
 const SOCIAL_LINKS: SocialLink[] = [
-  { id: 'instagram-presabjj', handle: '@presabjj', icon: 'mdi:instagram', url: 'https://www.instagram.com/presabjj/' },
-  { id: 'instagram-presaacademybjj', handle: '@presaacademybjj', icon: 'mdi:instagram', url: 'https://www.instagram.com/presaacademybjj' },
-  { id: 'youtube-presabjj', handle: '@PRESABJJ', icon: 'mdi:youtube', url: 'https://www.youtube.com/@PRESABJJ' }
+  {
+    id: 'instagram-presabjj',
+    handle: '@presabjj',
+    icon: 'mdi:instagram',
+    url: 'https://www.instagram.com/presabjj/'
+  },
+  {
+    id: 'instagram-presaacademybjj',
+    handle: '@presaacademybjj',
+    icon: 'mdi:instagram',
+    url: 'https://www.instagram.com/presaacademybjj'
+  },
+  {
+    id: 'instagram-santanajiujitsu',
+    handle: '@santanajiujitsu',
+    icon: 'mdi:instagram',
+    url: 'https://www.instagram.com/santanajiujitsu'
+  },
+  {
+    id: 'youtube-presabjj',
+    handle: '@PRESABJJ',
+    icon: 'mdi:youtube',
+    url: 'https://www.youtube.com/@PRESABJJ'
+  }
 ];
 
 const CARD_IMAGES = [
@@ -67,7 +88,9 @@ onUnmounted(() => {
     <div class="socials__inner">
       <div class="socials__header">
         <h2 class="socials__title">
-          <span class="socials__title-eyebrow">{{ t('socials.titleEyebrow') }}</span>
+          <span class="socials__title-eyebrow">{{
+            t('socials.titleEyebrow')
+          }}</span>
           <span class="socials__title-main">{{ t('socials.titleMain') }}</span>
         </h2>
       </div>
@@ -87,6 +110,8 @@ onUnmounted(() => {
             :src="card.image"
             :alt="card.alt"
             class="socials__card-img"
+            width="600"
+            height="800"
             format="webp"
             loading="lazy"
           />

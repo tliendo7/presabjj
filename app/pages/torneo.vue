@@ -24,7 +24,7 @@ usePageSeo('evento');
   <div class="torneo-page">
     <EventHero />
 
-    <Countdown target-date="2026-11-14T10:00:00Z" />
+    <Countdown target-date="2026-11-14T18:00:00Z" />
     <EventManifesto />
 
     <EventInfo />

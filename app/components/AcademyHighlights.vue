@@ -113,6 +113,8 @@ onUnmounted(() => {
                 :src="activeImage"
                 :alt="t('academia.values.imageAlt')"
                 class="academy-highlights__img"
+                width="700"
+                height="400"
                 format="webp"
               />
             </transition>

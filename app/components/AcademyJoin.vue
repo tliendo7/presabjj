@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const { tm, rt, t } = useI18n();
 
+const whatsappHref = 'https://wa.me/34673645324';
+
 interface GalleryImage {
   alt: string;
 }
@@ -62,6 +64,8 @@ const goToNextImage = (): void => {
                 src="/images/A.png"
                 alt="Presa logo mark"
                 class="w-10"
+                width="80"
+                height="64"
                 format="webp"
               />
               <span>Presa Culture</span>
@@ -72,8 +76,7 @@ const goToNextImage = (): void => {
                 v-for="(word, i) in headingWords"
                 :key="i + word"
                 class="academy-join__heading-line"
-                >{{ word }}</span
-              >
+              >{{ word }}</span>
             </h2>
             <TextLineReveal
               class="academy-join__description"
@@ -83,7 +86,9 @@ const goToNextImage = (): void => {
 
             <a
               class="academy-join__cta"
-              href="#"
+              :href="whatsappHref"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {{ t('academia.join.cta') }}
             </a>
@@ -97,6 +102,8 @@ const goToNextImage = (): void => {
                 :src="mainImage"
                 :alt="t('academia.join.gallery.main.alt')"
                 class="academy-join__gallery-img"
+                width="900"
+                height="1200"
                 format="webp"
               />
               <span class="academy-join__gallery-badge">{{
@@ -120,6 +127,8 @@ const goToNextImage = (): void => {
                   :src="activeCarouselSrc"
                   :alt="activeCarouselAlt"
                   class="academy-join__gallery-img"
+                  width="900"
+                  height="1200"
                   format="webp"
                 />
               </transition>
