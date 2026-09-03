@@ -75,6 +75,7 @@ const formattedDate = computed<string>(() =>
           </NuxtLink>
           <NuxtLink
             :to="localePath('torneo')"
+            :aria-label="t('home.tournament.ctaInfoAria')"
             class="home-tournament__cta-link"
           >
             <Button

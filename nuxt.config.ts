@@ -120,6 +120,13 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    // Necesario para que useLocaleHead() (app.vue) genere URLs absolutas en
+    // el <link rel="canonical"> y en los <link rel="alternate" hreflang="...">.
+    // Sin esto, @nuxtjs/i18n las genera relativas (p. ej. "/torneo" en vez de
+    // "https://presaculturebjj.com/torneo"), que Lighthouse/Google marcan como
+    // canonical/hreflang inválidos (el spec exige URL absoluta).
+    baseUrl: 'https://presaculturebjj.com',
+
     // Adds /en prefix for English; Spanish (default) has no prefix
     strategy: 'prefix_except_default',
     defaultLocale: 'es',
