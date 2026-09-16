@@ -79,7 +79,13 @@ export default defineNuxtConfig({
     },
     '/fonts/**': {
       headers: { 'cache-control': 'public, max-age=86400, must-revalidate' }
-    }
+    },
+
+    // Torneo pospuesto a 2027: la página sigue existiendo (app/pages/torneo.vue)
+    // pero no debe ser accesible directamente ni aparecer en el sitemap hasta
+    // que se reactive. Redirige tanto la ruta en español como en inglés a home.
+    '/torneo': { redirect: { to: '/', statusCode: 302 } },
+    '/en/tournament': { redirect: { to: '/en', statusCode: 302 } }
   },
   compatibilityDate: '2025-07-15',
 
@@ -179,4 +185,10 @@ export default defineNuxtConfig({
       }
     }
   },
+
+  // Torneo pospuesto a 2027: fuera del sitemap hasta que se reactive (ver
+  // routeRules más abajo, que además redirige /torneo y /en/tournament a home).
+  sitemap: {
+    exclude: ['/torneo', '/en/tournament']
+  }
 });

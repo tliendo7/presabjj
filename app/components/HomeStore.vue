@@ -34,13 +34,6 @@ const STIFFNESS = 80;
 const DAMPING = 9;
 const REST_THRESHOLD = 0.15;
 
-// ── Curva de entrada (mismo criterio que Merchandising.vue) ──
-// El borde superior de la sección arranca casi plano y se curva más
-// cuanto más se adentra en el viewport al hacer scroll.
-const MIN_CURVE_RY = 20;
-const MAX_CURVE_RY = 100;
-const curveRy = ref(MIN_CURVE_RY);
-
 let springs: SpringState[] = Array.from(
   { length: PARALLAX_GROUP_COUNT },
   (): SpringState => ({ current: 0, velocity: 0, target: 0 })
@@ -164,22 +157,6 @@ const getProgress = (): number => {
   );
 };
 
-const clamp = (value: number, min: number, max: number): number =>
-  Math.min(max, Math.max(min, value));
-
-const updateCurve = (): void => {
-  if (!sectionRef.value) return;
-
-  const rect = sectionRef.value.getBoundingClientRect();
-  const viewportHeight = window.innerHeight;
-
-  // 0 → el borde superior de la sección toca el borde inferior del viewport.
-  // 1 → el borde superior de la sección ha llegado a la parte alta del viewport.
-  const progress = clamp((viewportHeight - rect.top) / viewportHeight, 0, 1);
-
-  curveRy.value = MIN_CURVE_RY + progress * (MAX_CURVE_RY - MIN_CURVE_RY);
-};
-
 const updateParallax = (): void => {
   const progress = getProgress();
   const targets = getGroupTargets(progress);
@@ -189,14 +166,11 @@ const updateParallax = (): void => {
 
   cancelAnimationFrame(rafId);
   rafId = requestAnimationFrame(tick);
-
-  updateCurve();
 };
 
 // 9. Lifecycle functions
 onMounted((): void => {
   initSprings(getProgress());
-  updateCurve();
   window.addEventListener('scroll', updateParallax, { passive: true });
   window.addEventListener('resize', updateParallax, { passive: true });
 });
@@ -213,12 +187,6 @@ onUnmounted((): void => {
     ref="sectionRef"
     class="home-store"
   >
-    <div
-      class="home-store__top-curve"
-      aria-hidden="true"
-      :style="{ clipPath: `ellipse(70% ${curveRy}% at 50% 0%)` }"
-    />
-
     <Container>
       <!--
         Grid único de 4 columnas (2 en mobile): el texto ocupa las

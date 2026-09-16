@@ -129,21 +129,22 @@ const navColumns = computed<FooterNavColumn[]>(() => [
         to: { name: 'contacto' }
       }
     ]
-  },
-  {
-    title: t('footer.nav.torneo.title'),
-    to: { name: 'torneo' },
-    links: [
-      {
-        label: t('footer.nav.torneo.links.info'),
-        to: { name: 'torneo', hash: '#informacion-general' }
-      },
-      {
-        label: t('footer.nav.torneo.links.tickets'),
-        to: { name: 'torneo', hash: '#comprar-entradas' }
-      }
-    ]
   }
+  // Torneo pospuesto a 2027: columna oculta temporalmente (no borrar).
+  // {
+  //   title: t('footer.nav.torneo.title'),
+  //   to: { name: 'torneo' },
+  //   links: [
+  //     {
+  //       label: t('footer.nav.torneo.links.info'),
+  //       to: { name: 'torneo', hash: '#informacion-general' }
+  //     },
+  //     {
+  //       label: t('footer.nav.torneo.links.tickets'),
+  //       to: { name: 'torneo', hash: '#comprar-entradas' }
+  //     }
+  //   ]
+  // }
 ]);
 </script>
 

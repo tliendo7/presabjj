@@ -15,6 +15,10 @@ const { t } = useI18n();
       sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
       preload
     />
-    <span class="academy-hero__badge">{{ t('academia.hero.badge') }}</span>
+    <img
+      src="/images/deco/presa-academy-logo.png"
+      alt="Presa Academy"
+      class="academy-hero__badge"
+    >
   </section>
 </template>

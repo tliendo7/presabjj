@@ -1,7 +1,39 @@
 .home-events {
+  @apply relative;
   @apply w-full;
   @apply pt-xxl pb-xxl;
   @apply bg-white;
+
+  /* Compensa el inset -2px del top-curve (ver abajo) para que no quede
+     una línea de 2px sin cubrir entre esta sección y la anterior. */
+  margin-top: -2px;
+
+  /* Curva de entrada: tira que hace de puente visual con la sección oscura
+     anterior (HomeAcademy), con el mismo criterio que HomeStore.vue /
+     Merchandising.vue. Vive aquí (y no en HomeStore) porque en la home,
+     HomeAcademy va seguida de HomeEvents, no de HomeStore. */
+  & .home-events__top-curve {
+    @apply absolute;
+    @apply h-[85px];
+    inset: -2px 0 auto;
+    @apply bg-gray-900;
+    @apply z-0;
+    clip-path: ellipse(70% 20% at 50% 0%);
+    will-change: clip-path;
+
+    @apply lg:h-[200px];
+  }
+
+  & .home-events__space {
+    @apply pt-l;
+
+    @apply md:pt-xxl;
+  }
+
+  & .container {
+    @apply relative;
+    @apply z-1;
+  }
 
   & .home-events__header {
     @apply flex flex-col;

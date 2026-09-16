@@ -48,6 +48,8 @@ watch(
             {{ t('nav.academia') }}
           </NuxtLink>
         </li>
+        <!-- Torneo pospuesto a 2027: enlace oculto temporalmente (no borrar) -->
+        <!--
         <li>
           <NuxtLink
             :to="localePath('torneo')"
@@ -56,6 +58,7 @@ watch(
             {{ t('nav.evento') }}
           </NuxtLink>
         </li>
+        -->
         <li>
           <NuxtLink
             :to="localePath('contacto')"
@@ -126,6 +129,8 @@ watch(
             {{ t('nav.academia') }}
           </NuxtLink>
         </li>
+        <!-- Torneo pospuesto a 2027: enlace oculto temporalmente (no borrar) -->
+        <!--
         <li>
           <NuxtLink
             :to="localePath('torneo')"
@@ -134,6 +139,7 @@ watch(
             {{ t('nav.evento') }}
           </NuxtLink>
         </li>
+        -->
         <li>
           <NuxtLink
             :to="localePath('contacto')"

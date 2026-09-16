@@ -18,9 +18,19 @@ interface EventItem {
 const { t, tm, rt } = useI18n();
 
 // 6. Reactive variables
+const sectionRef = ref<HTMLElement | null>(null);
 const trackRef = ref<HTMLElement | null>(null);
 const activeIndex = ref<number>(0);
 let rafId = 0;
+
+// ── Curva de entrada (mismo criterio que HomeStore.vue / Merchandising.vue) ──
+// El borde superior de la sección arranca casi plano y se curva más cuanto
+// más se adentra en el viewport al hacer scroll. Hace de puente visual con
+// la sección oscura anterior (HomeAcademy), por eso vive aquí y no en
+// HomeStore: HomeAcademy va seguida de HomeEvents, no de HomeStore.
+const MIN_CURVE_RY = 20;
+const MAX_CURVE_RY = 100;
+const curveRy = ref(MIN_CURVE_RY);
 
 // Imágenes fijas en el componente: mismo criterio que Collabs.vue /
 // AcademyGallery.vue. El orden tiene que coincidir 1:1 con
@@ -63,6 +73,22 @@ const canScrollNext = computed<boolean>(
 );
 
 // 8. Functions
+const clamp = (value: number, min: number, max: number): number =>
+  Math.min(max, Math.max(min, value));
+
+const updateCurve = (): void => {
+  if (!sectionRef.value) return;
+
+  const rect = sectionRef.value.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+
+  // 0 → el borde superior de la sección toca el borde inferior del viewport.
+  // 1 → el borde superior de la sección ha llegado a la parte alta del viewport.
+  const progress = clamp((viewportHeight - rect.top) / viewportHeight, 0, 1);
+
+  curveRy.value = MIN_CURVE_RY + progress * (MAX_CURVE_RY - MIN_CURVE_RY);
+};
+
 // Los dots no representan "qué card está encajada" (con varias cards
 // visibles a la vez, esa card puede no llegar nunca a ser exactamente la
 // última: el scroll se queda corto antes de que encaje del todo). En su
@@ -131,18 +157,34 @@ onMounted((): void => {
   updateActiveIndex();
   trackRef.value?.addEventListener('scroll', handleScroll, { passive: true });
   window.addEventListener('resize', updateActiveIndex);
+
+  updateCurve();
+  window.addEventListener('scroll', updateCurve, { passive: true });
+  window.addEventListener('resize', updateCurve);
 });
 
 onUnmounted((): void => {
   trackRef.value?.removeEventListener('scroll', handleScroll);
   window.removeEventListener('resize', updateActiveIndex);
   cancelAnimationFrame(rafId);
+
+  window.removeEventListener('scroll', updateCurve);
+  window.removeEventListener('resize', updateCurve);
 });
 </script>
 
 <template>
-  <section class="home-events">
-    <Container>
+  <section
+    ref="sectionRef"
+    class="home-events"
+  >
+    <div
+      class="home-events__top-curve"
+      aria-hidden="true"
+      :style="{ clipPath: `ellipse(70% ${curveRy}% at 50% 0%)` }"
+    />
+
+    <Container class="home-events__space">
       <div class="home-events__header">
         <div class="home-events__header-bar">
           <span

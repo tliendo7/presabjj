@@ -87,6 +87,16 @@
     @apply gap-xl;
 
     @apply lg:justify-items-end;
+
+    /* Torneo pospuesto a 2027: con esa columna oculta solo queda
+       "Academia", que por defecto caería en la primera mitad del grid
+       (izquierda). La pasamos a la segunda mitad (derecha) en desktop
+       mientras sea la única columna — en cuanto vuelva la de Torneo,
+       :only-child deja de aplicar y el layout de dos columnas original
+       vuelve solo, sin tocar esto de nuevo. */
+    & > .footer__col:only-child {
+      @apply lg:col-start-2;
+    }
   }
 
   .footer__col-title {

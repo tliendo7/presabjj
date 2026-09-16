@@ -1,0 +1,13 @@
+.home-reel {
+  @apply relative;
+  @apply w-full;
+  @apply overflow-hidden;
+  @apply h-[500px];
+  @apply bg-black;
+
+  & .home-reel__media {
+    @apply absolute inset-0;
+    @apply w-full h-full;
+    @apply object-cover;
+  }
+}

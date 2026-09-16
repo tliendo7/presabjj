@@ -102,15 +102,13 @@
     "marquee": {
       "phrases": [
         "BJJ en La Laguna, Tenerife",
-        "Clase de prueba gratuita",
-        "Presa invitational Tournament 2026 4th edition"
+        "Clase de prueba gratuita"
       ]
     },
     "tournament": {
       "eyebrow": "4ª edición",
       "title": "Presa Invitational Tournament",
-      "ctaInfo": "Más información",
-      "ctaInfoAria": "Más información sobre el Presa Invitational Tournament",
+      "ctaInfo": "Info del torneo",
       "ctaTickets": "Comprar entrada"
     },
     "academy": {
@@ -570,7 +568,7 @@
       "form": "Déjanos tu mensaje"
     }
   },
-  "avisoLegal":   {
+  "avisoLegal": {
     "title": "Aviso Legal | Presa Academy BJJ",
     "subtitle": "Información legal sobre el titular y las condiciones de uso de presaculturebjj.com.",
     "heading": "Aviso Legal",
@@ -602,7 +600,7 @@
       }
     ]
   },
-  "privacidad":   {
+  "privacidad": {
     "title": "Política de Privacidad | Presa Academy BJJ",
     "subtitle": "Cómo tratamos tus datos personales en presaculturebjj.com.",
     "heading": "Política de Privacidad",

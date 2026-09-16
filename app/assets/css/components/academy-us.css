@@ -54,16 +54,8 @@
     @apply w-full max-w-[400px];
   }
 
-  /* Placeholder temporal del logo de Equipo Santana, a la espera de que
-     el cliente facilite el archivo definitivo. */
-  & .academy-us__logo-placeholder {
-    @apply flex items-center justify-center;
-    @apply w-full aspect-square;
-    @apply font-body text-s uppercase text-center;
-    @apply text-black;
-    @apply bg-gray-100;
-    @apply rounded-lg;
-    border: 1px dashed rgba(144, 144, 144, 0.783);
+  & .academy-us__logo-santana {
+    @apply w-full h-auto;
   }
 
   & .academy-us__logo-ganbaru {

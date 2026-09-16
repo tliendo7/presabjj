@@ -114,17 +114,10 @@
     @apply justify-start;
   }
 
-  /* Placeholder temporal del logo de Equipo Santana, a la espera de que
-     el cliente facilite el archivo definitivo. */
-  & .home-academy__extra-logo-placeholder {
-    @apply flex items-center justify-center;
+  & .home-academy__extra-logo {
+    @apply block;
     @apply mt-s mx-auto;
-    @apply w-full max-w-[400px] aspect-square;
-    @apply font-body text-s uppercase;
-    @apply text-gray-500;
-    @apply bg-gray-100;
-    @apply rounded-lg;
-    border: 1px dashed var(--gray-400);
+    @apply w-full max-w-[400px] h-auto;
   }
 
   /* Mismo border-top que .academy-us__description en AcademyUs.vue

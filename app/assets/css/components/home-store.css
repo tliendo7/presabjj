@@ -1,32 +1,8 @@
 .home-store {
   @apply relative;
   @apply w-full;
-  @apply pt-xxl pb-xxl;
+  @apply pt-s pb-xxl;
   @apply bg-white;
-
-  /* Compensa el inset -2px del top-curve (ver abajo) para que no quede
-     una línea de 2px sin cubrir entre esta sección y la anterior. */
-  margin-top: -2px;
-
-  /* Curva de entrada: tira que hace de puente visual con la sección
-     oscura anterior (HomeAcademy), con el mismo criterio que
-     Merchandising.vue / merchandising.css. */
-  & .home-store__top-curve {
-    @apply absolute;
-    @apply h-[85px];
-    inset: -2px 0 auto;
-    @apply bg-gray-900;
-    @apply z-0;
-    clip-path: ellipse(70% 20% at 50% 0%);
-    will-change: clip-path;
-
-    @apply lg:h-[200px];
-  }
-
-  & .container {
-    @apply relative;
-    @apply z-1;
-  }
 
   /* ── Texto ────────────────────────────────────────────── */
   /* Vive dentro de .home-store__grid (ver más abajo): ocupa las
@@ -104,9 +80,7 @@
     @apply grid grid-cols-2;
     @apply items-start;
     @apply gap-xs;
-    @apply pb-xxs pt-s;
-
-    @apply lg:pt-xxxl;
+    @apply pb-xxs pt-0;
   }
 
   @media (min-width: 1024px) {

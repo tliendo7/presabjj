@@ -56,7 +56,10 @@ usePageSeo('academia');
 
     <AcademyFAQ />
 
-    <AcademiaForm />
+    <!-- Banner con formulario oculto de forma temporal: el cliente todavía
+         no ha pasado la hoja de Google Sheets a la que debe enviar los
+         datos. No borrar -reactivar en cuanto esté lista la integración. -->
+    <!-- <AcademiaForm /> -->
     <Socials />
   </div>
 </template>

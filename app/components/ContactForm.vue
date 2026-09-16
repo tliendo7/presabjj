@@ -12,6 +12,11 @@ interface FormState {
 type SubmitStatus = 'idle' | 'loading' | 'success' | 'error';
 
 const { t } = useI18n();
+// Formulario oculto de forma temporal (ver el comentario en el template):
+// localePath, toggleForm, onPhoneInput y submitForm solo los usa el
+// desplegable con el <form>, así que quedan sin uso mientras tanto.
+// No borrar.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const localePath = useLocalePath();
 
 const WHATSAPP_HREF = 'https://wa.me/34673645324';
@@ -35,6 +40,7 @@ const measurePanelHeight = async (): Promise<void> => {
   panelHeight.value = panelInnerRef.value?.scrollHeight ?? 0;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const toggleForm = (): void => {
   isFormOpen.value = !isFormOpen.value;
   if (isFormOpen.value) {
@@ -79,6 +85,7 @@ const resetForm = (): void => {
   form.consent = false;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const onPhoneInput = (event: Event): void => {
   const target = event.target as HTMLInputElement;
   const digitsOnly = target.value.replace(/\D/g, '');
@@ -86,6 +93,7 @@ const onPhoneInput = (event: Event): void => {
   target.value = digitsOnly;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const submitForm = async (): Promise<void> => {
   if (!isValid.value || status.value === 'loading') return;
 
@@ -167,6 +175,11 @@ const submitForm = async (): Promise<void> => {
             </a>
           </li>
 
+          <!-- Formulario oculto de forma temporal: el cliente todavía no
+               ha pasado la hoja de Google Sheets a la que debe enviar los
+               datos. No borrar -reactivar este <li> (el desplegable con
+               el formulario) en cuanto esté lista la integración. -->
+          <!--
           <li class="contact-list__item">
             <button
               type="button"
@@ -327,6 +340,7 @@ const submitForm = async (): Promise<void> => {
               </div>
             </div>
           </li>
+          -->
         </ul>
       </div>
     </Container>

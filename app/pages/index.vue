@@ -9,10 +9,12 @@ usePageSeo('home');
   <div class="home-page">
     <HomeHero />
     <HomeMarquee />
+    <HomeReel />
     <!-- <HomeIntro /> -->
-    <HomeTournamentBanner />
-    <HomeEvents />
     <HomeAcademy />
+    <!-- Torneo pospuesto a 2027: banner oculto temporalmente (no borrar) -->
+    <!-- <HomeTournamentBanner /> -->
+    <HomeEvents />
     <HomeStore />
     <Socials />
   </div>

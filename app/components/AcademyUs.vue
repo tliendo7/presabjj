@@ -157,16 +157,15 @@ onUnmounted(() => {
 
           <!--
             Logos de los dos equipos, uno debajo del otro: primero Equipo
-            Santana, después Team Ganbaru (la afiliación). El de Santana
-            sigue siendo un placeholder -el cliente todavía no nos ha
-            pasado el logotipo definitivo-, sustituir este div por la
-            imagen real en cuanto esté disponible. El de Ganbaru ya es
+            Santana, después Team Ganbaru (la afiliación). Los dos son ya
             el logo real (SVG extraído del PDF que pasó el cliente).
           -->
           <div class="academy-us__logos">
-            <div class="academy-us__logo-placeholder">
-              {{ t('academia.us.logoPlaceholder') }}
-            </div>
+            <img
+              src="/images/partners/equipo-santana.svg"
+              alt="Equipo Santana"
+              class="academy-us__logo-santana"
+            >
 
             <img
               src="/images/partners/team-ganbaru.svg"
